@@ -1,0 +1,338 @@
+1. you are configuring a Spring Data Rest API and you want to only authorize admins to access the /admins endpoint. The Spring Security config class is annotated with @EnableGlobalMethodSecurity and the AdminRepository is annotated with @PreAuthorize("hasRole('ROLE_ADMIN')"), however a regular user is able to access /admins. Why? 
+	prePostEnabled = true is missing from @EnableGlobalMethodSecurity
+
+2. When defining a Spring PasswordEncoder implementation which methods are required?
+	encode and matches
+
+3. What Spring Expression Language (SpEL) expression can you use to check that an authenticated principal is a member of a role?
+	hasRole('ROLE')
+
+4. What annotation can be used on a Spring controller method to enable Cross Origin HTTP requests?
+	@CrossOrigin
+
+5.What is an advantage of using BCrypt to store passwords over SHA-256?
+	BCrypt provides greater resistance to brute force attacks.
+
+6. In a Spring controller how can you get the current UserDetails object?
+	public String currentUserName(Authentication authentication) {
+    UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+    ...
+	}
+
+7. Which is the minimum set of dependencies you need to add for enabling Spring Security into a Spring Data Rest API project for authentication?
+	spring-security-web, spring-security-config
+
+8. How does Spring Security help prevent Injection attacks?
+	By validating user input and escaping potentially dangerous characters
+
+9. What is the correct syntax for Spring Expression Language (SpEL) to write an authorization constraint that allows access only to users with a specific role?
+	hasRole('ROLE_ADMIN')
+
+10. Which of the following are annotations that can be used to secure a Spring controller method?
+	@PreAuthorize and @Secured
+
+11. What do you need to have in the following Spring Security configuration method in order to register a user after a successful login with OAuth?
+@Override
+protected void configure(HttpSecurity http) throws Exception {} 
+	
+	http.oauth2Login().successHandler(...);
+
+12. What AuthenticationProvider can you use to authenticate against Microsoft Active Directory from a Spring application?
+	LdapAuthenticationProvider
+
+13. How can you validate the email address given by a user when they are registering an account?
+	By sending an email containing a verification link
+
+14. You are using a custom UserDetailsService to integrate a Spring application with an existing authentication database. Upon testing your application you are unable to authenticate. The password is correct as you can login via other systems with it. What is the most likely cause of the authentication failure in your application?
+	The PasswordEncoder is not using the same message digest algorithm as the stored passwords.
+
+15. You are testing a Spring application for security vulnerabilities and you notice that the certificate passwords are hardcoded in clear text. Which solution would you adopt to solve this security issue?
+	Externalize the configuration in a distributed system.
+
+16. What do you need to do to automatically register a user into your application after a successful login using OAuth?
+	Implement AuthenticationSuccessHandler and override onAuthenticationSuccess() to save the user details.
+
+17. What Spring Security annotation can you use to filter the results of a method?
+	@PostFilter
+
+18. How can you secure the following controller method so that it can only be invoked by users that are a member of the admin role using Spring Security?
+public void deleteAccount(String accountId) {
+}
+		@PreAuthorize("hasRole('ROLE_ADMIN')")
+		public void deleteAccount(String accountId) {
+		}
+
+19. Your team's Spring based web application has recently undergone penetration testing, and the report highlighted that the application is storing user passwords using unsalted SHA-256 hashes. What action would you take to address these failings?
+	Move to using strong password hashes such as BCrypt or SCrypt.
+
+20. Using Spring security annotations, how can you restrict a controller method to only be accessible to authenticated users with the role ADMIN?
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
+
+1. What is the default authority prefix that OAuth assigns to an authenticated principal?
+	SCOPE_
+
+2. What annotation can be used to pass the authenticated principal to a controller?
+	@AuthenticationPrincipal
+
+3. Your team's Spring based web application has recently undergone penetration testing, and the report highlighted that the application is storing user passwords using unsalted SHA-256 hashes. What action would you take to address these failings?
+	Move to using strong password hashes such as BCrypt or SCrypt.
+
+4. What is the name of the header that Spring Security Framework will add by default to instruct browsers to automatically use HTTPS for future requests?
+	Strict-Transport-Security
+
+5. When should you use the Cross Site Request Forgery (CSRF) protection mechanism provided by Spring Security Framework?
+	For any request made by normal users that could be processed by a browser.
+
+6. You want to configure authentication in Spring Security Framework. What is the first thing you need to do?
+	Create a class that extends WebSecurityConfigurerAdapter
+
+7. The following Spring configuration is being used to authenticate requests to a Spring application:
+protected void configure(HttpSecurity http) throws Exception {
+    http.authorizeRequests()
+      .antMatchers("/**")
+      .hasRole("USER")
+      .and()
+      .httpBasic();
+}
+However users are being presented with a dialog asking for a username and password rather than being sent to the login form. What needs to be changed in the configuration?
+
+	httpBasic() should be replaced with formLogin()
+
+8. What do you need to have in the following Spring Security configuration method in order to register a user after a successful login with OAuth?
+@Override
+protected void configure(HttpSecurity http) throws Exception {} 
+	
+	http.oauth2Login().successHandler(...);
+
+9. How does Spring Security help prevent Injection attacks?
+	By validating user input and escaping potentially dangerous characters
+
+10. What class needs to be configured in order to configure authentication in Spring Security?
+	AuthenticationManager
+
+11. How can a Spring application mitigate online brute force password attacks?
+	By rate limiting authentication attempts
+
+12. Your team's Spring application integrates with a third party system at the database level. Given the highly sensitive information stored within the third party system your application must ensure that fine grained access controls are implemented and follow the access controls stored by the third party application. The following table is in the database capturing access controls:
+CREATE TABLE grants (
+    USER_ID BIGINT,
+    OBJECT_ID BIGINT,
+    PERMISSIONS CHAR[],
+    PRIMARY KEY (USER_ID, OBJECT_ID)
+)
+How would you go about solving this?
+
+	Make use of the hasPermission SpEL function and implement a custom PermissionEvaluator.
+
+13. What would you write in the following Spring Security configure method to instruct the browser to treat the domain as an HSTS host for a year?
+@Override
+protected void configure(HttpSecurity http) throws Exception {}
+
+	http.headers().httpStrictTransportSecurity().maxAgeSeconds(31536000);
+
+14. How does Spring Security relate the current authentication state to the thread processing the request?
+	The SecurityContext is stored in a ThreadLocal.
+
+15. You want to collect data for registration after the user is authenticated with OAuth. How can you determine which OAuth provider has been used to log in?
+	Call getAuthorizedClientRegistrationId() method from OAuth2AuthenticationToken
+
+
+16. Given the controller method:
+public List<Contact> getTeamMembers(Team team);
+How can you verify that the currently authenticated user has the permission get_team_members on the team object?
+	@PreAuthorize("hasPermission(#team, 'get_team_members')")
+	public List<Contact> getTeamMembers(Team team) {
+	}
+
+17. A user notices the following message in the console when inspecting an external website:"Refused to display http://localhost:8080/login in a frame because it set 'X-Frame-Options' to 'deny'." What attack has been prevented by the Spring Security default security headers?
+	Clickjacking
+
+18. How can a Spring application use a relational database for user authentication?
+	Using the built in JDBC authentication configured via AuthenticationManagerBuilder or with a custom UserDetailsService
+
+19. Using Spring Security, how can you restrict access to URLs starting with /api/ to fully authenticated users, and allow only users with the role ROLE_ADMIN to access URLs starting with /api/admin/?
+	protected void configure(HttpSecurity http) throws Exception {
+    http.authorizeRequests()
+      .antMatchers("/api/**").fullyAuthenticated()
+      .antMatchers("/api/admin/**").hasRole("ADMIN");
+	}
+
+20. Which Spring Security interface do you need to implement in order to authenticate users that send requests to your API?
+	UserDetailsService
+
+1. What is the purpose of implementing a UserDetailsService?
+	To provide details, including authentication data about a principal to DaoAuthenticationProvider
+
+2. You are using GitHub to log in to a Spring Security OAuth2 application and the following exception is thrown:"org.springframework.http.converter.HttpMessageNotReadableException: An error occurred reading the OAuth 2.0 Access Token Response: tokenValue cannot be empty; nested exception is java.lang.IllegalArgumentException: tokenValue cannot be empty"
+	The clientSecret value is wrong.
+
+3. What kind of attack can be done after a successful SQL Injection that will bypass password checks?
+	Denial-of-Service (DoS) attack
+
+4. What would you use to prevent a Structured Query Language (SQL) Injection attack by forcing the developer to first define all the SQL code and then passing each parameter to the query? 
+	Query parameterization
+
+5. A browser detects an XSS attack and attempts to change the content in order to still be able to render everything, however this replacement becomes a XSS vulnerability in itself. How would you implement the following Spring Security configure method to block Cross-site scripting?  
+@Override
+protected void configure(HttpSecurity http) throws Exception {} 
+
+	http.headers().xssProtection();
+
+6. Your team is building an API for any reseller to access your company sales promotions. This is built using Spring Data REST and is available at https://sales.api.my-corp.com/promotions. A third party complained that they cannot call your API from their website. What can you do to resolve this situation?
+	
+	Add the following to the getPromotions() controller method:
+
+	@CrossOrigin(origins = "*")
+
+7. When securing an API using Spring Security, you often use BCrypt to encode the password. However, the BCrypt hashing algorithm is really slow. Why does this happen?
+
+	To avoid Brute Force Attacks.
+
+8. You are using a GrantedAuthoritiesMapper to map OAuth2User.getAuthorities() to GrantedAuthority in order to retrieve the roles for a user from an OAuth identity store. You notice that some users that are authenticated don't have any role assigned. What might be the issue?
+	The users log in via an OpenID Connect provider and the authority is of type OidcUserAuthority.
+
+9. What do you need to write in the below Spring Security configuration method in order to only allow admins to save a new User using the Spring Data Rest API endpoint "/users" and everybody else to see the list of User entries using the same endpoint?
+@Override
+    protected void configure(HttpSecurity http) throws Exception {
+
+} 
+
+	http.authorizeRequests().antMatchers(HttpMethod.POST, "/users").hasRole("ROLE_ADMIN");
+
+10. What is the name of the class that deals with AccessDeniedException and AuthenticationException in Spring Security Framework?
+
+	org.springframework.security.web.access.ExceptionTranslationFilter
+
+
+11. How can you mitigate credential stuffing attacks against a Spring application?
+	By using a CAPTCHA as part of the login process
+
+12. You are securing a Spring Data Rest API with Spring Security. You implement the following UserRepository:
+@Repository
+@PreAuthorize("hasRole('ROLE_ADMIN')")
+public interface UserRepository extends JpaRepository<User, Long>{
+  User findByUsername(String username);
+}
+You notice that only admins are able to query the findByUserName() method, but a regular user can query deleteAllInBatch();. How can you prevent this from happening?
+
+	Override deleteAllInBatch() method in the UserRepository interface.
+
+13. You are configuring a Spring Data Rest API and you want to only authorize admins to access the /admins endpoint. The Spring Security config class is annotated with @EnableGlobalMethodSecurity and the AdminRepository is annotated with @PreAuthorize("hasRole('ROLE_ADMIN')"), however a regular user is able to access /admins. Why? 
+
+	prePostEnabled = true is missing from @EnableGlobalMethodSecurity
+
+14. You are building an application that holds sensitive data (e.g social security numbers). You aim to avoid threats that occur when clients accept access tokens from sources other than intentional requests to a token endpoint. Which protocol would you chose for authentication?
+	
+	OAuth 1.0a
+
+15. A developer configured Spring Security to disable the Cross Site Request Forgery (CSRF) protection on a Spring Data Rest API. What is the most likely explanation for their action?
+
+	If the application is attaching the credentials via an Authorization header, then the browser can't automatically authenticate the requests, therefore CSRF isn't possible.
+
+16. You are investigating why the following user uid=bill,ou=accounts,dc=springframework,dc=org cannot authenticate with the Spring application your team maintains. The Spring application uses the following configuration to authenticate with Microsoft Active Directory:
+public void configure(AuthenticationManagerBuilder auth) throws Exception {
+    auth
+      .ldapAuthentication()
+        .userDnPatterns("uid={0},ou=people")
+        .contextSource()
+          .url("ldap://localhost:8389/dc=springframework,dc=org");
+}
+How can you resolve this problem?
+
+	The application should set a userSearchFilter and configure a managerDn and managerPassword to enable searching for the user.
+
+17. Which Spring Security annotation is used to configure the login functionality using OAuth?
+
+	@EnableOAuth2Sso
+
+18. When using a Time-based One-time Password (TOTP) as a second authentication factor with Spring Security, what additional information needs to be stored for each user?
+
+	A shared secret
+
+19. What grant type should you use when building a client-side web app or mobile app that uses OAuth to integrate with another provider's login (e.g. Facebook)?
+
+	Implicit
+
+20. You are debugging a Spring application that has a global exception handler class. That class contains the annotations @ControllerAdvice and @ExceptionHandler. You notice that all the exceptions thrown by Spring MVC are caught, but the ones thrown by Spring Security are not. What might be the issue?
+
+	The exceptions thrown by Spring Security custom filters run before the controller methods are invoked.
+
+21. Which browser security headers included with Spring Security Framework reduce the possibility of on-path attacks?
+	HTTP Strict Transport Security (HSTS)
+
+22. What is the effect of the following configuration?
+protected void configure(HttpSecurity http) throws Exception {
+    http.authorizeRequests().antMatchers("/api/**").hasRole("API_USER");
+}
+	
+	All requests starting with /api/ requires an authenticated user which has the role ROLE_API_USER.
+
+23. What is the purpose of the managerDn and managerPassword options which can be configured when using the LDAP authentication provider against Microsoft Active Directory?
+
+	To enable the application to search for a user within the directory
+
+24. Which of the following is a standard for user authentication using OAuth?
+
+	OpenID Connect
+
+25. When using the JDBC based authentication provided by Spring Security, how can you use a custom database schema?
+
+	By configuring the SQL needed to look up users
+
+26. You are adding email validation to a Spring application. How can you go about integrating these changes into the registration process?
+	
+	Define an event to be emitted when a user is registered and create an event listener to send the verification email.
+
+27. You are made aware that users who have two factor authentication enabled to access your team's Spring based web application can not login, but users without two factor authentication can login without issue. The application makes use of Time-base One-time Passwords (TOTP) as the second authentication factor. What is the most likely reason for the issue?
+
+	The server clock is not synchronized to UTC.
+
+28. What Spring Security annotation will resolve the principal for OAuth, OpenID Connect, and form login when added to a method parameter?
+
+	@AuthenticationPrincipal
+
+29. Which class can be used to extract roles from the JWT token claims when using OAuth?
+
+	org.springframework.security.oauth2.server.resource.authentication.JwtGrantedAuthoritiesConverter
+
+30. You secured your application with Spring Security Framework, however, when deployed in production, the requests are not redirected to HTTPS. How would you implement the following configure method in order to keep developing on http and only redirecting to https in production?
+@Override
+protected void configure(HttpSecurity http) throws Exception {} 
+
+	http.requiresChannel().requestMatchers(r -> r.getHeader("x-forwarded-proto") != null).requireSecure();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

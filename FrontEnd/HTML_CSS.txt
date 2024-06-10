@@ -1,0 +1,2382 @@
+HTML/CSS
+
+set1
+
+1. 
+You are justifying four items at the center of a container. Which layout would you use along with the justify-items property?
+ 
+ 	 	 	Grid
+2. 
+How many paragraphs will have the color maroon?
+
+myApp.html
+<p> Foo </p>
+<p> Bar </p>
+<p> Baz </p>
+<p> Que </p>
+
+myApp.css
+p ~ p {
+  color: maroon;
+}
+ 
+ 	 	 	3
+3. 
+How do you add a Font Awesome icon to an <input> tag?
+ 
+ 	 	 	Use the <i> tag inside the <label> tag and use the class fa and the name of the icon.
+4. 
+You must add the stylesheet myStyle.css, which is in the folder styles, to the web page index.html. The following is the folder structure:
+
+├── index.html
+├── scripts
+│   └── functions.js
+└── styles
+    └── myStyle.css
+
+How would you add the stylesheet to the web page?
+ 
+ 	 	 	<head>
+  <link rel="stylesheet" href="styles/myStyle.css"> 
+</head>
+5. 
+How can you replicate the following CSS selector without using the value bold in it?
+
+p {
+  font-weight: bold;
+} 
+ 
+ 	 	 	p {
+  font-weight: 700;
+}
+6. 
+Why would you use the <video> tag instead of the <iframe> tag to embed a video?
+ 
+ 	 	 	<video> is more accessible and provides more control over the video playback.
+7. 
+How would you link an external CSS file to an HTML file?
+ 
+ 	 	 	In the head element, specify:
+
+ <link rel="stylesheet" href="custom.css">
+8. 
+The following is a simple web page with one button:
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My friendly web page</title>
+    <link rel="stylesheet" href="styles/pretty.css" />
+  </head>
+  <body>
+    <button onclick="sayHi()">Hello</button>
+  </body>
+</html>
+
+You want to add the function sayHi() using in-page JavaScript. How would you do that?
+ 
+ 	 	 	Add the following code to the head element:
+
+<script>
+   function sayHi() {
+     alert("Hi");
+   }
+</script>
+9. 
+Which is a common HTML bug that leads to an unexpected output?
+ 
+ 	 	 	<p>This part should not be in bold</strong></p>
+10. 
+You are trying to create a drop-down list in your form:
+
+<form>
+  <label for="cars">Choose a car:</label><br>
+  <!-- Drop-down list is not being displayed -->
+    <option value="car1">Car1</option>
+    <option value="car2">Car2</option>
+    <option value="car3">Car3</option>
+    <option value="car4">Car4</option>
+</form> 
+
+The drop-down list is not displaying. Why?
+ 
+ 	 	 	The <select> element is missing.
+11. 
+What can you infer from the following HTML script?
+
+<head>
+   <style>
+     body {
+         background-color: blue;
+     }
+   </style>
+</head>
+<body>
+    <p style="background-color: red;">XYZ automobiles</p>
+    <p>RKJ services</p>     
+</body>
+ 
+ 	 	 	The entire web page, excluding the text XYZ automobile, has a blue background.
+12. 
+Which CSS property lets you curve the corners of an HTML button?
+ 
+ 	 	 	border-radius
+13. 
+Which CSS property lets you specify a background color for an HTML element?
+ 
+ 	 	 	background-color
+14. 
+You must close the div element with the class close-me in the below snippet. On what line should you do this?
+
+1.  <body>
+2.    <button onclick="sayHi()">Hello</button>
+3.    <!-- content omitted -->
+4.    <div>
+5.      <div class="close-me">
+6.        <form>
+7.          <input type="text" />
+8.        </form>
+9.    </div>
+10. </body>
+ 
+ 	 	 	Between line 8 and 9
+15. 
+You want to add the languages for creating websites to an informative piece of text on your site. The languages do not need to be in any particular order. How would you add them?
+ 
+ 	 	 	<ul>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>JavaScript</li>
+</ul>
+16. 
+What is the purpose of the <tbody> element in a <table> element?
+ 
+ 	 	 	To group the elements to create the body of the table
+17. 
+Which CSS keyword applies the computed value of a parent element to its child element?
+ 
+ 	 	 	inherit
+18. 
+You have an HTML script with a div tag that displays text. How would you change the font size to 20 pixels without using the style element or an external CSS file?
+ 
+ 	 	 	<div style="font-size: 20px;">Hello, user!</div>
+19. 
+You must choose an editor for creating your new company website. The editor should support HTML and CSS files, be available for different operating systems, have syntax highlighting, and have extendable plugins for making coding easier. Which editor suits your needs?
+ 
+ 	 	 	Visual Studio Code
+20. 
+At what line is the div element with class special closed?
+
+1.  <body>
+2.    <button onclick="sayHi()">Hello</button>
+3.    <!-- content omitted -->
+4.    <div>
+5.      <div class="special">
+6.        <form>
+7.          <input type="text" />
+8.        </form>
+9.      </div>
+10.     <div>
+11.       <p>Some text after the form.</p>
+12.     </div>
+13.   </div>
+14. </body>
+ 
+ 	 	 	9
+
+
+Set2
+
+1. 
+You are displaying 20 items on a web page with a custom image marker. You must choose only base.jpg as the marker image for each list item. How would you write the CSS code for the li tag so each marker has a size of 10 pixels?
+ 
+ 	 	 	li {  
+  padding: 10px 10px 10px 20px;
+  list-style: none;
+  background-image: url("../../static/img/base.jpg");
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 10px;  
+}
+2. 
+You are creating a web page where you must include a Ruby statement within a code font. To do so, you write the following HTML and CSS codes:
+
+myApp.html
+<body>    
+    <code='rb'>
+        puts "Hello, User!";
+    </code>    
+</body>
+
+myApp.css
+code {
+  background-color: #eee;
+  font-family: courier, monospace;
+}
+
+When you run the application, the code formatting is missing from the Ruby statement. Why?
+ 
+ 	 	 	You used <code='rb'> instead of <code>.
+3. 
+You attempt to create the following table with three rows:
+
+<table>
+  <th>
+    <tr>Header 1</tr>
+    <tr>Header 2</tr>
+  </th>
+  <td>
+    <tr>Data 1</tr>
+    <tr>Data 2</tr>
+  </td>
+  <td>
+    <tr>Data 3</tr>
+    <tr>Data 4</tr>
+  </td>
+</table>
+
+Everything shows on one row. What will you adjust to solve the problem?
+ 
+ 	 	 	Remove <tr> inside <th> and <td> and put <tr> around them.
+4. 
+You must restrict a style where the height must be greater than the element's width. How would you use a media query to define this style restriction, ensuring that the element's width does not grow beyond 534 pixels?
+ 
+ 	 	 	@media (max-width: 534px) and (orientation: portrait) { }
+5. 
+In value processing, what happens to a specified value if you receive an empty list from a cascade output?
+ 
+ 	 	 	CSS uses the default value (initial/inherited) of the specified value.
+6. 
+Your viewport's width and height must be equal to the width and height of a user's device with a normal zoom of the web page. How would you configure the viewport setting for your application? 
+ 
+ 	 	 	<meta name="viewport" content="width=device-width, 
+      height=device-height, initial-scale=1" />
+7. 
+You must create an iframe that opens a new website in the iframe after you click a button. How can you do so?
+ 
+ 	 	 	<iframe id="foo" src=""></iframe>
+<button 
+onclick="document.getElementById('foo').src='https://www.eg.com'">Open Website</button>
+8. 
+What is metadata in the context of the meta tag?
+ 
+ 	 	 	Information (data) about data that is not displayed on the page but is machine parsable.
+9. 
+You create the following button with a red background and white text that says, "Join us!":
+
+myApp.html
+<a href="https://example.com/joinus">Join us!</a>
+
+myApp.css
+a {
+  background-color: red;
+  padding: auto;
+  color: white;
+}
+
+When you hover the cursor over the button, the text should become blue, a progressing cursor icon should appear, and a gray shadow should show behind the button. How would you write the CSS code?
+ 
+ 	 	 	a:hover {
+  color: blue;
+  box-shadow: gray 3px 3px 3px 3px;
+  cursor: progress;
+}
+10. 
+What is the outermost area of a CSS box model?
+ 
+ 	 	 	Margin
+11. 
+What is the purpose of the preventDefault() method in an event handler?
+ 
+ 	 	 	To prevent the default action of the event from triggering
+12. 
+Which HTML element lets you write CSS code within an HTML file?
+ 
+ 	 	 	<style> ... </style>
+13. 
+How would you improve the following table with <thead> and <tbody> tags? 
+
+<table>
+  <tr>
+    <th>Animal</th>     
+    <th>Average weight</th>
+  </tr>
+  <tr>
+    <td>Elephant</td>
+    <td>4000 kg</td>
+  </tr>
+  <tr>
+    <td>Mouse</td>
+    <td>22 g</td>
+  </tr>
+</table>
+ 
+ 	 	 	<table>
+  <thead>
+    <tr>...</tr>
+  </thead>
+  <tbody>
+    <tr>...</tr>
+    <tr>...</tr>
+  </tbody>
+</table>
+14. 
+When does a blur event fire?
+ 
+ 	 	 	When an element loses focus
+15. 
+The following is a simple web page with one button:
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My friendly web page</title>
+    <link rel="stylesheet" href="styles/pretty.css" />
+  </head>
+  <body>
+    <button onclick="sayHi()">Hello</button>
+  </body>
+</html>
+
+You want to add the function sayHi() using in-page JavaScript. How would you do that?
+ 
+ 	 	 	Add the following code to the head element:
+
+<script>
+   function sayHi() {
+     alert("Hi");
+   }
+</script>
+16. 
+What is true about HTML heading tags such as h1 and h6?
+ 
+ 	 	 	The lower the number (from h6 to h1), the larger the heading font size.
+17. 
+What is true about the following HTML statement?
+
+<form action="/take_to_an_action_page.php">
+    <input type="file" onchange="this.form.submit()" /> 
+</form>
+ 
+ 	 	 	It lets you select a file from your device storage and upload it to the server.
+18. 
+Your CSS is not active on your website. The following is the folder structure of the website:
+
+cooking-blog/
+├── index.html
+└── styles
+    └── custom.css
+
+The following is the HTML file:
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="custom.css" />
+    <title>Tasty vegan recipes</title>
+  </head>
+  <body>
+    <!-- content omitted -->
+  </body>
+</html>
+
+
+How can you fix the problem?
+ 
+ 	 	 	Change the link element to:
+
+<link rel="stylesheet" href="styles/custom.css" />
+19. 
+What can you infer from the following HTML script?
+
+<head>
+   <style>
+     body {
+         background-color: blue;
+     }
+   </style>
+</head>
+<body>
+    <p style="background-color: red;">XYZ automobiles</p>
+    <p>RKJ services</p>     
+</body>
+ 
+ 	 	 	The entire web page, excluding the text XYZ automobile, has a blue background.
+20. 
+How will you add an event handler for clicking an element in HTML?
+ 
+ 	 	 	<element onclick="handler">
+
+
+Set3
+
+1. 
+You create a web page to display three flex items. The first item must be in the first row and the remaining two items must be in the second row. You write the following scripts, but all three items appear one below another. Why?
+
+myApp.html
+<body>
+      <div id="config">
+          <div style="background-color: aqua;">Lorem</div>
+          <div style="background-color: hotpink;">Ipsum</div>
+          <div style="background-color: olive;">Que</div>
+      </div>
+</body>
+
+myApp.css
+#config {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  width: 500px;    
+}
+#config div{  
+  width: 300px;
+}
+ 
+ 	 	 	You used 300px instead of 250px in the #config div selector.
+2. 
+You create the following Font Awesome icon:
+
+<i class="far fa-camera"></i>
+
+It is not showing. Why?
+ 
+ 	 	 	You are not using the version of Font Awesome that supports regular style.
+3. 
+You must create a button on your web page. You can apply any of the available CSS properties to this button. Based on this statement, what is true?
+ 
+ 	 	 	You can develop the button without using the button or input elements.
+4. 
+You are displaying 20 items on a web page with a custom image marker. You must choose only base.jpg as the marker image for each list item. How would you write the CSS code for the li tag so each marker has a size of 10 pixels?
+ 
+ 	 	 	li {  
+  padding: 10px 10px 10px 20px;
+  list-style: none;
+  background-image: url("../../static/img/base.jpg");
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 10px;  
+}
+5. 
+You write the following code to display employee names and their roles:
+
+<table>
+  <tr>
+    <td><b>Name</b></td>
+    <td><b>Job</b></td>
+  </tr>
+  <tr>
+    <td>Name1</td>
+    <td>Software developer</td>
+  </tr>
+  <tr>
+    <td>Name2</td>
+    <td>Software developer</td>
+  </tr>
+</table>
+
+In the code review, your colleague comments on how you made the first row stand out. What does the comment likely say?
+ 
+ 	 	 	You used the <b> tag to bold the text in the first row, which is not the correct way to highlight that row.
+6. 
+How many CSS properties can you set using the single CSS border property?
+ 
+ 	 	 	3
+7. 
+Consider the following HTML layout:
+
+<body>
+    <div id="config">
+        <div id="foo" style="background-color: aqua;">Foo</div>
+        <div id="bar" style="background-color: hotpink;">Bar</div>
+        <div id="baz" style="background-color: olive;">Baz</div>        
+    </div>
+</body>
+
+How would you apply a grid layout on the above three items so the first item covers the first row, the second item covers two-thirds of the second row, and the third item covers the remaining track of the second row?
+ 
+ 	 	 	#config  {
+  display: grid;
+  grid-template-areas: "a a"
+                       "b c"
+                       "b c";
+  grid-template-columns: 2fr 1fr;   
+}
+
+#foo { grid-area: a }
+#bar { grid-area: b }
+#baz { grid-area: c }
+8. 
+You have four statements on a web page. The last three statements, excluding the first statement, must be blue. If you add any further statements after the fourth, those statements must inherit the blue color as well. To accomplish this, you write the following scripts:
+
+myApp.html
+<body>    
+    <div>
+        <p>Let's go and have some pizza together.</p>
+    </div>
+    <p>It was really tasty!</p>
+    <p>Goodbye.</p>
+    <p>See you later.</p>
+</body>
+
+myApp.css
+div + p {
+  color: blue;
+}
+
+After running the code, only the second statement appears blue. How would you fix the CSS script to resolve the issue?
+ 
+ 	 	 	div ~ p {
+  color: blue;
+}
+9. 
+You write three sentences on a web page. Only the first sentence should be green. To make this true, you create the following HTML/CSS scripts:
+
+myApp.html
+<body>    
+    <p class="foo">
+        <span>Let's go and have some pizza together.</span>
+    </p>
+    <span>It was really tasty!</span>
+    <p>Goodbye.</p>
+</body>
+
+myApp.css
+p + span {
+  color: green;
+}
+foo {
+  color: green;
+}
+
+The second sentence is green instead of the first sentence. Why?
+ 
+ 	 	 	You used an adjacent sibling selector (p + span) instead of a descendent selector.
+10. 
+You apply CSS on a parent div element that holds eight items. Which grid track has the smallest size compared to the other tracks based on the following code?
+
+#config {
+  display: grid; 
+  grid-template-columns: 800px 2fr 1fr 3fr;
+}
+ 
+ 	 	 	Third
+11. 
+You must restrict a style where the height must be greater than the element's width. How would you use a media query to define this style restriction, ensuring that the element's width does not grow beyond 534 pixels?
+ 
+ 	 	 	@media (max-width: 534px) and (orientation: portrait) { }
+12. 
+What happens when you apply the border: solid; CSS property on the first heading <h1> tag that uses red for its background?
+ 
+ 	 	 	A medium width, solid, and black (current color) border wraps the heading.
+13. 
+You have a div element that holds a paragraph. The element must begin 70% from the left of the block minus 150 pixels and 44% from the top of the block plus 28 pixels. How would you configure the foo class for the element?
+ 
+ 	 	 	.foo {
+  position: absolute;
+  left: calc(70% - 150px);
+  top: calc(44% + 28px);
+}
+14. 
+Which CSS layout model is a one-dimensional?
+ 
+ 	 	 	Flexbox
+15. 
+You insert four stylesheets in your HTML file with the same media query types/features. Which statement is correct?
+ 
+ 	 	 	The application uses all four stylesheets in a cascade pattern.
+16. 
+How can you replicate the following CSS selector without using the value bold in it?
+
+p {
+  font-weight: bold;
+} 
+ 
+ 	 	 	p {
+  font-weight: 700;
+}
+17. 
+What should you use the header element for?
+ 
+ 	 	 	For a container with introductory content, such as a logo, heading, or navigation links
+18. 
+What is metadata in the context of the meta tag?
+ 
+ 	 	 	Information (data) about data that is not displayed on the page but is machine parsable.
+19. 
+You have an HTML script that displays three paragraphs:
+
+<body>    
+    <div>
+        <p>Travelling is fun.</p> 
+        <div>
+            <!--Add Brown Color to these paragraphs-->
+            <p>We will head to North.</p>
+            <p>And, later towards East.</p>
+        </div>
+    </div>
+</body>
+
+How would you apply brown to the last two paragraphs? 
+ 
+ 	 	 	div div > p {
+  color: brown;
+}
+20. 
+The following HTML script displays a paragraph and five bullet points:
+
+<body>
+    <p> <span> Hello, user! Welcome to Pluralsight! Here are the available assessments: </span></p>
+    <ul>
+        <li><span>C++</span></li>        
+        <li><span>Java</span></li>        
+        <li><span>HTML/CSS</span></li>        
+        <li><span>Ruby</span></li>        
+        <li><span>Networking</span></li>        
+    </ul>       
+    <span>Have a nice day!</span>
+</body>
+
+How would you write a CSS script that changes only the color of the paragraph beginning with the word Hello to red?
+ 
+ 	 	 	p span {
+  color: red;
+}
+
+set4 
+
+1. 
+You create two div tags and apply a stylesheet to them. You expect the elements to appear horizontally when the screen is in landscape mode and you expect them to appear vertically in portrait mode. You write the following scripts:
+
+myApp.html
+<body>    
+    <div>Foo</div>
+    <div>Baz</div>    
+</body>
+
+myApp.css
+body {
+  display: flex;
+}
+
+div {
+  margin: 5px;
+  width: 300px;
+  height: 300px;
+  background: darkred;
+}
+
+@media screen {
+  body {
+    flex-direction: column;
+  }
+}
+
+In each orientation, the elements appear vertically. What change to the CSS script must you make to resolve the issue?
+ 
+ 	 	 	In the media query, replace screen with (orientation: portrait).
+2. 
+You have four statements on a web page. The last three statements, excluding the first statement, must be blue. If you add any further statements after the fourth, those statements must inherit the blue color as well. To accomplish this, you write the following scripts:
+
+myApp.html
+<body>    
+    <div>
+        <p>Let's go and have some pizza together.</p>
+    </div>
+    <p>It was really tasty!</p>
+    <p>Goodbye.</p>
+    <p>See you later.</p>
+</body>
+
+myApp.css
+div + p {
+  color: blue;
+}
+
+After running the code, only the second statement appears blue. How would you fix the CSS script to resolve the issue?
+ 
+ 	 	 	div ~ p {
+  color: blue;
+}
+3. 
+Your vegan Moroccan recipe blog has the following <h1> tag on the home page:
+
+<h1>Introduction</h1>
+
+In terms of search engine optimization (SEO), how can you improve the displayed header?
+ 
+ 	 	 	<h1>Vegan Moroccan recipes</h1>
+4. 
+You must write HTML for a figure that has an image of a captain and holds the description of this image as a caption. How would you do so?
+ 
+ 	 	 	<figure>
+  <img src="captain.jpg" alt="captain on the boat">
+  <figcaption>Caption for the captain</figcaption>
+</figure>
+5. 
+What is the purpose of the preventDefault() method in an event handler?
+ 
+ 	 	 	To prevent the default action of the event from triggering
+6. 
+Your CSS is not active on your website. The following is the folder structure of the website:
+
+cooking-blog/
+├── index.html
+└── styles
+    └── custom.css
+
+The following is the HTML file:
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="custom.css" />
+    <title>Tasty vegan recipes</title>
+  </head>
+  <body>
+    <!-- content omitted -->
+  </body>
+</html>
+
+
+How can you fix the problem?
+ 
+ 	 	 	Change the link element to:
+
+<link rel="stylesheet" href="styles/custom.css" />
+7. 
+You want to add the languages for creating websites to an informative piece of text on your site. The languages do not need to be in any particular order. How would you add them?
+ 
+ 	 	 	<ul>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>JavaScript</li>
+</ul>
+8. 
+Which HTML element should be part of the <head> element?
+ 
+ 	 	 	<meta name="description" content="All about the head element">
+9. 
+Which CSS property lets you curve the corners of an HTML button?
+ 
+ 	 	 	border-radius
+10. 
+At what line is the div element with class special closed?
+
+1.  <body>
+2.    <button onclick="sayHi()">Hello</button>
+3.    <!-- content omitted -->
+4.    <div>
+5.      <div class="special">
+6.        <form>
+7.          <input type="text" />
+8.        </form>
+9.      </div>
+10.     <div>
+11.       <p>Some text after the form.</p>
+12.     </div>
+13.   </div>
+14. </body>
+ 
+ 	 	 	9
+11. 
+What is an example of an HTML block element?
+ 
+ 	 	 	div
+12. 
+In the following code snippet, where should you add a comment explaining the purpose of the content of the <div> element? 
+
+<body>
+  <div>
+    <p>This is some text inside the div.</p>
+  </div>
+</body>
+ 
+ 	 	 	Between the <div> and <p> tags
+13. 
+Which CSS property lets you specify a background color for an HTML element?
+ 
+ 	 	 	background-color
+14. 
+Why would you want to link an external CSS file instead of having the CSS in the HTML page inline with the style attribute or as a separate style element?
+ 
+ 	 	 	CSS is easier to maintain because you only need to make changes to one CSS file instead of changing all the CSS snippets in every HTML page.
+15. 
+A link takes you to the Pluralsight website. When you hover the mouse over the link, the link text must have a solid red border. How would you write its CSS script?
+ 
+ 	 	 	a:hover {
+  border: 10px solid red;
+}
+16. 
+What is the purpose of the controls attribute in the <video> tag?
+ 
+ 	 	 	To enable playing, pausing, and adjusting the volume of a video
+17. 
+You are trying to create a drop-down list in your form:
+
+<form>
+  <label for="cars">Choose a car:</label><br>
+  <!-- Drop-down list is not being displayed -->
+    <option value="car1">Car1</option>
+    <option value="car2">Car2</option>
+    <option value="car3">Car3</option>
+    <option value="car4">Car4</option>
+</form> 
+
+The drop-down list is not displaying. Why?
+ 
+ 	 	 	The <select> element is missing.
+18. 
+You must add a canvas element of 300 pixels by 400 pixels to an HTML document. How would you do so?
+ 
+ 	 	 	<canvas id="shapes" width="300" height="400"></canvas>
+19. 
+What is the correct way to write a comment in HTML? 
+ 
+ 	 	 	<!-- This is a comment -->
+20. 
+On what axes does the following transformation property apply?
+
+translate: 20px 20px;
+ 
+ 	 	 	X and Y
+
+
+Set5
+
+1. 
+You create a web page to display three flex items. The first item must be in the first row and the remaining two items must be in the second row. You write the following scripts, but all three items appear one below another. Why?
+
+myApp.html
+<body>
+      <div id="config">
+          <div style="background-color: aqua;">Lorem</div>
+          <div style="background-color: hotpink;">Ipsum</div>
+          <div style="background-color: olive;">Que</div>
+      </div>
+</body>
+
+myApp.css
+#config {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  width: 500px;    
+}
+#config div{  
+  width: 300px;
+}
+ 
+ 	 	 	You used 300px instead of 250px in the #config div selector.
+2. 
+You have four divs nested in a parent div. You must develop a script to keep divs in a pair. How would you complete the CSS based on the following scripts?
+
+myApp.html
+<body>
+    <div id="config">
+        <div style="background-color: aqua;">Foo</div>
+        <div style="background-color: hotpink;">Bar</div>
+        <div style="background-color: olive;">Baz</div>
+        <div style="background-color: wheat;">Que</div>
+    </div>
+</body>
+
+myApp.css
+#config {
+  display: flex;
+  width: 880px;  
+}
+#config div{
+  width: 300px;
+}
+ 
+ 	 	 	Add the flex-wrap: wrap-reverse; property to the config ID selector.
+3. 
+You create a web page with two elements as follows:
+
+<body>    
+    <h2>XYZ automobiles</h2>
+    <div id="foo">We deal with a variety of cars.</div>    
+</body>
+
+How would you color the first element maroon and the second element gold?
+ 
+ 	 	 	body {
+  color: gold;
+}
+
+h2 {
+  color: maroon;  
+}
+4. 
+You have 10 div elements on an HTML web page. You must add two background images behind these elements that cover the entire page. The first image, mountains.jpg, is opaque and the second image, birds.png, is transparent. You use the following CSS styling to add birds over mountains:
+
+body {  
+  background-image: url("../../static/img/mountains.jpg"), 
+                    url("../../static/img/birds.png");  
+}
+
+After performing this operation, you see only mountains. Why?
+ 
+ 	 	 	You added the opaque image before the transparent image.
+5. 
+Which symbol separates a pair of a properties and its value from other pairs in a CSS selector?
+ 
+ 	 	 	;
+6. 
+Which value of the position property always devises a fresh stacking context?
+ 
+ 	 	 	fixed
+7. 
+You are using the Google Chrome Inspect tool to inspect an HTML element. What color is the word Foo after you uncheck the color property under span?
+
+myApp.html
+<div>
+    <span>Foo</span>
+</div>
+
+myApp.css
+body {
+  background-color: red;
+}
+div {
+  color: green;
+  background-color: violet;
+}
+span {
+  color:  white;  
+  background-color: black;
+}
+ 
+ 	 	 	Green
+8. 
+You apply CSS on a parent div element that holds eight items. Which grid track has the smallest size compared to the other tracks based on the following code?
+
+#config {
+  display: grid; 
+  grid-template-columns: 800px 2fr 1fr 3fr;
+}
+ 
+ 	 	 	Third
+9. 
+You write the following code to display employee names and their roles:
+
+<table>
+  <tr>
+    <td><b>Name</b></td>
+    <td><b>Job</b></td>
+  </tr>
+  <tr>
+    <td>Name1</td>
+    <td>Software developer</td>
+  </tr>
+  <tr>
+    <td>Name2</td>
+    <td>Software developer</td>
+  </tr>
+</table>
+
+In the code review, your colleague comments on how you made the first row stand out. What does the comment likely say?
+ 
+ 	 	 	You used the <b> tag to bold the text in the first row, which is not the correct way to highlight that row.
+10. 
+You want to display a 20 sentence paragraph on your web page. You must confine it within two columns with a three pixel dashed gray line dividing the columns. How would you write the CSS for the config ID if you cannot use the column-rule-style property?
+ 
+ 	 	 	#config {
+  column-count: 2;
+  column-rule: dashed 3px gray;
+}
+11. 
+After how many pixels from the left of the block does Hello, user! appear on the web page?
+
+myApp.html
+<div id="foo">Hello, user!</div>
+
+myApp.css
+#foo {
+  position: absolute;
+  left: clamp(10px, 250px, 500px);
+}
+ 
+ 	 	 	250 pixels
+12. 
+Consider the following HTML layout:
+
+<body>
+    <div id="config">
+        <div id="foo" style="background-color: aqua;">Foo</div>
+        <div id="bar" style="background-color: hotpink;">Bar</div>
+        <div id="baz" style="background-color: olive;">Baz</div>        
+    </div>
+</body>
+
+How would you apply a grid layout on the above three items so the first item covers the first row, the second item covers two-thirds of the second row, and the third item covers the remaining track of the second row?
+ 
+ 	 	 	#config  {
+  display: grid;
+  grid-template-areas: "a a"
+                       "b c"
+                       "b c";
+  grid-template-columns: 2fr 1fr;   
+}
+
+#foo { grid-area: a }
+#bar { grid-area: b }
+#baz { grid-area: c }
+
+13. 
+You have three items on a web page. The first two items must show in one line on the main axis and the third item must occupy two-thirds space on the second line of the main axis. Based on the following HTML script, how would you configure the page's CSS?
+
+<div class="box">
+    <div style="background-color: aqua;" id="one">Foo</div>
+    <div style="background-color: gold;" id="one">Baz</div>
+    <div style="background-color: pink;" id="two">Que</div>
+</div>
+ 
+ 	 	 	.box {
+  display: flex;
+  flex-wrap: wrap;
+}
+#one {
+  flex-basis: 50%;
+}
+#two {
+  flex-basis: 66.6%;
+}
+14. 
+How many CSS properties can you set using the single CSS border property?
+ 
+ 	 	 	3
+15. 
+You implement the CSS box model configuration to div and ul tags to transform a list of three items into a Venn diagram. These items must have circular boundaries and the second circle must intersect with the remaining two circles. You write the following HTML/CSS scripts:
+
+myApp.html
+<body>
+    <div>
+        <ul>
+            <li>Foo</li>
+            <li>Baz</li>
+            <li>Que</li>
+        </ul>
+    </div>
+</body>
+
+myApp.css
+ul {
+  display: flex;
+  list-style: none;
+}
+li {
+  border: 5px solid greenyellow;
+  border-radius: 350px;
+  margin-left: -100px;
+  margin-top: 100px;
+  padding: 200px;
+}
+
+The scripts create the result you expected, except a portion of the first circle is hiding behind the left side of the block. How would you make all three circles visible?
+ 
+ 	 	 	Add the following selector to the CSS script:
+
+li:first-child {
+  margin-left: 0px;
+}
+16. 
+You write three sentences on a web page. Only the first sentence should be green. To make this true, you create the following HTML/CSS scripts:
+
+myApp.html
+<body>    
+    <p class="foo">
+        <span>Let's go and have some pizza together.</span>
+    </p>
+    <span>It was really tasty!</span>
+    <p>Goodbye.</p>
+</body>
+
+myApp.css
+p + span {
+  color: green;
+}
+foo {
+  color: green;
+}
+
+The second sentence is green instead of the first sentence. Why?
+ 
+ 	 	 	You used an adjacent sibling selector (p + span) instead of a descendent selector.
+17. 
+You create a collapsable widget with the text Pie Baking Contest. When a user clicks the text, the date and location details should appear. You write the following code:
+
+<summary>
+    Pie Baking Contest
+    <details>April 2, Town Hall HTML Hills</details>
+</summary>
+
+Instead of the details, a Details collapsable widget appears. Why?
+ 
+ 	 	 	The details tag must be the outer element. The summary tag goes around the clickable text.
+18. 
+You want to embed the following PDF file in your page:
+
+<object src="file.pdf" type="application/pdf"></object>
+
+The file is not showing. Why?
+ 
+ 	 	 	You must use the data attribute instead of the src attribute.
+19. 
+You are creating a web page where you must include a Ruby statement within a code font. To do so, you write the following HTML and CSS codes:
+
+myApp.html
+<body>    
+    <code='rb'>
+        puts "Hello, User!";
+    </code>    
+</body>
+
+myApp.css
+code {
+  background-color: #eee;
+  font-family: courier, monospace;
+}
+
+When you run the application, the code formatting is missing from the Ruby statement. Why?
+ 
+ 	 	 	You used <code='rb'> instead of <code>.
+20. 
+What do you use the style element for?
+ 
+ 	 	 	For defining CSS in the HTML page to style that specific HTML page
+
+
+set6
+
+1. 
+You are justifying four items at the center of a container. Which layout would you use along with the justify-items property?
+ 
+ 	 	 	Grid
+2. 
+You write the following code snippet:
+
+myApp.html
+<div>
+  <span class="green">Some text with a green background.</span>
+  <p>More text without a background.</p>
+</div>
+
+myApp.css
+.green {
+  background-color: green;
+}
+
+The green class adds a green background to the text. You want the background to fill the full page width, not just behind the text. How can you use an HTML block element to change that?
+ 
+ 	 	 	Replace the span tag with a p tag.
+3. 
+You create two div tags and apply a stylesheet to them. You expect the elements to appear horizontally when the screen is in landscape mode and you expect them to appear vertically in portrait mode. You write the following scripts:
+
+myApp.html
+<body>    
+    <div>Foo</div>
+    <div>Baz</div>    
+</body>
+
+myApp.css
+body {
+  display: flex;
+}
+
+div {
+  margin: 5px;
+  width: 300px;
+  height: 300px;
+  background: darkred;
+}
+
+@media screen {
+  body {
+    flex-direction: column;
+  }
+}
+
+In each orientation, the elements appear vertically. What change to the CSS script must you make to resolve the issue?
+ 
+ 	 	 	In the media query, replace screen with (orientation: portrait).
+4. 
+Based on the following scripts, what do you see if mobile.png is not transparent?
+
+myApp.html
+<h3>Hello, user!</h3>
+
+myApp.css
+h3 {
+  color: blue;  
+  background-image: url("../../static/img/mobile.png");
+  background-color: red;
+}
+ 
+ 	 	 	Hello, user! in blue and mobile.png behind it.
+5. 
+You are using the Google Chrome Inspect tool to inspect an HTML element. What color is the word Foo after you uncheck the color property under span?
+
+myApp.html
+<div>
+    <span>Foo</span>
+</div>
+
+myApp.css
+body {
+  background-color: red;
+}
+div {
+  color: green;
+  background-color: violet;
+}
+span {
+  color:  white;  
+  background-color: black;
+}
+ 
+ 	 	 	Green
+6. 
+You have 10 div elements on an HTML web page. You must add two background images behind these elements that cover the entire page. The first image, mountains.jpg, is opaque and the second image, birds.png, is transparent. You use the following CSS styling to add birds over mountains:
+
+body {  
+  background-image: url("../../static/img/mountains.jpg"), 
+                    url("../../static/img/birds.png");  
+}
+
+After performing this operation, you see only mountains. Why?
+ 
+ 	 	 	You added the opaque image before the transparent image.
+7. 
+Which statement is correct based on the following scripts?
+
+myApp.html
+<body>    
+    <p> <span>Hello</span> <span>World</span> </p>
+    <ul>
+        <li><span>Grid</span></li>        
+    </ul>       
+    <span>Layout</span>
+</body>
+
+myApp.css
+p span {
+  color: gold;
+}
+
+ul + span {
+  color: red;
+}
+ 
+ 	 	 	The word Layout appears in red on the web page.
+8. 
+Which statement is correct based on the following viewport configuration?
+
+<meta name="viewport" content="width=-2000, initial-scale=1" />
+ 
+ 	 	 	The application has no effect on its content because of the negative width value.
+9. 
+You set up a media query to apply restrictions on your application:
+
+@media (max-height: 500px), screen and (orientation: portrait) { }
+
+You use a printer that has a page height of 600 pixels and a page width of 400 pixels. The media query does not print the page, however. Why?
+ 
+ 	 	 	The conditions, (max-height: 500px) and screen, both return a boolean false value which sets the final value of the media query to false.
+10. 
+Consider the following HTML/CSS scripts:
+
+myApp.html
+<body>    
+    <div>
+        <span>We saw a beautiful waterfall on our last trek.</span>
+    </div>
+    <span>We plan to visit again soon!</span>    
+</body>
+
+myApp.css
+body {
+  background-color: red;
+}
+div {
+  color: lawngreen;
+  background-color: violet;
+}
+span {  
+  background-color: black;
+  font-size: 30px;
+}
+
+You run the scripts, but only the first sentence appears on the web page. You add the property color: black; to the span selector, but this action hides the first sentence as well. How can you reveal both sentences?
+ 
+ 	 	 	In span, change the background color from black to gray.
+11. 
+Which symbol separates a pair of a properties and its value from other pairs in a CSS selector?
+ 
+ 	 	 	;
+12. 
+You must configure three grid items in three rows. The first item must occupy the first row completely, the second item must occupy one-third of the second row from the right, and the third item must occupy the initial two-thirds of the third-row track. You write the following scripts:
+
+myApp.html
+<body>
+    <div id="config">
+        <div id="foo" style="background-color: aqua;">Foo</div>
+        <div id="bar" style="background-color: hotpink;">Bar</div>
+        <div id="baz" style="background-color: olive;">Baz</div>        
+    </div>
+</body>
+
+myApp.css
+#config  {
+  display: grid;
+  grid-template-areas: "a a"
+                       "b b"
+                       "c c";
+  grid-template-columns: 2fr 1fr;   
+}
+
+#foo { grid-area: a }
+#bar { grid-area: b }
+#baz { grid-area: c }
+
+All three items occupy the complete space of all three rows. How would you change the CSS to correct the issue?
+ 
+ 	 	 	grid-template-areas: "a a"
+                     ". b"
+                     "c .";
+13. 
+You have three items on a web page. The first two items must show in one line on the main axis and the third item must occupy two-thirds space on the second line of the main axis. Based on the following HTML script, how would you configure the page's CSS?
+
+<div class="box">
+    <div style="background-color: aqua;" id="one">Foo</div>
+    <div style="background-color: gold;" id="one">Baz</div>
+    <div style="background-color: pink;" id="two">Que</div>
+</div>
+ 
+ 	 	 	.box {
+  display: flex;
+  flex-wrap: wrap;
+}
+#one {
+  flex-basis: 50%;
+}
+#two {
+  flex-basis: 66.6%;
+}
+14. 
+Which statement is correct based on the following HTML/CSS scripts?
+
+myApp.html
+<div class="foo">
+    Hello, Pluralsight!
+</div>
+
+myApp.css
+.foo {  
+  width: 500px;
+  text-align: center;
+  margin: 50px;
+  padding: 20px;
+  background-color: beige;
+  border-image: url("../../static/img/base.jpg");
+}
+ 
+ 	 	 	You will see no image on the border of the div element.
+15. 
+How many paragraphs will have the color maroon?
+
+myApp.html
+<p> Foo </p>
+<p> Bar </p>
+<p> Baz </p>
+<p> Que </p>
+
+myApp.css
+p ~ p {
+  color: maroon;
+}
+ 
+ 	 	 	3
+16. 
+After how many pixels from the left of the block does Hello, user! appear on the web page?
+
+myApp.html
+<div id="foo">Hello, user!</div>
+
+myApp.css
+#foo {
+  position: absolute;
+  left: clamp(10px, 250px, 500px);
+}
+ 
+ 	 	 	250 pixels
+17. 
+What is true of inner HTML elements?
+ 
+ 	 	 	You must close them before you close the outer HTML element.
+18. 
+You are creating a web page where you must include a Ruby statement within a code font. To do so, you write the following HTML and CSS codes:
+
+myApp.html
+<body>    
+    <code='rb'>
+        puts "Hello, User!";
+    </code>    
+</body>
+
+myApp.css
+code {
+  background-color: #eee;
+  font-family: courier, monospace;
+}
+
+When you run the application, the code formatting is missing from the Ruby statement. Why?
+ 
+ 	 	 	You used <code='rb'> instead of <code>.
+19. 
+You implement the CSS box model configuration to div and ul tags to transform a list of three items into a Venn diagram. These items must have circular boundaries and the second circle must intersect with the remaining two circles. You write the following HTML/CSS scripts:
+
+myApp.html
+<body>
+    <div>
+        <ul>
+            <li>Foo</li>
+            <li>Baz</li>
+            <li>Que</li>
+        </ul>
+    </div>
+</body>
+
+myApp.css
+ul {
+  display: flex;
+  list-style: none;
+}
+li {
+  border: 5px solid greenyellow;
+  border-radius: 350px;
+  margin-left: -100px;
+  margin-top: 100px;
+  padding: 200px;
+}
+
+The scripts create the result you expected, except a portion of the first circle is hiding behind the left side of the block. How would you make all three circles visible?
+ 
+ 	 	 	Add the following selector to the CSS script:
+
+li:first-child {
+  margin-left: 0px;
+}
+20. 
+You want to display a 20 sentence paragraph on your web page. You must confine it within two columns with a three pixel dashed gray line dividing the columns. How would you write the CSS for the config ID if you cannot use the column-rule-style property?
+ 
+ 	 	 	#config {
+  column-count: 2;
+  column-rule: dashed 3px gray;
+}
+
+set7
+
+1. 
+What is true of inner HTML elements?
+ 
+ 	 	 	You must close them before you close the outer HTML element.
+2. 
+You have four divs nested in a parent div. You must develop a script to keep divs in a pair. How would you complete the CSS based on the following scripts?
+
+myApp.html
+<body>
+    <div id="config">
+        <div style="background-color: aqua;">Foo</div>
+        <div style="background-color: hotpink;">Bar</div>
+        <div style="background-color: olive;">Baz</div>
+        <div style="background-color: wheat;">Que</div>
+    </div>
+</body>
+
+myApp.css
+#config {
+  display: flex;
+  width: 880px;  
+}
+#config div{
+  width: 300px;
+}
+ 
+ 	 	 	Add the flex-wrap: wrap-reverse; property to the config ID selector.
+3. 
+You create a div tag that includes two sentences. You must add a background image to this element and add the image duplicates throughout the div tag. To do so, you create the following scripts:
+
+myApp.html
+<body>
+    <div>
+        <p>I like singing song.</p>
+        <p>I also composed my own songs.</p>
+    </div>    
+</body>
+
+myApp.css
+div {
+  height: 50%;
+  width: 100%;
+  background: url("../../static/img/base.jpg") repeat-y;
+}
+
+This configuration does not repeat the background image to the entire div space. What fix will you use?
+ 
+ 	 	 	div {
+  height: 50%;
+  width: 100%;
+  background-image: url("../../static/img/base.jpg");
+}
+4. 
+Which CSS math function calculates the remainder in a division operation?
+ 
+ 	 	 	rem
+5. 
+You must change the text, "We are playing in a park," to red with a font size of 12 pixels. To do so, you write the following scripts:
+
+myApp.html
+<p id="foo">We are playing in a park</p>
+
+myApp.css
+foo {
+  font-size: 12px;
+  color: red;
+}
+
+The paragraph is missing CSS styling. What fix would you make to either script to resolve the issue?
+ 
+ 	 	 	In myApp.css, replace foo with p.
+6. 
+You are justifying four items at the center of a container. Which layout would you use along with the justify-items property?
+ 
+ 	 	 	Grid
+7. 
+You create two div blocks that appear vertically, one below another with a blue background:
+
+myApp.html
+<body>
+    <div class="foo">Waterfall</div>
+    <div class="foo" id="p1">Mountains</div>
+</body>
+
+myApp.css
+.foo {  
+  height: 150px;
+  width: 150px;
+  background-color: blue;  
+}
+
+#p1 {
+  position: absolute;  
+}
+
+You must bring the second div block in line horizontally with the first block, so you change the position property value to relative. This action has no effect. How would you fix the issue?
+ 
+ 	 	 	#p1 {
+  position: relative;
+  left: 300px;
+  top: -150px;
+}
+8. 
+Which statement is correct based on the following viewport configuration?
+
+<meta name="viewport" content="width=-2000, initial-scale=1" />
+ 
+ 	 	 	The application has no effect on its content because of the negative width value.
+9. 
+You create a web page with two elements as follows:
+
+<body>    
+    <h2>XYZ automobiles</h2>
+    <div id="foo">We deal with a variety of cars.</div>    
+</body>
+
+How would you color the first element maroon and the second element gold?
+ 
+ 	 	 	body {
+  color: gold;
+}
+
+h2 {
+  color: maroon;  
+}
+10. 
+You must create a button on your web page. You can apply any of the available CSS properties to this button. Based on this statement, what is true?
+ 
+ 	 	 	You can develop the button without using the button or input elements.
+11. 
+Which is an example of incorrect labeling while working with CSS?
+ 
+ 	 	 	You specify a rule for the color of a paragraph but you cannot see this styling because the paragraph has a class you specified another color for.
+12. 
+You have five div elements within a parent div element. Only two elements can occur on the main axis (horizontal). You use the display: flex property to configure these elements. What happens? 
+
+ 
+
+Here is a snippet of the HTML:
+
+<div class="box">
+  <div>One</div>
+  <div>Two</div>
+  <div>Three</div>
+  <div>Four</div>
+  <div>Five</div>
+</div>
+
+And here is the CSS:
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+}
+ 
+.box>* {
+  flex: 1 1 200px;
+  border: black 1px solid;
+}
+ 
+ 	 	 	The fifth element occupies the place for the unavailable sixth element.
+13. 
+You create a web page to display three flex items. The first item must be in the first row and the remaining two items must be in the second row. You write the following scripts, but all three items appear one below another. Why?
+
+myApp.html
+<body>
+      <div id="config">
+          <div style="background-color: aqua;">Lorem</div>
+          <div style="background-color: hotpink;">Ipsum</div>
+          <div style="background-color: olive;">Que</div>
+      </div>
+</body>
+
+myApp.css
+#config {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  width: 500px;    
+}
+#config div{  
+  width: 300px;
+}
+ 
+ 	 	 	You used 300px instead of 250px in the #config div selector.
+14. 
+In value processing, which value does CSS compute after the used value?
+ 
+ 	 	 	Actual value
+15. 
+What is the syntax for an attribute selector that checks if at least one value is present within a string?
+ 
+ 	 	 	[attr*=value]
+16. 
+When you hover over your paragraph, its background color and width must change. While performing the transitions, the paragraph element must also perform a transformation on the X and Y axes, 100 pixels each. You write the following scripts:
+
+myApp.html
+<body>    
+    <div id="config">
+        <div id="core">Hello, user!</div>       
+    </div>
+</body>
+
+myApp.css
+#config {  
+  display: inline-flex;
+  gap: 30px;
+}
+#config > div {
+  width: 100px;
+  line-height: 200px;  
+  transition: 3s ease-in-out;
+  border: 3px solid darkgoldenrod;
+}
+#core:hover {
+  width: 200px;  
+  background-color: blue;
+}
+
+No transformations take place during the transition. What is missing?
+ 
+ 	 	 	The translate: 100px 100px; property in the #core:hover selector
+17. 
+You set up a media query to apply restrictions on your application:
+
+@media (max-height: 500px), screen and (orientation: portrait) { }
+
+You use a printer that has a page height of 600 pixels and a page width of 400 pixels. The media query does not print the page, however. Why?
+ 
+ 	 	 	The conditions, (max-height: 500px) and screen, both return a boolean false value which sets the final value of the media query to false.
+18. 
+You create the following Font Awesome icon:
+
+<i class="far fa-camera"></i>
+
+It is not showing. Why?
+ 
+ 	 	 	You are not using the version of Font Awesome that supports regular style.
+19. 
+You write the following code snippet:
+
+myApp.html
+<div>
+  <span class="green">Some text with a green background.</span>
+  <p>More text without a background.</p>
+</div>
+
+myApp.css
+.green {
+  background-color: green;
+}
+
+The green class adds a green background to the text. You want the background to fill the full page width, not just behind the text. How can you use an HTML block element to change that?
+ 
+ 	 	 	Replace the span tag with a p tag.
+20. 
+You create two div tags and apply a stylesheet to them. You expect the elements to appear horizontally when the screen is in landscape mode and you expect them to appear vertically in portrait mode. You write the following scripts:
+
+myApp.html
+<body>    
+    <div>Foo</div>
+    <div>Baz</div>    
+</body>
+
+myApp.css
+body {
+  display: flex;
+}
+
+div {
+  margin: 5px;
+  width: 300px;
+  height: 300px;
+  background: darkred;
+}
+
+@media screen {
+  body {
+    flex-direction: column;
+  }
+}
+
+In each orientation, the elements appear vertically. What change to the CSS script must you make to resolve the issue?
+ 
+ 	 	 	In the media query, replace screen with (orientation: portrait).
+
+
+set8
+
+1. 
+What is true of inner HTML elements?
+ 
+ 	 	 	You must close them before you close the outer HTML element.
+2. 
+Which is an example of incorrect labeling while working with CSS?
+ 
+ 	 	 	You specify a rule for the color of a paragraph but you cannot see this styling because the paragraph has a class you specified another color for.
+3. 
+You must configure three grid items in three rows. The first item must occupy the first row completely, the second item must occupy one-third of the second row from the right, and the third item must occupy the initial two-thirds of the third-row track. You write the following scripts:
+
+myApp.html
+<body>
+    <div id="config">
+        <div id="foo" style="background-color: aqua;">Foo</div>
+        <div id="bar" style="background-color: hotpink;">Bar</div>
+        <div id="baz" style="background-color: olive;">Baz</div>        
+    </div>
+</body>
+
+myApp.css
+#config  {
+  display: grid;
+  grid-template-areas: "a a"
+                       "b b"
+                       "c c";
+  grid-template-columns: 2fr 1fr;   
+}
+
+#foo { grid-area: a }
+#bar { grid-area: b }
+#baz { grid-area: c }
+
+All three items occupy the complete space of all three rows. How would you change the CSS to correct the issue?
+ 
+ 	 	 	grid-template-areas: "a a"
+                     ". b"
+                     "c .";
+4. 
+You create a web page with two elements as follows:
+
+<body>    
+    <h2>XYZ automobiles</h2>
+    <div id="foo">We deal with a variety of cars.</div>    
+</body>
+
+How would you color the first element maroon and the second element gold?
+ 
+ 	 	 	body {
+  color: gold;
+}
+
+h2 {
+  color: maroon;  
+}
+5. 
+You have four divs nested in a parent div. You must develop a script to keep divs in a pair. How would you complete the CSS based on the following scripts?
+
+myApp.html
+<body>
+    <div id="config">
+        <div style="background-color: aqua;">Foo</div>
+        <div style="background-color: hotpink;">Bar</div>
+        <div style="background-color: olive;">Baz</div>
+        <div style="background-color: wheat;">Que</div>
+    </div>
+</body>
+
+myApp.css
+#config {
+  display: flex;
+  width: 880px;  
+}
+#config div{
+  width: 300px;
+}
+ 
+ 	 	 	Add the flex-wrap: wrap-reverse; property to the config ID selector.
+6. 
+You apply CSS on a parent div element that holds five items. Which statement is correct?
+
+.demo {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+}
+ 
+ 	 	 	The first and the fourth items will occupy twice the amount of space compared to the other three items.
+7. 
+Of the following four words, how many will appear green?
+
+myApp.html
+<body>
+    <h2>Foo</h2>
+    <h2><h3>Baz</h3></h2>
+    <h3><p>Que</p></h3>
+    <h2><h2>Lorem</h2></h2>
+</body>
+
+myApp.css
+h2 {
+  color: red;
+}
+h2 p {
+  color: blue;
+}
+h2 > h3 {
+  color: green;
+}
+h3 {
+  color: gold;
+}
+ 
+ 	 	 	0
+8. 
+You write the following code snippet:
+
+myApp.html
+<div>
+  <span class="green">Some text with a green background.</span>
+  <p>More text without a background.</p>
+</div>
+
+myApp.css
+.green {
+  background-color: green;
+}
+
+The green class adds a green background to the text. You want the background to fill the full page width, not just behind the text. How can you use an HTML block element to change that?
+ 
+ 	 	 	Replace the span tag with a p tag.
+9. 
+You create two div blocks that appear vertically, one below another with a blue background:
+
+myApp.html
+<body>
+    <div class="foo">Waterfall</div>
+    <div class="foo" id="p1">Mountains</div>
+</body>
+
+myApp.css
+.foo {  
+  height: 150px;
+  width: 150px;
+  background-color: blue;  
+}
+
+#p1 {
+  position: absolute;  
+}
+
+You must bring the second div block in line horizontally with the first block, so you change the position property value to relative. This action has no effect. How would you fix the issue?
+ 
+ 	 	 	#p1 {
+  position: relative;
+  left: 300px;
+  top: -150px;
+}
+10. 
+You must create a button on your web page. You can apply any of the available CSS properties to this button. Based on this statement, what is true?
+ 
+ 	 	 	You can develop the button without using the button or input elements.
+11. 
+In value processing, which value does CSS compute after the used value?
+ 
+ 	 	 	Actual value
+12. 
+Which CSS math function calculates the remainder in a division operation?
+ 
+ 	 	 	rem
+13. 
+How many columns does the following paragraph divide itself into if you keep the browser on full-screen mode?
+
+myApp.html
+<body>
+    <p id="config">
+        I am driving to California tomorrow. Do you want to tag along?
+    </p>
+</body>
+
+myApp.css
+#config {
+  padding: 5px;
+  background: cyan;
+  column-count: 4;
+  column-rule: dashed 5px darkgoldenrod;
+}
+ 
+ 	 	 	1
+14. 
+You create the following Font Awesome icon:
+
+<i class="far fa-camera"></i>
+
+It is not showing. Why?
+ 
+ 	 	 	You are not using the version of Font Awesome that supports regular style.
+15. 
+When you hover over your paragraph, its background color and width must change. While performing the transitions, the paragraph element must also perform a transformation on the X and Y axes, 100 pixels each. You write the following scripts:
+
+myApp.html
+<body>    
+    <div id="config">
+        <div id="core">Hello, user!</div>       
+    </div>
+</body>
+
+myApp.css
+#config {  
+  display: inline-flex;
+  gap: 30px;
+}
+#config > div {
+  width: 100px;
+  line-height: 200px;  
+  transition: 3s ease-in-out;
+  border: 3px solid darkgoldenrod;
+}
+#core:hover {
+  width: 200px;  
+  background-color: blue;
+}
+
+No transformations take place during the transition. What is missing?
+ 
+ 	 	 	The translate: 100px 100px; property in the #core:hover selector
+16. 
+You are creating a slide-out animation for five seconds after a delay of two seconds. The animation must run in an alternate reverse direction using an ease-out function three times. How would you write the CSS property for this animation?
+ 
+ 	 	 	animation: 5s ease-out 2s 3 alternate-reverse running slideout;
+17. 
+You have five div elements within a parent div element. Only two elements can occur on the main axis (horizontal). You use the display: flex property to configure these elements. What happens? 
+
+ 
+
+Here is a snippet of the HTML:
+
+<div class="box">
+  <div>One</div>
+  <div>Two</div>
+  <div>Three</div>
+  <div>Four</div>
+  <div>Five</div>
+</div>
+
+And here is the CSS:
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+}
+ 
+.box>* {
+  flex: 1 1 200px;
+  border: black 1px solid;
+}
+ 
+ 	 	 	The fifth element occupies the place for the unavailable sixth element.
+18. 
+Which statement is correct based on the following viewport configuration?
+
+<meta name="viewport" content="width=-2000, initial-scale=1" />
+ 
+ 	 	 	The application has no effect on its content because of the negative width value.
+19. 
+You create two div tags and apply a stylesheet to them. You expect the elements to appear horizontally when the screen is in landscape mode and you expect them to appear vertically in portrait mode. You write the following scripts:
+
+myApp.html
+<body>    
+    <div>Foo</div>
+    <div>Baz</div>    
+</body>
+
+myApp.css
+body {
+  display: flex;
+}
+
+div {
+  margin: 5px;
+  width: 300px;
+  height: 300px;
+  background: darkred;
+}
+
+@media screen {
+  body {
+    flex-direction: column;
+  }
+}
+
+In each orientation, the elements appear vertically. What change to the CSS script must you make to resolve the issue?
+ 
+ 	 	 	In the media query, replace screen with (orientation: portrait).
+20. 
+What is the syntax for an attribute selector that checks if at least one value is present within a string?
+ 
+ 	 	 	[attr*=value]
+
+set9
+
+1. 
+You must change the text, "We are playing in a park," to red with a font size of 12 pixels. To do so, you write the following scripts:
+
+myApp.html
+<p id="foo">We are playing in a park</p>
+
+myApp.css
+foo {
+  font-size: 12px;
+  color: red;
+}
+
+The paragraph is missing CSS styling. What fix would you make to either script to resolve the issue?
+ 
+ 	 	 	In myApp.css, replace foo with p.
+2. 
+You have four divs nested in a parent div. You must develop a script to keep divs in a pair. How would you complete the CSS based on the following scripts?
+
+myApp.html
+<body>
+    <div id="config">
+        <div style="background-color: aqua;">Foo</div>
+        <div style="background-color: hotpink;">Bar</div>
+        <div style="background-color: olive;">Baz</div>
+        <div style="background-color: wheat;">Que</div>
+    </div>
+</body>
+
+myApp.css
+#config {
+  display: flex;
+  width: 880px;  
+}
+#config div{
+  width: 300px;
+}
+ 
+ 	 	 	Add the flex-wrap: wrap-reverse; property to the config ID selector.
+3. 
+How many columns does the following paragraph divide itself into if you keep the browser on full-screen mode?
+
+myApp.html
+<body>
+    <p id="config">
+        I am driving to California tomorrow. Do you want to tag along?
+    </p>
+</body>
+
+myApp.css
+#config {
+  padding: 5px;
+  background: cyan;
+  column-count: 4;
+  column-rule: dashed 5px darkgoldenrod;
+}
+ 
+ 	 	 	1
+4. 
+You add a video to your website with the following code snippet:
+
+<embed type="video/webm" src="cutepanda.mp4" width="600" height="450">
+
+The video is not showing. What is the problem?
+ 
+ 	 	 	The src attribute is pointing to the wrong file path or external malicious code compromised the file.
+5. 
+Of the following four words, how many will appear green?
+
+myApp.html
+<body>
+    <h2>Foo</h2>
+    <h2><h3>Baz</h3></h2>
+    <h3><p>Que</p></h3>
+    <h2><h2>Lorem</h2></h2>
+</body>
+
+myApp.css
+h2 {
+  color: red;
+}
+h2 p {
+  color: blue;
+}
+h2 > h3 {
+  color: green;
+}
+h3 {
+  color: gold;
+}
+ 
+ 	 	 	0
+6. 
+You write the following media query feature to test if a device has more than zero dots per pixel unit and less than 200 dots per pixel unit:
+
+@media (min-resolution: 0dppx and max-resolution: 200 x) {}
+
+It fails to test the pixel density of the device. Why?
+ 
+ 	 	 	You added an extra space between 200 and x in the max-resolution property.
+7. 
+You are displaying content on a web page. The content's height must remain proportional to its width when you change its size. Which CSS orientation property value will you use?
+ 
+ 	 	 	portrait
+8. 
+You create the following Font Awesome icon:
+
+<i class="far fa-camera"></i>
+
+It is not showing. Why?
+ 
+ 	 	 	You are not using the version of Font Awesome that supports regular style.
+9. 
+In value processing, which values use the filtering step?
+ 
+ 	 	 	Declared values
+10. 
+How many yellow boxes are visible on the web page based on the following HTML/CSS scripts?
+
+myApp.html
+<body>
+    <div class="foo">Waterfall</div>
+    <div class="foo" id="p1">Mountains</div>
+    <div class="foo">Trees</div>
+    <div class="foo" id="p2">Beach</div>
+</body>
+
+myApp.css
+.foo {
+  display: inline-block;
+  height: 150px;
+  width: 150px;
+  background-color: yellow;  
+}
+
+#p1 {
+  position: relative;
+  left: 155px;
+  background-color: aquamarine;
+}
+
+#p2 {
+  position: relative;
+  left: 155px;
+  background-color: aquamarine;
+}
+ 
+ 	 	 	One
+11. 
+You create a heading along with a text area on a web page as follows:
+
+myApp.html
+<body>
+    <h1>Introduction</h1>
+    <textarea cols="35">
+       Pluralsight offers video courses, assessments, labs, and much more. 
+    </textarea>
+</body>
+
+myApp.css
+h1 {
+  color: blue;
+}
+placeholder {
+  color: red;
+}
+
+CSS applies blue on the first heading, but the text within the textarea remains black instead of red. Why?
+ 
+ 	 	 	You did not create textarea (name tag) with the color: red; property.
+12. 
+In the CSS resolution property, which unit is an alias for the number of dots per pixel unit?
+ 
+ 	 	 	x
+13. 
+Which is an example of incorrect labeling while working with CSS?
+ 
+ 	 	 	You specify a rule for the color of a paragraph but you cannot see this styling because the paragraph has a class you specified another color for.
+14. 
+You create a div tag that includes two sentences. You must add a background image to this element and add the image duplicates throughout the div tag. To do so, you create the following scripts:
+
+myApp.html
+<body>
+    <div>
+        <p>I like singing song.</p>
+        <p>I also composed my own songs.</p>
+    </div>    
+</body>
+
+myApp.css
+div {
+  height: 50%;
+  width: 100%;
+  background: url("../../static/img/base.jpg") repeat-y;
+}
+
+This configuration does not repeat the background image to the entire div space. What fix will you use?
+ 
+ 	 	 	div {
+  height: 50%;
+  width: 100%;
+  background-image: url("../../static/img/base.jpg");
+}
+15. 
+You apply CSS on a parent div element that holds five items. Which statement is correct?
+
+.demo {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+}
+ 
+ 	 	 	The first and the fourth items will occupy twice the amount of space compared to the other three items.
+16. 
+What is true about debugging HTML?
+ 
+ 	 	 	The browser always shows the page, even when it includes syntax errors.
+17. 
+When you hover over your paragraph, its background color and width must change. While performing the transitions, the paragraph element must also perform a transformation on the X and Y axes, 100 pixels each. You write the following scripts:
+
+myApp.html
+<body>    
+    <div id="config">
+        <div id="core">Hello, user!</div>       
+    </div>
+</body>
+
+myApp.css
+#config {  
+  display: inline-flex;
+  gap: 30px;
+}
+#config > div {
+  width: 100px;
+  line-height: 200px;  
+  transition: 3s ease-in-out;
+  border: 3px solid darkgoldenrod;
+}
+#core:hover {
+  width: 200px;  
+  background-color: blue;
+}
+
+No transformations take place during the transition. What is missing?
+ 
+ 	 	 	The translate: 100px 100px; property in the #core:hover selector
+18. 
+In a pagination setup, you have the HTML layout, nav > ul > li. What do you see on the web page after setting list-style to decimal?
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination-setup {
+  list-style: decimal;  
+  display: flex;
+}
+
+.pagination-setup li {
+  margin: 0 5px;
+}
+ 
+ 	 	 	A horizontal list starting with 1. that can overlap other items
+19. 
+Which statement is correct based on the following viewport configuration?
+
+<meta name="viewport" content="width=-2000, initial-scale=1" />
+ 
+ 	 	 	The application has no effect on its content because of the negative width value.
+20. 
+In value processing, which value does CSS compute after the used value?
+ 
+ 	 	 	Actual value
+21. 
+You are displaying 20 items on a web page with a custom image marker. You must choose only base.jpg as the marker image for each list item. How would you write the CSS code for the li tag so each marker has a size of 10 pixels?
+ 
+ 	 	 	li {  
+  padding: 10px 10px 10px 20px;
+  list-style: none;
+  background-image: url("../../static/img/base.jpg");
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 10px;  
+}
+22. 
+You create two div blocks that appear vertically, one below another with a blue background:
+
+myApp.html
+<body>
+    <div class="foo">Waterfall</div>
+    <div class="foo" id="p1">Mountains</div>
+</body>
+
+myApp.css
+.foo {  
+  height: 150px;
+  width: 150px;
+  background-color: blue;  
+}
+
+#p1 {
+  position: absolute;  
+}
+
+You must bring the second div block in line horizontally with the first block, so you change the position property value to relative. This action has no effect. How would you fix the issue?
+ 
+ 	 	 	#p1 {
+  position: relative;
+  left: 300px;
+  top: -150px;
+}

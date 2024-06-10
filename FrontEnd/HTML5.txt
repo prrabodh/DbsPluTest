@@ -1,0 +1,1381 @@
+HTML5
+
+set1
+
+1. 
+You create an HTML web page that displays Yellow and Brown in separate lines. You copy the text Yellow and paste it into a text editor. What result do you get?
+
+<html>
+  <body>
+    <p>Yellow</p>
+    <p>Brown</p>
+    <script>
+      document.addEventListener('copy', function(p){
+          console.log(p);
+          p.clipboardData.setData('text/plain', 'Red');
+          p.preventDefault(); 
+      });
+    </script>
+  </body>
+</html>
+ 
+ 	 	 	Red
+2. 
+You download an HTML script with 50 lines of code from a GitHub repository and run it in Google Chrome. There are several mistakes on the web page. Which step should you perform first to debug the script?
+ 
+ 	 	 	Open the script in a graphical code editor to fix it based on code color.
+3. 
+A video embedded in a web page plays well and is compatible with the browser. Despite the good video quality, the loading process causes unwanted flickering. What action can you take to address this issue?
+ 
+ 	 	 	Add width and height attributes in the video tag.
+4. 
+You create a basic web page with three sentences. How will these sentences appear on the web page once you render the following HTML script?
+
+<body> 
+  Hello, user!
+  <blockquote>
+    Let us learn <q>HTML</q>.
+  </blockquote>
+  Thank you!
+</body>
+ 
+Hello, user!
+
+          Let us learn “HTML”.
+
+Thank you!
+5. 
+The following web page has multiple elements, including a list:
+
+<html>
+  <head>
+    <style>
+      .foo:hover {
+          background-color: green;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>You must retrieve these details from each employee and feed the data <a href="https://www.example.com/empDetails">here</a>:</p>
+    <div class="foo">
+      <ol style="background-color: beige;">      
+          <li>ID</li>
+          <li>Name</li>
+          <li>Unit</li>      
+      </ol>
+    </div>
+    <p>Once done, notify me.</p>
+  </body>
+</html>
+
+The list elements should have a beige background, but when a user hovers over them, the background must change to green. There is no change when hovering over the list elements, however. How can you fix the issue?
+ 
+ 	 	 	<ol style="background-color: beige;">    
+  <div class="foo">
+     <li>ID</li>
+     <li>Name</li>
+     <li>Unit</li>      
+  </div>
+</ol>
+6. 
+What will be the output of the following markup?
+
+<ol>
+ <li value="one" />
+ <li value="two" />
+ <li value="three" />
+</ol>
+ 
+ 	 	 	1.
+2.
+3.
+7. 
+You must display the following paragraph on your web page:
+
+Hello, user!
+We hope you are doing well.     You are 
+taking the HTML 5 assessment.
+
+How would you write its HTML script?
+ 
+ 	 	 	<pre>
+Hello, user!
+We hope you are doing well.     You are 
+taking the HTML 5 assessment.
+</pre>
+8. 
+You must create an HTML website with a paragraph and a list. You write the following script to achieve the task:
+
+<body>
+  <!-- A short list of HTML frameworks-->
+  <p main="track>You can include the following frameworks while building an HTML website --></p>
+  <ol>
+     <li>CSS</li> 
+     <li>JavaScript</li>
+     <li>Bootstrap</li>
+  </ol>
+</body>
+
+You receive the following rendered output on the web page:
+
+= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf()); } parent.appendChild(elem); } } var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://'; var address = protocol + window.location.host + window.location.pathname + '/ws'; var socket = new WebSocket(address); socket.onmessage = function (msg) { if (msg.data == 'reload') window.location.reload(); else if (msg.data == 'refreshcss') refreshCSS(); }; if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) { console.log('Live reload enabled.'); sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true); } })(); } else { console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.'); } // ]]>
+
+You run the script and receive an unexpected output on the web page. Why?
+ 
+ 	 	 	There is a missing double quote on the invalid yet interpretable attribute main="track.
+9. 
+You have a basic web page with the following HTML script:
+
+<html>
+  <body>
+    alert()
+  </body>
+</html>
+
+What happens when you render the above script?
+ 
+ 	 	 	You receive the text alert() on the web page.
+10. 
+You highlight the text, "custom placeholder" and use Ctrl + X to cut. What happens?
+
+<head>
+ <script>
+   function foo() {
+     document.getElementById("ps").innerHTML = "take this action"
+   }
+ </script>
+</head>
+
+<body> 
+ <input type="text" oncopy="foo()" value="custom placeholder">
+ <p id="ps"></p>
+</body>
+ 
+ 	 	 	You cut the text with no pop-ups, warnings, or messages.
+11. 
+A paragraph contains a mathematical term and a formula. How would you apply inline elements in this <body> tag to separate normal text from mathematical text?
+
+<body>
+The <i>circumference</i> of a circle is 2πr where r is the radius of the circle.
+</body>
+ 
+ 	 	 	<p>The <i>circumference</i> of a circle is <var>2πr</var> where <var>r</var> is the radius of the circle.</p>
+12. 
+What attribute would you add to an element to link Cascading Style Sheets (CSS) rules?
+ 
+ 	 	 	link
+13. 
+You write code using the <canvas> tag in HTML. It displays a simple game that you made on your website.
+
+<canvas width="500" height="500" style="background-color:#562">
+ <p>An error may have occurred or your browser does not support the canvas tag.</p>
+</canvas>
+
+<script>
+ var blank = document.getElementById("canvas");
+ var data = blank.getContext("2d");
+ ...
+</script>
+
+Instead of the game, however, the paragraph written inside the <canvas> tag is displayed. Why?
+ 
+ 	 	 	There is no id attribute in the <canvas> tag to connect it with its script.
+14. 
+An HTML script has multiple elements::
+
+<!DOCTYPE HTML>
+<html>
+  <body>
+    <!-- A short list of HTML frameworks. The comment ends here.
+    <p make="true">You can include the following frameworks while building an HTML website --></p>
+    <ol>
+       <li>CSS</li>
+       <li>JavaScript</li>
+       <li>Bootstrap</li>
+    </ol>
+  </body>
+</html>
+
+How many errors are present in the script?
+ 
+ 	 	 	3
+15. 
+You install a new version of a service worker on your system to load all the pages that a user needs. When you run the application, the active worker is still the old service worker. How can you resolve this issue?
+ 
+ 	 	 	Implement the ServiceWorkerGlobalScope.skipWaiting() method in the code snippet to change the active worker.
+16. 
+Your colleague gave you code that uses JavaScript and is defined inside a <script> tag as follows:
+
+<script>
+ document.getElementById("menu").innerHTML="Let's Start!";
+</script>
+<noscript>
+ No script found!!!
+</noscript>
+
+When you run the code, the content of the <script> tag does not render. The content of the <noscript> tag is shown. Why?
+ 
+ 	 	 	The current working browser does not support JavaScript.
+17. 
+You have an image called logo.png in the static directory of your project. What do you see after rendering the following script?
+
+<html>
+  <head>
+    <title>a small creation</title>
+    <link href="./static/logo.png">
+  </head>
+  <body>
+    <p>Hello, friends!</p>
+  </body>
+</html>
+ 
+ 	 	 	A web page with a title, no favicon, and the, "Hello, friends!" message
+18. 
+Which tag would you use to embed a PDF file into a web page?
+ 
+ 	 	 	<iframe>
+19. 
+Which is an inline element?
+ 
+ 	 	 	<select>
+20. 
+You create a web page that shows two paragraphs and an image using the <p> and the <img> tags. You must provide a description of the tag that the paragraphs use and the image when a user hovers over them. How can you do so?
+ 
+ 	 	 	Add the title attribute with the description in each element.
+21. 
+You create an HTML web page that includes Cascading Style Sheets (CSS), JavaScript, and regular HTML elements as follows:
+
+<html>
+  <head>
+    <style>
+      alert {
+        background-color: brown;
+      }
+    </style>
+    <script>
+    function foo() {
+      alert("Let us go for a swim!");
+    }
+    </script>
+  </head>
+  <body>
+    <button onclick="foo()">Ready</button>
+  </body>
+</html>
+
+You run the script and receive a button. What does the button do?
+ 
+ 	 	 	Clicking the button results in a pop-up without a brown background.
+
+set2
+
+1. 
+A video embedded in a web page plays well and is compatible with the browser. Despite the good video quality, the loading process causes unwanted flickering. What action can you take to address this issue?
+ 
+ 	 	 	Add width and height attributes in the video tag.
+2. 
+You create a web page that shows two paragraphs and an image using the <p> and the <img> tags. You must provide a description of the tag that the paragraphs use and the image when a user hovers over them. How can you do so?
+ 
+ 	 	 	Add the title attribute with the description in each element.
+3. 
+When a <canvas> element exceeds the maximum screen size for the browser, what is the result?
+ 
+ 	 	 	The canvas is rendered unusable and drawing commands do not work.
+4. 
+Which block element groups the header elements of a table?
+ 
+ 	 	 	<thead>
+5. 
+You are using Notepad to create HTML files for your website. What is the benefit of using Notepad instead of a graphical text editor or an integrated development environment (IDE)?
+ 
+ 	 	 	Light-weight software
+6. 
+Which heading element do search engines look for first?
+ 
+ 	 	 	<h1>
+7. 
+The code given below shows the list of the games that can be played on a website whenever the user wishes.
+
+<select id="game" name="game" size="3">
+  <option value="ludo">Ludo</option>
+  <option value="chess">Chess</option>
+  <option value="cards">Cards</option>
+  <option value="has">Hide & Seek</option>
+</select>
+
+
+However, only three games are visible instead of all the games. How will you solve this problem?
+ 
+ 	 	 	Replace size=3 to size=4.
+8. 
+How many built-in heading tags are available in HTML5?
+ 
+ 	 	 	Six
+9. 
+You create a basic HTML web page with only one statement. You implement Cascading Style Sheets (CSS) to an element using three methods:
+
+myApp.html
+<html>  
+  <head>
+    <link href="mystyle.css" rel="stylesheet">
+    <style>
+      span {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Hello, friends! 
+     <span style="background-color: blue;"> I give my best wishes to you all! 
+     </span>
+    </p>
+  </body>
+</html>
+
+myApp.css
+span {
+ background-color: red;
+}
+
+What background color will you see for the phrase after rendering the script?
+ 
+ 	 	 	Blue
+10. 
+Which element specifies illustrations, diagrams, and photos?
+ 
+ 	 	 	<figure>
+11. 
+Which HTML element defines a list item?
+ 
+ 	 	 	<li>
+12. 
+Which integrated development environment would you use for developing an HTML website? 
+ 
+ 	 	 	Visual Studio
+13. 
+You are creating a web page. You must place a header on it. Which header code is conventionally valid in HTML5?
+ 
+ 	 	 	<section>
+  <header> ... </header>
+</section>
+14. 
+What HTML code can you use to structure a numbered list?
+ 
+ 	 	 	<ol></ol>
+15. 
+You are developing HTML files using a text editor (Notepad). You use Google Chrome to view them. Notepad lets you create files without any problem, but there are benefits you do not receive, such as an auto-complete feature, highlighted codes, and a live server to make changes to the web page automatically after you save the file. How can you get these features while building an HTML website?
+ 
+ 	 	 	Use a graphical text editor such as Visual Studio Code.
+16. 
+Which HTML sections correctly displays three headers in order of largest to smallest sizes?
+ 
+ 	 	 	<h1>Apples</h1>
+<h2>Oranges</h2>
+<h3>Pears</h3>
+17. 
+How can you change the size of a heading?
+ 
+ 	 	 	font-size
+18. 
+Which <video> element attribute allows you to set the video to play automatically when the page loads?
+ 
+ 	 	 	autoplay
+19. 
+Review the following markup:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      A Simple HTML Page
+    </title>
+  </head>
+  <body>
+      <div>
+          This is an important section of the page.
+      </div>
+  </body>
+</html>
+
+Which HTML5 structural tag would you replace the <div> tag with to identify a significant portion of the content on the page?
+ 
+ 	 	 	<section>
+20. 
+What is the default unit of measurement for an element's width and height attributes?
+ 
+ 	 	 	Pixels
+
+Set3
+
+1. 
+You create an HTML web page that displays Yellow and Brown in separate lines. You copy the text Yellow and paste it into a text editor. What result do you get?
+
+<html>
+  <body>
+    <p>Yellow</p>
+    <p>Brown</p>
+    <script>
+      document.addEventListener('copy', function(p){
+          console.log(p);
+          p.clipboardData.setData('text/plain', 'Red');
+          p.preventDefault(); 
+      });
+    </script>
+  </body>
+</html>
+ 
+ 	 	 	Red
+2. 
+You are working an application that requires a synchronization action for the ServiceWorkerGlobalScope of a service worker. How can you achieve this?
+ 
+ 	 	 	Implement the SyncEvent interface to depict the synchronization action.
+3. 
+The following web page has multiple elements, including a list:
+
+<html>
+  <head>
+    <style>
+      .foo:hover {
+          background-color: green;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>You must retrieve these details from each employee and feed the data <a href="https://www.example.com/empDetails">here</a>:</p>
+    <div class="foo">
+      <ol style="background-color: beige;">      
+          <li>ID</li>
+          <li>Name</li>
+          <li>Unit</li>      
+      </ol>
+    </div>
+    <p>Once done, notify me.</p>
+  </body>
+</html>
+
+The list elements should have a beige background, but when a user hovers over them, the background must change to green. There is no change when hovering over the list elements, however. How can you fix the issue?
+ 
+ 	 	 	<ol style="background-color: beige;">    
+  <div class="foo">
+     <li>ID</li>
+     <li>Name</li>
+     <li>Unit</li>      
+  </div>
+</ol>
+4. 
+You have a basic web page with the following HTML script:
+
+<html>
+  <body>
+    alert()
+  </body>
+</html>
+
+What happens when you render the above script?
+ 
+ 	 	 	You receive the text alert() on the web page.
+5. 
+An HTML script has multiple elements::
+
+<!DOCTYPE HTML>
+<html>
+  <body>
+    <!-- A short list of HTML frameworks. The comment ends here.
+    <p make="true">You can include the following frameworks while building an HTML website --></p>
+    <ol>
+       <li>CSS</li>
+       <li>JavaScript</li>
+       <li>Bootstrap</li>
+    </ol>
+  </body>
+</html>
+
+How many errors are present in the script?
+ 
+ 	 	 	3
+6. 
+You must display the following paragraph on your web page:
+
+Hello, user!
+We hope you are doing well.     You are 
+taking the HTML 5 assessment.
+
+How would you write its HTML script?
+ 
+ 	 	 	<pre>
+Hello, user!
+We hope you are doing well.     You are 
+taking the HTML 5 assessment.
+</pre>
+7. 
+A video embedded in a web page plays well and is compatible with the browser. Despite the good video quality, the loading process causes unwanted flickering. What action can you take to address this issue?
+ 
+ 	 	 	Add width and height attributes in the video tag.
+8. 
+A paragraph contains a mathematical term and a formula. How would you apply inline elements in this <body> tag to separate normal text from mathematical text?
+
+<body>
+The <i>circumference</i> of a circle is 2πr where r is the radius of the circle.
+</body>
+ 
+ 	 	 	<p>The <i>circumference</i> of a circle is <var>2πr</var> where <var>r</var> is the radius of the circle.</p>
+9. 
+What will be the output of the following markup?
+
+<ol>
+ <li value="one" />
+ <li value="two" />
+ <li value="three" />
+</ol>
+ 
+ 	 	 	1.
+2.
+3.
+10. 
+You highlight the text, "custom placeholder" and use Ctrl + X to cut. What happens?
+
+<head>
+ <script>
+   function foo() {
+     document.getElementById("ps").innerHTML = "take this action"
+   }
+ </script>
+</head>
+
+<body> 
+ <input type="text" oncopy="foo()" value="custom placeholder">
+ <p id="ps"></p>
+</body>
+ 
+ 	 	 	You cut the text with no pop-ups, warnings, or messages.
+11. 
+You write code using the <canvas> tag in HTML. It displays a simple game that you made on your website.
+
+<canvas width="500" height="500" style="background-color:#562">
+ <p>An error may have occurred or your browser does not support the canvas tag.</p>
+</canvas>
+
+<script>
+ var blank = document.getElementById("canvas");
+ var data = blank.getContext("2d");
+ ...
+</script>
+
+Instead of the game, however, the paragraph written inside the <canvas> tag is displayed. Why?
+ 
+ 	 	 	There is no id attribute in the <canvas> tag to connect it with its script.
+12. 
+You create an HTML web page that includes Cascading Style Sheets (CSS), JavaScript, and regular HTML elements as follows:
+
+<html>
+  <head>
+    <style>
+      alert {
+        background-color: brown;
+      }
+    </style>
+    <script>
+    function foo() {
+      alert("Let us go for a swim!");
+    }
+    </script>
+  </head>
+  <body>
+    <button onclick="foo()">Ready</button>
+  </body>
+</html>
+
+You run the script and receive a button. What does the button do?
+ 
+ 	 	 	Clicking the button results in a pop-up without a brown background.
+13. 
+Your colleague gave you code that uses JavaScript and is defined inside a <script> tag as follows:
+
+<script>
+ document.getElementById("menu").innerHTML="Let's Start!";
+</script>
+<noscript>
+ No script found!!!
+</noscript>
+
+When you run the code, the content of the <script> tag does not render. The content of the <noscript> tag is shown. Why?
+ 
+ 	 	 	The current working browser does not support JavaScript.
+14. 
+You create multiple inline frames (iframes) to display Pluralsight courses on a web page. The following is the syntax of one iframe:
+
+<iframe style="height:400px;width:700px;" src="https://app.pluralsight.com/path/html"> </iframe>
+
+Your website displays the iframes successfully, but it renders extra code for users who use screen readers. How can you resolve this issue?
+ 
+ 	 	 	Add a concise description of each iframe within its title attribute.
+15. 
+You have two Cascading Style Sheets (CSS) scripts, foo.css and baz.css, in your src directory. You use the following code to include them in your HTML script:
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="src/*.css" rel="stylesheet">
+  </head>
+  <body>
+    <p> Hello, users! </p>
+  </body>
+</html>
+
+You render the script, but no HTML elements use CSS styles. Why?
+ 
+ 	 	 	You included both CSS scripts using a single link element.
+16. 
+You have an image called logo.jpg in the img directory of your project. You must use this image as a favicon for your HTML website with the title, "My Inventory". How would you structure the <head> section of the script?
+ 
+ 	 	 	<head>
+  <title> My Inventory </title>
+  <link rel="icon" type="image/x-icon" href="./img/logo.jpg">
+</head>
+17. 
+When a <canvas> element exceeds the maximum screen size for the browser, what is the result?
+ 
+ 	 	 	The canvas is rendered unusable and drawing commands do not work.
+18. 
+Which element's positioning is independent of the main flow of an HTML5 document?
+ 
+ 	 	 	<figure>
+19. 
+You have an image called logo.png in the static directory of your project. What do you see after rendering the following script?
+
+<html>
+  <head>
+    <title>a small creation</title>
+    <link href="./static/logo.png">
+  </head>
+  <body>
+    <p>Hello, friends!</p>
+  </body>
+</html>
+ 
+ 	 	 	A web page with a title, no favicon, and the, "Hello, friends!" message
+20. 
+Which HTML element is valid in HTML5?
+ 
+ 	 	 	<datalist>
+
+
+set4
+
+1. 
+You must display the following paragraph on your web page:
+
+Hello, user!
+We hope you are doing well.     You are 
+taking the HTML 5 assessment.
+
+How would you write its HTML script?
+ 
+ 	 	 	<pre>
+Hello, user!
+We hope you are doing well.     You are 
+taking the HTML 5 assessment.
+</pre>
+2. 
+A paragraph contains a mathematical term and a formula. How would you apply inline elements in this <body> tag to separate normal text from mathematical text?
+
+<body>
+The <i>circumference</i> of a circle is 2πr where r is the radius of the circle.
+</body>
+ 
+ 	 	 	<p>The <i>circumference</i> of a circle is <var>2πr</var> where <var>r</var> is the radius of the circle.</p>
+3. 
+You create a basic web page with three sentences. How will these sentences appear on the web page once you render the following HTML script?
+
+<body> 
+  Hello, user!
+  <blockquote>
+    Let us learn <q>HTML</q>.
+  </blockquote>
+  Thank you!
+</body>
+ 
+ 	 	 	Hello, user!
+
+          Let us learn “HTML”.
+
+Thank you!
+4. 
+Your colleague gave you code that uses JavaScript and is defined inside a <script> tag as follows:
+
+<script>
+ document.getElementById("menu").innerHTML="Let's Start!";
+</script>
+<noscript>
+ No script found!!!
+</noscript>
+
+When you run the code, the content of the <script> tag does not render. The content of the <noscript> tag is shown. Why?
+ 
+ 	 	 	The current working browser does not support JavaScript.
+5. 
+You have an image called logo.png in the static directory of your project. What do you see after rendering the following script?
+
+<html>
+  <head>
+    <title>a small creation</title>
+    <link href="./static/logo.png">
+  </head>
+  <body>
+    <p>Hello, friends!</p>
+  </body>
+</html>
+ 
+ 	 	 	A web page with a title, no favicon, and the, "Hello, friends!" message
+6. 
+Which is an inline element?
+ 
+ 	 	 	<select>
+7. 
+You create an HTML web page that includes Cascading Style Sheets (CSS), JavaScript, and regular HTML elements as follows:
+
+<html>
+  <head>
+    <style>
+      alert {
+        background-color: brown;
+      }
+    </style>
+    <script>
+    function foo() {
+      alert("Let us go for a swim!");
+    }
+    </script>
+  </head>
+  <body>
+    <button onclick="foo()">Ready</button>
+  </body>
+</html>
+
+You run the script and receive a button. What does the button do?
+ 
+ 	 	 	Clicking the button results in a pop-up without a brown background.
+8. 
+You create multiple inline frames (iframes) to display Pluralsight courses on a web page. The following is the syntax of one iframe:
+
+<iframe style="height:400px;width:700px;" src="https://app.pluralsight.com/path/html"> </iframe>
+
+Your website displays the iframes successfully, but it renders extra code for users who use screen readers. How can you resolve this issue?
+ 
+ 	 	 	Add a concise description of each iframe within its title attribute.
+9. 
+You have access to a website's base HTML file. You must control its navigation so it redirects all its users to https://mydomain.org within five seconds. How would you modify the script?
+ 
+ 	 	 	<head>
+  <meta http-equiv="refresh" content="5; url=https://mydomain.org" />
+</head>
+10. 
+You have an image called logo.jpg in the img directory of your project. You must use this image as a favicon for your HTML website with the title, "My Inventory". How would you structure the <head> section of the script?
+ 
+ 	 	 	<head>
+  <title> My Inventory </title>
+  <link rel="icon" type="image/x-icon" href="./img/logo.jpg">
+</head>
+11. 
+What steps would you take to modify the following HTML into a details/summary section?
+
+<div>
+    <p>I have keys but no doors. I have space but no room. You can enter but can’t leave. What am I?</p>
+    A keyboard.
+</div>
+ 
+ 	 	 	1. Replace <div> with <details>;
+2. Replace <p> with <summary>
+12. 
+You host an HTML website, http://www.mydomain.com, on a web server. Within two hours, one user registers on the website. In the context of a potential web-defacing attack, which entity is at risk?
+ 
+ 	 	 	Web server
+13. 
+You may (and should) display a message inside the <canvas> block for both older browsers that don't support canvas and in browsers with JavaScript disabled. Which HTML segment can you add to provide this message?
+
+<canvas width="300" height="300"> 
+  --INSERT HERE-- 
+</canvas> 
+ 
+ 	 	 	<p>Error:  This is either not supported or JavaScript is disabled.</p>
+14. 
+In which type of web attack does an attacker change the visual interface of a website?
+ 
+ 	 	 	Website defacement
+15. 
+What attribute would you add to an element to link Cascading Style Sheets (CSS) rules?
+ 
+ 	 	 	link
+16. 
+The following <video> file was designed to restart when it reached its end and continue playing. It isn't restarting automatically when it reaches the end. What is the problem?
+
+<video controls width="250" >
+
+    <source src="/media/cc0-videos/flower.webm"
+            type="video/webm" loop="true" >
+
+    <source src="/media/cc0-videos/flower.mp4"
+            type="video/mp4" loop="true" >
+
+    Sorry, your browser doesn't support embedded videos.
+</video>
+ 
+ 	 	 	loop is an attribute of <video> and not <source>
+17. 
+You install a new version of a service worker on your system to load all the pages that a user needs. When you run the application, the active worker is still the old service worker. How can you resolve this issue?
+ 
+ 	 	 	Implement the ServiceWorkerGlobalScope.skipWaiting() method in the code snippet to change the active worker.
+18. 
+Which tag would you use to embed a PDF file into a web page?
+ 
+ 	 	 	<iframe>
+19. 
+Your website contains a large image that is 1280x1280 pixels. It also contains a lengthy paragraph of more than 500 words. You must align the image on the left side of the page and wrap the paragraph around it. You use the following code:
+
+<body>
+   <img src="./a_large_image.png" width="300" height="400">
+   <p>
+     A long paragraph .....
+   </p>
+</body>
+
+The image appears on the left side of the page, but the paragraph appears at the bottom of the image and does not wrap it. How can you resolve the wrapping issue?
+ 
+ 	 	 	<img style="float: left;" 
+ src="./a_large_image.png" width="300" height="400">
+20. 
+You are creating a button on your web page that will download an image from another website server. Your domain name is https://www.make-a-demo.com and the reference image website's domain name is https://www.hello-world.com. You write the following code to reference the image within your web page:
+
+<body>
+  <a href="https://cdn.hello-world.com/photo/2022/03/09/park.png" download>
+    <button>Download</button>
+  </a>
+</body>
+
+After clicking the button, the image opens in the browser tab instead of downloading to your local system. Why?
+ 
+ 	 	 	The download attribute works for the resources that belong to the same server.
+
+Set5
+
+1. 
+Which browser hides the service worker APIs and stops working when the user is in private browsing mode?
+ 
+ 	 	 	Mozilla Firefox
+2. 
+You are building an HTML website for a club within your organization. The design team created a logo and submitted it as a GIF. You are using this logo as a favicon for the website. You write the following code:
+
+<head>
+ <title> The Codegenix </title>
+ <link rel="icon" href="./logo.gif">
+</head>
+
+You present the website content but the favicon is static. Why are you unable to present members with an animated favicon?
+ 
+ 	 	 	You have not animated the icon using the JavaScript code.
+3. 
+Which statement is correct about HTML5 debugging?
+ 
+ 	 	 	An editor interprets an HTML script.
+4. 
+What attribute would you add to an element to link Cascading Style Sheets (CSS) rules?
+ 
+ 	 	 	link
+5. 
+The following <video> file was designed to restart when it reached its end and continue playing. It isn't restarting automatically when it reaches the end. What is the problem?
+
+<video controls width="250" >
+
+    <source src="/media/cc0-videos/flower.webm"
+            type="video/webm" loop="true" >
+
+    <source src="/media/cc0-videos/flower.mp4"
+            type="video/mp4" loop="true" >
+
+    Sorry, your browser doesn't support embedded videos.
+</video>
+ 
+ 	 	 	loop is an attribute of <video> and not <source>
+6. 
+Why would you use service workers between web applications, the browser, and the network?
+ 
+ 	 	 	To implement a proxy server between web applications, the browser, and the network
+7. 
+You have four elements on a web page: a link, a paragraph, an image, and a GIF advertisement. You must make all four elements draggable. Which element would you add the draggable attribute to?
+ 
+ 	 	 	The paragraph, the image, the link, and the GIF advertisement
+8. 
+You may (and should) display a message inside the <canvas> block for both older browsers that don't support canvas and in browsers with JavaScript disabled. Which HTML segment can you add to provide this message?
+
+<canvas width="300" height="300"> 
+  --INSERT HERE-- 
+</canvas> 
+ 
+ 	 	 	<p>Error:  This is either not supported or JavaScript is disabled.</p>
+9. 
+Which is an inline element?
+ 
+ 	 	 	<select>
+10. 
+You host an HTML website, http://www.mydomain.com, on a web server. Within two hours, one user registers on the website. In the context of a potential web-defacing attack, which entity is at risk?
+ 
+ 	 	 	Web server
+11. 
+You download an HTML script with 50 lines of code from a GitHub repository and run it in Google Chrome. There are several mistakes on the web page. Which step should you perform first to debug the script?
+ 
+ 	 	 	Open the script in a graphical code editor to fix it based on code color.
+12. 
+You have two sentences on a web page that currently display on the right side:
+
+<html>
+
+  <head>
+    <style>
+      .foo {
+        background-color: silver;
+        align-items: baseline;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="foo" dir="rtl">
+      <p style="text-align: right; text-justify: auto;">Pluralsight provides on-demand training. It has training for individuals and businesses.</p>
+    </div>
+  </body>
+
+</html>
+
+The period from the second sentence appears before the word Pluralsight. Which code snippet is responsible for this change?
+ 
+ 	 	 	dir="rtl"
+13. 
+You must create an HTML website with a paragraph and a list. You write the following script to achieve the task:
+
+<body>
+  <!-- A short list of HTML frameworks-->
+  <p main="track>You can include the following frameworks while building an HTML website --></p>
+  <ol>
+     <li>CSS</li> 
+     <li>JavaScript</li>
+     <li>Bootstrap</li>
+  </ol>
+</body>
+
+You receive the following rendered output on the web page:
+
+= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf()); } parent.appendChild(elem); } } var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://'; var address = protocol + window.location.host + window.location.pathname + '/ws'; var socket = new WebSocket(address); socket.onmessage = function (msg) { if (msg.data == 'reload') window.location.reload(); else if (msg.data == 'refreshcss') refreshCSS(); }; if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) { console.log('Live reload enabled.'); sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true); } })(); } else { console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.'); } // ]]>
+
+You run the script and receive an unexpected output on the web page. Why?
+ 
+ 	 	 	There is a missing double quote on the invalid yet interpretable attribute main="track.
+14. 
+Your website contains a large image that is 1280x1280 pixels. It also contains a lengthy paragraph of more than 500 words. You must align the image on the left side of the page and wrap the paragraph around it. You use the following code:
+
+<body>
+   <img src="./a_large_image.png" width="300" height="400">
+   <p>
+     A long paragraph .....
+   </p>
+</body>
+
+The image appears on the left side of the page, but the paragraph appears at the bottom of the image and does not wrap it. How can you resolve the wrapping issue?
+ 
+ 	 	 	<img style="float: left;" 
+ src="./a_large_image.png" width="300" height="400">
+15. 
+You must develop a JavaScript function to set a data value for an HTML element. The data includes the personal information about the user. The function outputs the current time along with all the data. Which JavaScript method should you use to assign the data value securely?
+ 
+ 	 	 	element.textContent=data;
+16. 
+You create a basic web page with three sentences. How will these sentences appear on the web page once you render the following HTML script?
+
+<body> 
+  Hello, user!
+  <blockquote>
+    Let us learn <q>HTML</q>.
+  </blockquote>
+  Thank you!
+</body>
+ 
+ 	 	 	Hello, user!
+
+          Let us learn “HTML”.
+
+Thank you!
+17. 
+You install a new version of a service worker on your system to load all the pages that a user needs. When you run the application, the active worker is still the old service worker. How can you resolve this issue?
+ 
+ 	 	 	Implement the ServiceWorkerGlobalScope.skipWaiting() method in the code snippet to change the active worker.
+18. 
+In which type of web attack does an attacker change the visual interface of a website?
+ 
+ 	 	 	Website defacement
+19. 
+When would you use HTML inline frames (iframes)?
+ 
+ 	 	 	When embedding a web page within another web page
+20. 
+You create a web page that shows two paragraphs and an image using the <p> and the <img> tags. You must provide a description of the tag that the paragraphs use and the image when a user hovers over them. How can you do so?
+ 
+ 	 	 	Add the title attribute with the description in each element.
+21. 
+Which element is specifically intended to isolate a piece of text that might be formatted in a different direction than text outside the element?
+ 
+ 	 	 	<bdi>
+22. 
+Which tag would you use to embed a PDF file into a web page?
+ 
+ 	 	 	<iframe>
+23. 
+You are creating a button on your web page that will download an image from another website server. Your domain name is https://www.make-a-demo.com and the reference image website's domain name is https://www.hello-world.com. You write the following code to reference the image within your web page:
+
+<body>
+  <a href="https://cdn.hello-world.com/photo/2022/03/09/park.png" download>
+    <button>Download</button>
+  </a>
+</body>
+
+After clicking the button, the image opens in the browser tab instead of downloading to your local system. Why?
+ 
+ 	 	 	The download attribute works for the resources that belong to the same server.
+24. 
+Which HTML5 element replaces the use of the <applet> element?
+ 
+ 	 	 	<object>
+25. 
+You are making a website for school teachers to upload practice questions for their students. While writing an equation, you need symbols that indicate ^, _, and \. What would you use to obtain these symbols with respective American Standard Code for Information Interchange (ASCII) digits 94, 95, and 92?
+ 
+ 	 	 	&#94;, &#95;, &#92;
+26. 
+Which input type in HTML specifies what file types users can pick using an <input> dialog box?
+ 
+ 	 	 	accept
+27. 
+What is the minimum number of files you can upload to your website server using the following HTML code?
+
+<input type="file" id="custom" name="ps" multiple>
+ 
+ 	 	 	0
+28. 
+The following <iframe> element was properly formatted to display a web page named hello.html. When the browser doesn't support frames nothing is displayed. What should you add within the following <iframe> element to provide information when it isn't supported?
+
+<iframe src="hello.html" width="400" height="300" scrolling="auto">
+</iframe>
+ 
+ 	 	 	Include text within the <iframe> element to be displayed if frames are not supported.
+29. 
+Which HTML5 element would you use to render the following formatted text with descriptions?
+Tea
+A hot beverage
+Milk
+A cold beverage
+ 
+ 	 	 	<dl>
+  <dt>Tea</dt>
+    <dd>A hot beverage</dd>
+  <dt>Milk</dt>
+    <dd>A cold beverage</dd>
+</dl>
+30. 
+Which HTML event triggers a function after you double-click an element?
+ 
+ 	 	 	ondblclick
+
+set6
+
+1. 
+Why would you use service workers between web applications, the browser, and the network?
+ 
+ 	 	 	To implement a proxy server between web applications, the browser, and the network
+2. 
+You are building an HTML website for a club within your organization. The design team created a logo and submitted it as a GIF. You are using this logo as a favicon for the website. You write the following code:
+
+<head>
+ <title> The Codegenix </title>
+ <link rel="icon" href="./logo.gif">
+</head>
+
+You present the website content but the favicon is static. Why are you unable to present members with an animated favicon?
+ 
+ 	 	 	You have not animated the icon using the JavaScript code.
+3. 
+The following web page has multiple elements, including a list:
+
+<html>
+  <head>
+    <style>
+      .foo:hover {
+          background-color: green;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>You must retrieve these details from each employee and feed the data <a href="https://www.example.com/empDetails">here</a>:</p>
+    <div class="foo">
+      <ol style="background-color: beige;">      
+          <li>ID</li>
+          <li>Name</li>
+          <li>Unit</li>      
+      </ol>
+    </div>
+    <p>Once done, notify me.</p>
+  </body>
+</html>
+
+The list elements should have a beige background, but when a user hovers over them, the background must change to green. There is no change when hovering over the list elements, however. How can you fix the issue?
+ 
+ 	 	 	<ol style="background-color: beige;">    
+  <div class="foo">
+     <li>ID</li>
+     <li>Name</li>
+     <li>Unit</li>      
+  </div>
+</ol>
+4. 
+You create an HTML web page that displays Yellow and Brown in separate lines. You copy the text Yellow and paste it into a text editor. What result do you get?
+
+<html>
+  <body>
+    <p>Yellow</p>
+    <p>Brown</p>
+    <script>
+      document.addEventListener('copy', function(p){
+          console.log(p);
+          p.clipboardData.setData('text/plain', 'Red');
+          p.preventDefault(); 
+      });
+    </script>
+  </body>
+</html>
+ 
+ 	 	 	Red
+5. 
+You have a basic web page with the following HTML script:
+
+<html>
+  <body>
+    alert()
+  </body>
+</html>
+
+What happens when you render the above script?
+ 
+ 	 	 	You receive the text alert() on the web page.
+6. 
+You are working an application that requires a synchronization action for the ServiceWorkerGlobalScope of a service worker. How can you achieve this?
+ 
+ 	 	 	Implement the SyncEvent interface to depict the synchronization action.
+7. 
+You download an HTML script with 50 lines of code from a GitHub repository and run it in Google Chrome. There are several mistakes on the web page. Which step should you perform first to debug the script?
+ 
+ 	 	 	Open the script in a graphical code editor to fix it based on code color.
+8. 
+You have four elements on a web page: a link, a paragraph, an image, and a GIF advertisement. You must make all four elements draggable. Which element would you add the draggable attribute to?
+ 
+ 	 	 	The paragraph, the image, the link, and the GIF advertisement
+9. 
+A video embedded in a web page plays well and is compatible with the browser. Despite the good video quality, the loading process causes unwanted flickering. What action can you take to address this issue?
+ 
+ 	 	 	Add width and height attributes in the video tag.
+10. 
+You highlight the text, "custom placeholder" and use Ctrl + X to cut. What happens?
+
+<head>
+ <script>
+   function foo() {
+     document.getElementById("ps").innerHTML = "take this action"
+   }
+ </script>
+</head>
+
+<body> 
+ <input type="text" oncopy="foo()" value="custom placeholder">
+ <p id="ps"></p>
+</body>
+ 
+ 	 	 	You cut the text with no pop-ups, warnings, or messages.
+11. 
+You must create an HTML website with a paragraph and a list. You write the following script to achieve the task:
+
+<body>
+  <!-- A short list of HTML frameworks-->
+  <p main="track>You can include the following frameworks while building an HTML website --></p>
+  <ol>
+     <li>CSS</li> 
+     <li>JavaScript</li>
+     <li>Bootstrap</li>
+  </ol>
+</body>
+
+You receive the following rendered output on the web page:
+
+= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf()); } parent.appendChild(elem); } } var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://'; var address = protocol + window.location.host + window.location.pathname + '/ws'; var socket = new WebSocket(address); socket.onmessage = function (msg) { if (msg.data == 'reload') window.location.reload(); else if (msg.data == 'refreshcss') refreshCSS(); }; if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) { console.log('Live reload enabled.'); sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true); } })(); } else { console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.'); } // ]]>
+
+You run the script and receive an unexpected output on the web page. Why?
+ 
+ 	 	 	There is a missing double quote on the invalid yet interpretable attribute main="track.
+12. 
+You write code using the <canvas> tag in HTML. It displays a simple game that you made on your website.
+
+<canvas width="500" height="500" style="background-color:#562">
+ <p>An error may have occurred or your browser does not support the canvas tag.</p>
+</canvas>
+
+<script>
+ var blank = document.getElementById("canvas");
+ var data = blank.getContext("2d");
+ ...
+</script>
+
+Instead of the game, however, the paragraph written inside the <canvas> tag is displayed. Why?
+ 
+ 	 	 	There is no id attribute in the <canvas> tag to connect it with its script.
+13. 
+An HTML script has multiple elements::
+
+<!DOCTYPE HTML>
+<html>
+  <body>
+    <!-- A short list of HTML frameworks. The comment ends here.
+    <p make="true">You can include the following frameworks while building an HTML website --></p>
+    <ol>
+       <li>CSS</li>
+       <li>JavaScript</li>
+       <li>Bootstrap</li>
+    </ol>
+  </body>
+</html>
+
+How many errors are present in the script?
+ 
+ 	 	 	3
+14. 
+Which element is specifically intended to isolate a piece of text that might be formatted in a different direction than text outside the element?
+ 
+ 	 	 	<bdi>
+15. 
+You must develop a JavaScript function to set a data value for an HTML element. The data includes the personal information about the user. The function outputs the current time along with all the data. Which JavaScript method should you use to assign the data value securely?
+ 
+ 	 	 	element.textContent=data;
+16. 
+Which HTML5 element replaces the use of the <applet> element?
+ 
+ 	 	 	<object>
+17. 
+Which element's positioning is independent of the main flow of an HTML5 document?
+ 
+ 	 	 	<figure>
+18. 
+You have two Cascading Style Sheets (CSS) scripts, foo.css and baz.css, in your src directory. You use the following code to include them in your HTML script:
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="src/*.css" rel="stylesheet">
+  </head>
+  <body>
+    <p> Hello, users! </p>
+  </body>
+</html>
+
+You render the script, but no HTML elements use CSS styles. Why?
+ 
+ 	 	 	You included both CSS scripts using a single link element.
+19. 
+Which statement is correct about HTML5 debugging?
+ 
+ 	 	 	An editor interprets an HTML script.
+20. 
+Which attribute can specify that the input's value must match the format of the text entered into an <input> element?
+ 
+ 	 	 	pattern
+21. 
+What will be the output of the following markup?
+
+<ol>
+ <li value="one" />
+ <li value="two" />
+ <li value="three" />
+</ol>
+ 
+ 	 	 	1.
+2.
+3.
+22. 
+Consider the following HTML:
+
+<canvas width="300" height="300">
+
+An error occurs and the canvas is not rendered when the page is loaded. What is the problem?
+ 
+ 	 	 	The <canvas> element requires the closing tag (</canvas>).
+23. 
+When a <canvas> element exceeds the maximum screen size for the browser, what is the result?
+ 
+ 	 	 	The canvas is rendered unusable and drawing commands do not work.
+24. 
+You are making a website for school teachers to upload practice questions for their students. While writing an equation, you need symbols that indicate ^, _, and \. What would you use to obtain these symbols with respective American Standard Code for Information Interchange (ASCII) digits 94, 95, and 92?
+ 
+ 	 	 	&#94;, &#95;, &#92;
+25. 
+You have a basic HTML script with one <p> tag:
+
+<html>
+  <head>
+    <style>
+      p {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Hello, friends!</p>  
+  </body>
+</html>
+
+Which statement is correct based on the above script?
+ 
+ 	 	 	"Hello, friends!" appears on the web page with a blue background. The HTML keeps the <style> tag within the <head> tag.
+26. 
+What kind of list does the following code create?
+
+<dl>
+ <dt></dt>
+ <dd></dd>
+</dl>
+ 
+ 	 	 	Description list
+27. 
+Which input type in HTML specifies what file types users can pick using an <input> dialog box?
+ 
+ 	 	 	accept
+28. 
+Which HTML5 element would you use to render the following formatted text with descriptions?
+Tea
+A hot beverage
+Milk
+A cold beverage
+ 
+ 	 	 	<dl>
+  <dt>Tea</dt>
+    <dd>A hot beverage</dd>
+  <dt>Milk</dt>
+    <dd>A cold beverage</dd>
+</dl>
+29. 
+When would you use HTML inline frames (iframes)?
+ 
+ 	 	 	When embedding a web page within another web page
+30. 
+What is the syntax to display an American Standard Coder for Information Interchange (ASCII) character on an HTML web page using its ASCII number?
+ 
+ 	 	 	&#number;
+
+
+

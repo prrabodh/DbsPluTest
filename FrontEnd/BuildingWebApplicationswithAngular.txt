@@ -1,0 +1,616 @@
+Building Web Applications with Angular
+
+1. 
+How would you test the correct binding of the event and inner functionality for the output property name "User1"?
+ 
+ 	 	 	Use the method triggerEventHandler as follows:
+
+triggerEventHandler("editConfirmed","User1")
+2. 
+What is the correct syntax to navigate to this route: { path:'hero/:id', component:HeroDetailComponent }?
+ 
+ 	 	 	this.router.navigate(['/hero', hero.id]);
+3. 
+How can you add the validator function into the reactive forms?
+ 
+ 	 	 	Directly add the function into the form control model in the component class.
+4. 
+Which Reactive Extensions for JavaScript (RxJs) operator merges the output of many observations and reduces it to one observable?
+ 
+ 	 	 	merge() 
+5. 
+Given the following code, where do you associate the form element with the form data structure?
+
+this.heroForm = new FormGroup({
+      heroName: new FormControl(),
+      identityName: new FormControl()
+});
+ 
+ 	 	 	In the HTML on the form element: [formGroup]="heroForm"
+6. 
+How would you embed styles inside your HTML templates?
+ 
+ 	 	 	Embed Cascading Style Sheets (CSS) in the template inside the style property.
+7. 
+What is the difference between the canLoad and canActivate methods in Angular?
+ 
+ 	 	 	canLoad prevents the app from loading the entire module lazily if the user is unauthorized.
+canActivate prevents unauthorized users from accessing certain routes.
+8. 
+To inject a service in the Angular dependency injection system, you wrote the following code: 
+
+Import {Component} from '@angular/core';
+Import {HelloService} from '. /helloService';
+
+@Component({  
+ selector: 'my-app',  
+ templateUrl: './app.component.html',  
+ styleUrls: [ './app.component.css' ]
+})
+
+export class AppComponent  {
+ constructor(private helloService : HelloService){   
+  console.log(this.helloService.sayHello());  
+ }
+}
+
+After running it, you get the error: "No provider for HelloService!". How can you fix this?
+ 
+ 	 	 	Pass a provider object to the provider's property in the component decorator:
+9. 
+What is ActivatedRoute?
+ 
+ 	 	 	A service that provides information about the active route path and parameters
+10. 
+Which utility can you use to unsubscribe from the observable in Angular using async pipes?
+ 
+ 	 	 	ngOnDestroy
+11. 
+You are building an application for your organization, but many of your users work with older versions of Internet Explorer. Which command should you run to create a project that will support Internet Explorer?
+ 
+ 	 	 	ng new --legacy-browsers true
+12. 
+Which command generates a component with the Cascading Style Sheets (CSS) styles in an external file?
+ 
+ 	 	 	ng generate component home-page --style css
+13. 
+How can you trigger the navigation to a route based on a user's action inside your component's template?
+ 
+ 	 	 	By using a routerlink
+14. 
+What effect will the following command have on the component it generates?
+
+ng generate component site-nav --inline-template true
+ 
+ 	 	 	The component will be generated with the HTML template inside the component file.
+15. 
+Template-driven forms and reactive forms require importing different modules. What are those module?
+ 
+ 	 	 	FormsModule, ReactiveFormsModule
+16. 
+How can you inject HttpClient as a dependency of an application class to consume the REST API in Angular?
+ 
+ 	 	 	constructor(private http: HttpClient) { }
+
+Set2
+
+1. 
+You are creating a new application using the Angular command-line interface (CLI). You want to use a separate styles file for each component and want to include a routing configuration. Which is the correct command to use to create the app?
+ 
+ 	 	 	ng new --routing
+2. 
+You are building an application with Angular and want to use an external library in your project. What Angular command-line interface (CLI) command should you use to include an external library?
+ 
+ 	 	 	ng add
+3. 
+How do you define the appropriate routerLink syntax to specify a path parameter?
+ 
+ 	 	 	[routerLink]="['/heroes', hero.id]"
+4. 
+You are an Angular developer who must test code that uses LocationStrategy. While testing, you come across code that uses HashLocationStrategy.
+
+1. import {HashLocationStrategy, Location, LocationStrategy} from '@angular/common';
+2. import {Component} from '@angular/core';
+
+3. @Component({
+4.  selector: 'hash-location',
+5.  providers: [Location, {provide: location, useClass: HashLocationStrategy}],
+ ...
+})```
+
+When you run the code it produces an error, however. How can you fix this?
+ 
+ 	 	 	Replace the location with LocationStrategy in the fifth line.
+5. 
+How can you test your application using Protractor with the Angular command-line interface (CLI)?
+ 
+ 	 	 	ng e2e
+6. 
+What must you add on your second router-outlet if you want to use a component-less route to load two components?
+ 
+ 	 	 	A name attribute that matches the outlet property of the second component
+7. 
+What do the routerLinkActive and routerLinkActiveOptions in this code do?
+
+<li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+     <a [routerLink]="['/heroes']">Hero List</a>
+</li>
+ 
+ 	 	 	When the heroes route is activated, it styles the li element using the defined style ("active"), but only when there is an exact match to the route.
+8. 
+Based on the router's current state, what does Angular use to fill data dynamically?
+ 
+ 	 	 	router-outlet
+9. 
+How could you set an element's background color based on a property color of the component class?
+ 
+ 	 	 	[style.background-color]="color"
+10. 
+Angular uses zone.js to monkey patch each asynchronous event, so whenever any event occurs Angular runs change detection over its component tree, which leads to low performance. How can you fix this?
+ 
+ 	 	 	Use the OnPush change detection strategy, which disables change detection from running on a component and its children.
+11. 
+While working on an Angular project, you must repeatedly import multiple pipes, components, and directives. This process requires repetitive code and your project becomes less organized. How can you avoid such issues? 
+ 
+ 	 	 	Make a SharedModule and import every usable directive, pipe, and component in it. 
+12. 
+Which Angular command-line interface (CLI) command executes all unit tests in your project?
+ 
+ 	 	 	ng test
+13. 
+An application experiences vulnerabilities and slows down if it has to display a large file. How can you fix this?
+ 
+ 	 	 	Using Component Development Kit (CDK) virtual scrolling
+14. 
+While creating an application using React and Angular, you must use react and react-dom in the application. How would you implement both?
+ 
+ 	 	 	npm install -S react-in-angular react react-dom
+15. 
+What is the difference between providers and providedIn in Angular while using dependency injection?
+ 
+ 	 	 	providers must specify services in the providers: [] property of the @NgModule decorator while, with providedIn, the service itself declares where the module is provided instead of the module providing all its services.
+16. 
+A component must implement multiple styles in its host element without targeting the elements inside the host. How would you do this?
+ 
+ 	 	 	Implement the :host selector inside the .css file.
+
+
+Set3
+
+1. 
+What must you add on your second router-outlet if you want to use a component-less route to load two components?
+ 
+ 	 	 	A name attribute that matches the outlet property of the second component
+2. 
+What can the exports array of an Angular module contain?
+ 
+ 	 	 	Components, directives, and pipes
+3. 
+How can you stop the controller from moving on to the next instruction before the ongoing animations are finished? 
+ 
+ 	 	 	Use the sequence() call.
+4. 
+What is the purpose of the bootstrap array of an Angular module?
+ 
+ 	 	 	To define the set of components that have functionalities that are needed while running an application
+5. 
+How would you test the correct binding of the event and inner functionality for the output property name "User1"?
+ 
+ 	 	 	Use the method triggerEventHandler as follows:
+
+triggerEventHandler("editConfirmed","User1")
+6. 
+You are creating a new application using the Angular command-line interface (CLI). You want to use a separate styles file for each component and want to include a routing configuration. Which is the correct command to use to create the app?
+ 
+ 	 	 	ng new --routing
+7. 
+What is the key difference between hot and cold observables?
+ 
+ 	 	 	Cold observables produce data for separate subscribers, whereas hot observables do not.
+8. 
+What is the format of the error response from the HttpClient?
+ 
+ 	 	 	ErrorObservable
+9. 
+What must you do to add an input element to the form (ngForm) when building template-driven forms?
+ 
+ 	 	 	Set the name attribute in the input element.
+10. 
+How do you define the appropriate routerLink syntax to specify a path parameter?
+ 
+ 	 	 	[routerLink]="['/heroes', hero.id]"
+11. 
+How do you create an observable that has already been multicast through connect()?
+ 
+ 	 	 	Implement the connectable() function in the application.
+12. 
+How would you tell Angular that the lazy loaded bundles should be loaded as soon as possible, without affecting the user interface?
+ 
+ 	 	 	Using the PreloadAllModule strategy
+13. 
+How do you configure testing to ignore unknown attributes and elements in a template?b
+ 
+ 	 	 	By adding the CUSTOM_ELEMENTS_SCHEMA schema
+14. 
+You are making an application using different components in Angular. All the components are at the same level in the tree and the link to SecondComponent is located within the FirstComponent. 
+
+1.<h1>First Component</h1>
+2.<nav> 
+   <ul>
+3.  <li><a routerLink="second-component">Second Component Route</a></li> 
+4. </ul> 
+  </nav>
+
+When you run the code, the link to the SecondComponent is missing. Why?
+ 
+ 	 	 	The notation ../ is missing from the third line.
+15. 
+How can you test your application using Protractor with the Angular command-line interface (CLI)?
+ 
+ 	 	 	ng e2e
+16. 
+You are an Angular developer who must test code that uses LocationStrategy. While testing, you come across code that uses HashLocationStrategy.
+
+1. import {HashLocationStrategy, Location, LocationStrategy} from '@angular/common';
+2. import {Component} from '@angular/core';
+
+3. @Component({
+4.  selector: 'hash-location',
+5.  providers: [Location, {provide: location, useClass: HashLocationStrategy}],
+ ...
+})```
+
+When you run the code it produces an error, however. How can you fix this?
+ 
+ 	 	 	Replace the location with LocationStrategy in the fifth line.
+17. 
+What is a common way to specify validation rules on an input element with template-driven forms?
+ 
+ 	 	 	Add standard HTML validation attributes to the input element.
+18. 
+What is the difference between the HttpClientTestingBackend and the HttpClientTestingModule?
+ 
+ 	 	 	The HttpClientTestingModule configures the HttpClientTestingBackend.
+19. 
+How does the FormControlDirective work?
+ 
+ 	 	 	It syncs a standalone FormControl instance to a form control element.
+20. 
+Given the following input element, what syntax must you check to see if the user engaged/modified the input element?
+
+<input id="heroNameId"
+       type="text"
+       required
+       [(ngModel)] = hero.name
+       name="heroName"
+       #heroNameVar="ngModel" />
+ 
+ 	 	 	heroNameVar.dirty
+21. 
+You must create a secondary route in Angular. Which property is responsible for identifying the target outlet in the Route object?
+ 
+ 	 	 	outlet
+
+
+Set4
+
+1. 
+What is the key difference between hot and cold observables?
+ 
+ 	 	 	Cold observables produce data for separate subscribers, whereas hot observables do not.
+2. 
+You perform integration testing. You first test the modules individually and then integrate and test them at the same time. Which type of integration testing are you performing?
+ 
+ 	 	 	Big bang integration testing
+3. 
+How do you create an observable that has already been multicast through connect()?
+ 
+ 	 	 	Implement the connectable() function in the application.
+4. 
+What is the format of the error response from the HttpClient?
+ 
+ 	 	 	ErrorObservable
+5. 
+How do you define the appropriate routerLink syntax to specify a path parameter?
+ 
+ 	 	 	[routerLink]="['/heroes', hero.id]"
+6. 
+You have an Angular application that restricts access to the user area with a password. This area's home component is protected using the CanActivate route guard, but it has child routes. How do you protect these child routes?
+ 
+ 	 	 	The home components route guard will protect the child routes. 
+7. 
+What is the key difference between template-driven and reactive forms?
+ 
+ 	 	 	A template-driven form is asynchronous in nature; a reactive form is mostly synchronous
+8. 
+You are creating a new application using the Angular command-line interface (CLI). You want to use a separate styles file for each component and want to include a routing configuration. Which is the correct command to use to create the app?
+ 
+ 	 	 	ng new --routing
+9. 
+How many Angular modules must be defined for an Angular application?
+ 
+ 	 	 	Zero
+10. 
+What can the exports array of an Angular module contain?
+ 
+ 	 	 	Components, directives, and pipes
+11. 
+What action must you take to create the form model (ngForm) to facilitate validation and error-handling when building template-driven forms?
+ 
+ 	 	 	Define the form HTML element to create the form model (ngForm) automatically.
+12. 
+What is the difference between the HttpClientTestingBackend and the HttpClientTestingModule?
+ 
+ 	 	 	The HttpClientTestingModule configures the HttpClientTestingBackend.
+13. 
+What is the purpose of the bootstrap array of an Angular module?
+ 
+ 	 	 	To define the set of components that have functionalities that are needed while running an application
+14. 
+What must you do to add an input element to the form (ngForm) when building template-driven forms?
+ 
+ 	 	 	Set the name attribute in the input element.
+15. 
+You must create a secondary route in Angular. Which property is responsible for identifying the target outlet in the Route object?
+ 
+ 	 	 	outlet
+16. 
+How can you stop the controller from moving on to the next instruction before the ongoing animations are finished? 
+ 
+ 	 	 	Use the sequence() call.
+17. 
+How could you define the appropriate routerLink syntax to specify a required query parameter?
+ 
+ 	 	 	[routerLink]="['/heroes']" [queryParams]="{id: hero.id}"
+18. 
+How does the FormControlDirective work?
+ 
+ 	 	 	It syncs a standalone FormControl instance to a form control element.
+19. 
+How can you test your application using Protractor with the Angular command-line interface (CLI)?
+ 
+ 	 	 	ng e2e
+20. 
+How would you tell Angular that the lazy loaded bundles should be loaded as soon as possible, without affecting the user interface?
+ 
+ 	 	 	Using the PreloadAllModule strategy
+21. 
+Given the following constructor for a component:
+
+constructor(private myService: MyService)
+
+Which block of code is equivalent for the purposes of dependency injection?
+ 
+ 	 	 	constructor(@Inject(MyService) private myService)
+22. 
+Given the following input element, what syntax must you check to see if the user engaged/modified the input element?
+
+<input id="heroNameId"
+       type="text"
+       required
+       [(ngModel)] = hero.name
+       name="heroName"
+       #heroNameVar="ngModel" />
+ 
+ 	 	 	heroNameVar.dirty
+23. 
+You are building an application with Angular and want to use an external library in your project. What Angular command-line interface (CLI) command should you use to include an external library?
+ 
+ 	 	 	ng add
+24. 
+How does a template reference variable in the following code (#heroNameVar), help with validation of a template-driven form?
+
+<input id="heroNameId"
+       type="text"
+       required
+       [(ngModel)] = hero.name
+       name="heroName"
+       #heroNameVar="ngModel" />
+ 
+ 	 	 	It provides a reference to an input element's state that you can use for styling errors or displaying validation error messages.
+25. 
+You are an Angular developer who must test code that uses LocationStrategy. While testing, you come across code that uses HashLocationStrategy.
+
+1. import {HashLocationStrategy, Location, LocationStrategy} from '@angular/common';
+2. import {Component} from '@angular/core';
+
+3. @Component({
+4.  selector: 'hash-location',
+5.  providers: [Location, {provide: location, useClass: HashLocationStrategy}],
+ ...
+})```
+
+When you run the code it produces an error, however. How can you fix this?
+ 
+ 	 	 	Replace the location with LocationStrategy in the fifth line.
+26. 
+How do you configure testing to ignore unknown attributes and elements in a template?
+ 
+ 	 	 	By adding the CUSTOM_ELEMENTS_SCHEMA schema
+27. 
+What is the ideal outcome of using shallow tests?
+ 
+ 	 	 	To render a template without child component dependencies.
+28. 
+What is a common way to specify validation rules on an input element with template-driven forms?
+ 
+ 	 	 	Add standard HTML validation attributes to the input element.
+29. 
+You are making an application using different components in Angular. All the components are at the same level in the tree and the link to SecondComponent is located within the FirstComponent. 
+
+1.<h1>First Component</h1>
+2.<nav> 
+   <ul>
+3.  <li><a routerLink="second-component">Second Component Route</a></li> 
+4. </ul> 
+  </nav>
+
+When you run the code, the link to the SecondComponent is missing. Why?
+ 
+ 	 	 	The notation ../ is missing from the third line.
+30. 
+What is the purpose of the InjectionToken class?
+ 
+ 	 	 	To allow a service that isn't a class to be registered with the dependency injection system
+
+
+Set5
+
+1. 
+What is the correct syntax to navigate to this route: { path:'hero/:id', component:HeroDetailComponent }?
+ 
+ 	 	 	this.router.navigate(['/hero', hero.id]);
+2. 
+What is the purpose of the InjectionToken class?
+ 
+ 	 	 	To allow a service that isn't a class to be registered with the dependency injection system
+3. 
+Given the following constructor for a component:
+
+constructor(private myService: MyService)
+
+Which block of code is equivalent for the purposes of dependency injection?
+ 
+ 	 	 	constructor(@Inject(MyService) private myService)
+4. 
+What action must you take to create the form model (ngForm) to facilitate validation and error-handling when building template-driven forms?
+ 
+ 	 	 	Define the form HTML element to create the form model (ngForm) automatically.
+5. 
+You perform integration testing. You first test the modules individually and then integrate and test them at the same time. Which type of integration testing are you performing?
+ 
+ 	 	 	Big bang integration testing
+6. 
+How many Angular modules must be defined for an Angular application?
+ 
+ 	 	 	Zero
+7. 
+What is the key difference between template-driven and reactive forms?
+ 
+ 	 	 	A template-driven form is asynchronous in nature; a reactive form is mostly synchronous
+8. 
+You have an Angular application that restricts access to the user area with a password. This area's home component is protected using the CanActivate route guard, but it has child routes. How do you protect these child routes?
+ 
+ 	 	 	The home components route guard will protect the child routes. 
+9. 
+In async testing, how can you wrap a test function in an asynchronous test zone? 
+ 
+ 	 	 	By using waitForAsync()
+10. 
+What command will create a new Angular application with a root routing module?
+ 
+ 	 	 	ng new my-dream-app and choose the option to configure routing from the interactive prompt
+11. 
+What is the ideal outcome of using shallow tests?
+ 
+ 	 	 	To render a template without child component dependencies.
+12. 
+How does a template reference variable in the following code (#heroNameVar), help with validation of a template-driven form?
+
+<input id="heroNameId"
+       type="text"
+       required
+       [(ngModel)] = hero.name
+       name="heroName"
+       #heroNameVar="ngModel" />
+ 
+ 	 	 	It provides a reference to an input element's state that you can use for styling errors or displaying validation error messages.
+13. 
+What is the difference in how reactive forms and template-driven forms validate the information a user enters?
+ 
+ 	 	 	Reactive forms use functions, while template-driven forms use directives.
+14. 
+How could you define the appropriate routerLink syntax to specify a required query parameter?
+ 
+ 	 	 	[routerLink]="['/heroes']" [queryParams]="{id: hero.id}"
+15. 
+You are building an application with Angular and want to use an external library in your project. What Angular command-line interface (CLI) command should you use to include an external library?
+ 
+ 	 	 	ng add
+16. 
+Which route guard would you use to prevent a user from navigating to another view before saving their content?
+ 
+ 	 	 	CanDeactivate
+17. 
+Based on the router's current state, what does Angular use to fill data dynamically?
+ 
+ 	 	 	router-outlet
+18. 
+How would you spy on any element?
+ 
+ 	 	 	Implement two hooks, SpyDirective ngOnInit() and ngOnDestroy().
+19. 
+Given the following template:
+
+<input type="text">
+<button (click)="saveName()">Save</button>
+
+Which block of code will correctly send the value entered into the input box into the saveName function?
+ 
+ 	 	 	<input #name type="text">
+<button (click)="saveName(name.value)">Save</button>
+20. 
+Which Reactive Extensions for JavaScript (RxJs) operator merges the output of many observations and reduces it to one observable?
+ 
+ 	 	 	merge() 
+21. 
+What do the routerLinkActive and routerLinkActiveOptions in this code do?
+
+<li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+     <a [routerLink]="['/heroes']">Hero List</a>
+</li>
+ 
+ 	 	 	When the heroes route is activated, it styles the li element using the defined style ("active"), but only when there is an exact match to the route.
+22. 
+You work at a company as an Angular programmer. You must create snippets of code designed for error handling. What is the outcome of the following code?
+
+1. import { ErrorHandler, Injectable } from '@angular/core';
+
+2. @Injectable()
+3. export class Handlingerror implements ErrorHandler {
+4.     handleError(error) {
+5.        console.error('An error occured here: ', error.message);
+6.        console.error();
+7.        alert(error);
+8.    }
+9.   }  
+ 
+ 	 	 	One error message in the console and one in an alert dialog box
+23. 
+You have a component that has two router outlets. Why do you need the name attribute on the second router outlet?
+ 
+ 	 	 	To indicate it is not the primary outlet
+24. 
+While creating an application using React and Angular, you must use react and react-dom in the application. How would you implement both?
+ 
+ 	 	 	npm install -S react-in-angular react react-dom
+25. 
+Angular uses zone.js to monkey patch each asynchronous event, so whenever any event occurs Angular runs change detection over its component tree, which leads to low performance. How can you fix this?
+ 
+ 	 	 	Use the OnPush change detection strategy, which disables change detection from running on a component and its children.
+26. 
+How can you simulate a server and return mock data with the HTTP requests in Angular?
+ 
+ 	 	 	By using json Server
+27. 
+What is the difference between the canLoad and canActivate methods in Angular?
+ 
+ 	 	 	canLoad prevents the app from loading the entire module lazily if the user is unauthorized.
+canActivate prevents unauthorized users from accessing certain routes.
+28. 
+An application experiences vulnerabilities and slows down if it has to display a large file. How can you fix this?
+ 
+ 	 	 	Using Component Development Kit (CDK) virtual scrolling
+29. 
+Which set of component lifecycle hooks are valid and listed in the same sequence they fire?
+ 
+ 	 	 	ngOnChanges, ngOnInit, ngAfterContentInit, ngAfterViewInit, ngOnDestroy
+30. 
+How could you set an element's background color based on a property color of the component class?
+ 
+ 	 	 	[style.background-color]="color"
+
+
+Set6
+
+

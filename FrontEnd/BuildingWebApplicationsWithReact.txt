@@ -1,0 +1,1918 @@
+BuildingWebApplicationsWithReact
+
+set1
+
+1. 
+Consider the following higher-order component function:
+
+const M = (C) => {
+  return () => <C answer={42} />;
+};
+
+Which snippet of code creates a new component that wraps component A as well as makes it receive the answer prop?
+ 
+ 	 	 	M(A);
+2. 
+What does React.useState return?
+ 
+ 	 	 	An array with exactly two items
+3. 
+What change must you make to optimize the performance of the following component which must run whenever prop changes?
+
+function MyComponent({ prop }) {
+  function Foo() {
+    console.log(prop);
+  }
+
+  useEffect(() => {
+    Foo();
+  }); 
+}
+ 
+ 	 	 	Add a second argument [prop] in the useEffect hook.
+4. 
+You have two classes in a Cascading Style Sheets (CSS) file: image, and image:hover. You must call these classes on a div tag. Which code is valid based on this information?
+ 
+ 	 	 	className="image"
+5. 
+The following App component is supposed to increment the button counter label on each click of that button in perpetuity, but it's not working. What is the bug?
+
+const App = () => {
+  let [count, setCount] = React.useState(0);
+ 
+  const handleClick = React.useCallback(
+    () => setCount(count + 1),
+    []
+  );
+ 
+  return (
+    <button onClick={handleClick}>{count}</button>
+  );
+};
+
+ReactDOM.render(<App />, mountNode);
+ 
+ 	 	 	The empty array [] (second argument of useCallback) should be [count].
+6. 
+Which function can initialize a state variable in a React function component?
+ 
+ 	 	 	React.useState
+7. 
+Which snippet of code is a valid React application that will render a div element in the browser?
+ 
+ 	 	 	ReactDOM.render(React.createElement("div", null, "Hello React"));
+8. 
+How would you render the following container in React 18 without any warning?
+
+const cont = document.getElementById('app');
+ 
+ 	 	 	const root = createRoot(cont);
+root.render(<App />);
+9. 
+How do you generate a correct production build for React?
+ 
+ 	 	 	Make sure NODE_ENV is seen as "production" while building.
+10. 
+You create a script that displays the name, unit, and age of two employees. You ensure that if any of these three props are missing, the script will use a certain default value as follows:
+
+function App(props) {
+  return (
+    <div >
+      <Employee name="Name1" unit="testing" age="25"></Employee>
+      <Employee unit="systems" ></Employee>
+    </div>
+  );
+}
+ 
+function Employee(props) {
+  return (
+    <div>
+      <p> Name: { "Name0" } </p>
+      <p> Unit: {props.unit}</p>
+      <p> Age : {props.age} </p>
+      <hr></hr>
+    </div>
+  )
+}
+ 
+Employee.defaultProps = {
+  name: "Name5",
+  unit: "development",
+  age: "32"
+}
+
+In both cases, you receive names as Name0 instead of Name1 and Name5. How can you fix this?
+ 
+ 	 	 	Use { props.name } instead of { "Name0" }.
+11. 
+You have an array of objects (arr). For each of the objects in the array you'd like your UI to show a div element. Which snippet of code can do this?
+ 
+ 	 	 	{arr.map(() => <div />)}
+12. 
+What is the resulting HTML for this component?
+
+const App = () => (
+  <div>{4 + 2}</div>
+);
+ 
+ 	 	 	<div>6</div>
+13. 
+You have the following snippet of code in a test file for a React component:
+
+import App from './app.js'; // The component being tested
+
+
+it('renders correctly', () => {
+
+  const tree = renderer.create(<App />).toJSON();
+
+  expect(tree).toMatchSnapshot();
+
+});
+
+What does this test validate?
+ 
+ 	 	 	That if a snapshot already exists, and matches with the one from the tree, the test passes
+14. 
+Which use case is best suited for React?
+ 
+ 	 	 	An application with many user interactions and UI changes
+15. 
+Which line mounts a React application in a browser?
+ 
+ 	 	 	ReactDOM.render()
+16. 
+Which syntax lets you create a React context object?
+ 
+ 	 	 	const Obj = React.createContext();
+17. 
+Which special React "prop" allows you to perform many of the CSS-in-JavaScript ideas?
+ 
+ 	 	 	style
+18. 
+How many clicks are required to change the initial background color of the following component?
+
+const App = () => {
+ const [dynamic, setDynamically] = useState("customRed"); // changes to red
+ 
+  const changeDynamically = () => {  
+    setDynamically("customGreen"); // changes to green
+  };
+  return (
+    <>      
+      <div className={dynamic}>
+        <button onClick={changeDynamically}>
+          Press me!
+        </button>
+      </div>
+    </>
+  );
+};
+ 
+ 	 	 	1
+19. 
+Which function can get the value of a React context object?
+ 
+ 	 	 	useContext()
+20. 
+Consider the following script:
+
+Foo.defaultProps = {
+	ids: ["OSF2", "FKSI3", "SFDW4"]
+}
+
+function App() {
+ return (
+   <div>
+     <Foo />
+   </div>
+ )
+}
+
+How would you write the function Foo to display each ID separated by a space?
+ 
+ 	 	 	function Foo(props) {
+ return <>{props.ids.map((e) => e + " ")}</>;
+}
+
+
+
+set2
+
+1. 
+Your component returns the following JSX:
+
+<div>
+  <div>hello</div>
+</div>
+
+The underlying state gets updated and your component returns the following JSX:
+
+<span>
+  <div>hello</div>
+</span>
+
+How did React handle the transition from the first example to the second?
+ 
+ 	 	 	React replaced the DOM for the whole component, because the root element is of a different type.
+2. 
+How can you identify if a function component Foo uses multiple props?
+ 
+ 	 	 	The function definition will start with Foo(props).
+3. 
+What will the console.log line in this code print?
+
+const App = () => {};
+
+const props = { v: 100 };
+const component1 = <App {...props} v={200} />;
+const component2 = <App v={300} {...props} />;
+
+console.log(component1.props.v, component2.props.v);
+ 
+ 	 	 	200 100
+4. 
+What can you infer about the result of the following script?
+
+import React, {useState} from 'react';
+
+function Foo()
+{
+  const [count,setCount]=useState(0)
+  return<div>    
+    <button onClick={()=>setCount(count+1)}> Increment the counter 
+ </button>
+  </div>
+}
+
+function MyComp(props)
+{
+  return <h2 style={
+   {backgroundColor: props.id === 2 ? 'green' : 'red', width:500}}> 
+     <props.id /> 
+   </h2>
+}
+
+function App() {
+  return (
+    <div className="App">
+      <MyComp id={Foo} />
+
+    </div>
+  );
+}
+
+export default App;
+ 
+ 	 	 	The background color remains red after clicking the button twice.
+5. 
+Making a React class component extend React.PureComponent would likely improve the performance of a component that has expensive operations in which lifecycle method?
+ 
+ 	 	 	render
+6. 
+A function component manages a state variable. Each time that state variable changes, you must make a synchronous change to the Document Object Model (DOM) (not using React but rather using the DOM API directly). Which hook function do you need?
+ 
+ 	 	 	useLayoutEffect
+7. 
+You have the following React component in a Counter.js file:
+
+import React, { useState } from 'react';
+
+export default function Counter() {
+  const [count, setCount] = useState(0);
+  return (
+    <button onClick={() => setCount(count + 1)}>
+      {count}
+    </button>
+  );
+}
+
+This is the passing test that you have so far in Counter.test.js (which is next to Counter.js):
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { act } from 'react-dom/test-utils';
+import Counter from './Counter';
+
+let container;
+
+beforeEach(() => {
+  container = document.createElement('div');
+  document.body.appendChild(container);
+});
+
+afterEach(() => {
+  document.body.removeChild(container);
+  container = null;
+});
+
+it('renders and update a counter', () => {
+  act(() => {
+    ReactDOM.render(<Counter />, container);
+  });
+
+  const button = container.querySelector('button');
+  expect(button.textContent).toBe('0');
+
+
+  // TODO: test the click action
+});
+
+Which snippet of code should you use to correctly test that the button's label value is incremented when the button is clicked?
+ 
+ 	 	 	act(() => {
+    button.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+  });
+
+  expect(button.textContent).toBe('1');
+8. 
+Consider the following starter code:
+
+const Button = (props) => {
+ return (
+   <label>
+     <input type="radio" value={props.item} name={props.name} />
+    {props.children}
+   </label>
+)
+}
+
+function App() {
+ return (
+ <Group name="duplicate">
+   <Button item="p1"> Primary </Button>
+   <Button item="p2"> Secondary </Button>
+ </Group>
+ )
+}
+
+How would you create a component Group so that it adds the name duplicate to both the child components at once?
+ 
+ 	 	 	const Group = (props) => {
+ const SubComponent = () => (
+   React.Children.map(props.children, ele => {
+     return React.cloneElement(ele, {
+       name: props.name
+    })
+  })
+ )
+
+ return ( <> {<SubComponent />} </> )
+}
+9. 
+You upgrade your React version to 18. You push the npm start command in the terminal. The command starts your web browser and displays the demo content that React provides. You see a warning stating "ReactDOM.render is no longer supported in React 18". Here's the default code from the index.js file:
+
+import React from 'react';
+import './index.css';
+import App from './App';
+import ReactDOM from 'react-dom';
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+What fixes would you make to the index.js file to remove the warning?
+ 
+ 	 	 	// Keep the first three imports intact
+import { createRoot } from 'react-dom/client';
+
+const box = document.getElementById('root');
+const base = createRoot(box);
+base.render( ... );
+10. 
+What validation does snapshot testing provide?
+ 
+ 	 	 	Validation that the component's expected rendered HTML output did not change
+11. 
+You need React to execute some JavaScript code each time a button is clicked. What do you do?
+ 
+ 	 	 	Define an onClick attribute on that button.
+12. 
+If component C defined a context object and used its "Provider". What components can access the value of that context object?
+ 
+ 	 	 	All children and grand children components of C
+13. 
+You place subscriptions and timers inside a function component's main body, which introduces inconsistencies in your project. Which hook can remove the inconsistencies and make the code imperative?
+ 
+ 	 	 	useEffect
+14. 
+In which call would you pass the rendering code to perform assertions on a component?
+ 
+ 	 	 	act()
+15. 
+Which higher order component boosts the performance of a script by reusing the last rendered result of a component?
+ 
+ 	 	 	React.memo()
+16. 
+You want to combine the functionality of componentDidMount, componentDidUpdate, and componentWillUnmount. Which React hook would you use?
+ 
+ 	 	 	useEffect
+17. 
+In the react-testing-library, which Promise can keep calling a function until it times out?
+ 
+ 	 	 	waitFor
+18. 
+Given the following function component:
+
+function Incr () {
+  const [currentValue, setCurrentValue] = React.useState(10);
+}
+
+Which snippet of code must you add inside the Incr function to update the title of the webpage based on the number of clicks?
+ 
+ 	 	 	useEffect(() => {
+  document.title = `${currentValue}`;
+});
+19. 
+The following code is missing the definition of textInput:
+
+function MyComponent() {
+    ________________
+    useEffect(() => {
+    	textInput.current.focus();
+    }, []);
+
+    return (
+      <div>
+          <input type="text" ref={textInput} />
+      </div>	
+    );
+}
+
+Which definition for textInput correctly makes the text input element in this component auto-focused when the component mounts?
+ 
+ 	 	 	const textInput = useRef(null);
+20. 
+You have three components: A, B, and C. The definition of component C is:
+
+const C = ({ one, two }) => <>
+  <div id="one">{one}</div>
+  <div id="two">{two}</div>
+</>;
+
+Which code snippet will correctly make C render component A in div#one and component B in div#two?
+ 
+ 	 	 	<C one={<A />} two={<B />} />
+
+
+set3
+
+1. 
+Which snippet of code will copy the value of an initialLabel prop into the label state element?
+ 
+ 	 	 	const [label, setLabel] = React.useState(
+  () => initialLabel
+);
+2. 
+You have a React function component that fetches data in a useEffect hook function. You must server-render this component. What do you do about the data fetching?
+ 
+ 	 	 	Move it outside of the component and have the component receive the data as a prop.
+3. 
+What is a valid relation between a React component's state and the initial data that server-side markup provides to React after rendering the HTML markup?
+ 
+ 	 	 	The state can be initialized from the initial data.
+4. 
+You have the following object defined in your Button component file:
+
+const withBorder = {
+  border: "thin solid #888",
+  borderRadius: "2rem"
+};
+
+How do you use it in Button's JavaScript XML (JSX)?
+ 
+ 	 	 	const Button = () => (
+  <button style={withBorder}>
+    Submit
+  </button>
+);
+5. 
+You have a function to handle change events:
+
+const changeHandler = (e) => { ... };
+
+
+This function is used for many input elements such as this:
+
+<input value={...} onChange={changeHandler} />
+
+<input value={...} onChange={changeHandler} />
+
+<input value={...} onChange={changeHandler} />
+
+
+What attribute must you add for each input element so that you can identify which element the changeHandler function is being called for?
+ 
+ 	 	 	An attribute such as name or id
+6. 
+Which React property specifies default values for a functional component's props argument?
+ 
+ 	 	 	defaultProps
+7. 
+You have this style.css file:
+
+.red {
+  background-color: red;
+}
+
+Your React stack is configured to use CSS modules. Assuming that the style.css file has been imported into a React component as a module like this:
+
+import styles from 'styles.css';
+
+Which snippet of code is the likely way to use the .red style in JSX?
+ 
+ 	 	 	<div className={styles.red}>...</div>;
+8. 
+Lifting the state up to a parent component is inefficient for multiple components to share a common state. What external solution should you use?
+ 
+ 	 	 	Redux
+9. 
+Given this React component:
+
+const C = (props) => <div>{props.children}</div>;
+
+How do you use component C to render a button in a div?
+ 
+ 	 	 	<C><button /></C>
+10. 
+You have a component with two props, fruit and vegetable. How would you assign default values to these two props?
+ 
+ 	 	 	MyComponent.defaultProps = {
+  fruit: "Mango",
+  vegetable: "Broccoli"
+}
+11. 
+You have a function named capture. How do you make that function the change event handler of an input element?
+ 
+ 	 	 	<input onChange={capture} />
+12. 
+What is wrong with the following code?
+
+function App() {
+  const items = [false, true, undefined, -1, 0];
+
+  const listItems = items.map((ele) =>
+    <li key={ ele.toString() }>
+      { ele }
+    </li>
+  );
+  return (
+    <ul>{listItems}</ul>
+  );
+}
+ 
+ 	 	 	It will throw a TypeError because of the operation undefined.toString().
+13. 
+How many clicks are required to change the initial background color of the following component?
+
+const App = () => {
+ const [dynamic, setDynamically] = useState("customRed"); // changes to red
+ 
+  const changeDynamically = () => {  
+    setDynamically("customGreen"); // changes to green
+  };
+  return (
+    <>      
+      <div className={dynamic}>
+        <button onClick={changeDynamically}>
+          Press me!
+        </button>
+      </div>
+    </>
+  );
+};
+ 
+ 	 	 	1
+14. 
+You wrote a component Comp to create two checkboxes using the latest hook that React 18 provides. What is wrong with these checkboxes?
+
+function Checkboxes() {
+  const id = useId();
+  return (
+    <>
+      <label htmlFor={id+"household"}>I am a developer.</label>
+      <input id={id+"household"} type="checkbox" name="dev"/>
+      <br />
+      <label htmlFor={id+"house"+"hold"}>Programming is fun!</label>
+      <input id={id+"house"+"hold"} type="checkbox" name="code"/>
+    </>
+  );
+};
+ 
+ 	 	 	Both checkboxes have the same ID, which is :r1:household.
+15. 
+The following React component uses Cascading Style Sheets (CSS) modules:
+
+import styles from './button.module.css';
+
+function Button(){
+    return <button className={styles.btn}>Error Button</button>;
+}
+
+And the ./button.module.css has the following content:
+
+.btn {
+  background-color: red;
+}
+
+What output is rendered?
+ 
+ 	 	 	A red button with the text "Error Button".
+16. 
+What is the resulting HTML for this component?
+
+const App = () => (
+  <div>{4 + 2}</div>
+);
+ 
+ 	 	 	<div>6</div>
+17. 
+Which function would you use to apply an operation to each element of an array?
+ 
+ 	 	 	map()
+18. 
+You create a script that displays the name, unit, and age of two employees. You ensure that if any of these three props are missing, the script will use a certain default value as follows:
+
+function App(props) {
+  return (
+    <div >
+      <Employee name="Name1" unit="testing" age="25"></Employee>
+      <Employee unit="systems" ></Employee>
+    </div>
+  );
+}
+ 
+function Employee(props) {
+  return (
+    <div>
+      <p> Name: { "Name0" } </p>
+      <p> Unit: {props.unit}</p>
+      <p> Age : {props.age} </p>
+      <hr></hr>
+    </div>
+  )
+}
+ 
+Employee.defaultProps = {
+  name: "Name5",
+  unit: "development",
+  age: "32"
+}
+
+In both cases, you receive names as Name0 instead of Name1 and Name5. How can you fix this?
+ 
+ 	 	 	Use { props.name } instead of { "Name0" }.
+19. 
+You have the following snippet of code in a test file for a React component:
+
+import App from './app.js'; // The component being tested
+
+
+it('renders correctly', () => {
+
+  const tree = renderer.create(<App />).toJSON();
+
+  expect(tree).toMatchSnapshot();
+
+});
+
+What does this test validate?
+ 
+ 	 	 	That if a snapshot already exists, and matches with the one from the tree, the test passes
+20. 
+React is often labeled as "declarative". Which statement represents that?
+ 
+ 	 	 	In React, developers describe their user interfaces (UIs) as functions of data/state.
+
+
+set4
+
+1. 
+In React 18, you are using the renderToNodeStream API for node streaming. Which statement is true based on this information?
+ 
+ 	 	 	React will notify you to use the renderToPipeableStream API.
+2. 
+You have the following tests for a Display component:
+
+it('renders a text', () => {
+  act(() => {
+    ReactDOM.render(
+      <Display content="test1" />, 
+      container
+    );
+  });
+
+  expect(
+    container.querySelector('div').textContent
+  ).toBe('test1');
+});
+
+it('renders an array of texts', () => {
+  act(() => {
+    ReactDOM.render(
+      <Display content={['test3', 'test4']} />, 
+      container
+    );
+  });
+
+  const output = container.querySelectorAll('div');
+  expect(output[0].textContent).toBe('test3');
+  expect(output[1].textContent).toBe('test4');
+});
+
+Which implementation will make both of these tests pass?
+ 
+ 	 	 	const Display = ({ content }) =>
+  [content].flat().map(message => <div>{message}</div>);
+3. 
+You have the following CSS defined in a stylesheet file style.css:
+
+.withBorder {
+  border-style: solid;
+  border-radius: 2rem;
+}
+
+Given that this style.css file is globally included in your React app, how do you make a button element in a React component use this style?
+ 
+ 	 	 	const Button = () => (
+  <button className="withBorder">
+    Submit
+  </button>
+);
+4. 
+Which line mounts a React application in a browser?
+ 
+ 	 	 	ReactDOM.render()
+5. 
+You create a script that displays the name, unit, and age of two employees. You ensure that if any of these three props are missing, the script will use a certain default value as follows:
+
+function App(props) {
+  return (
+    <div >
+      <Employee name="Name1" unit="testing" age="25"></Employee>
+      <Employee unit="systems" ></Employee>
+    </div>
+  );
+}
+ 
+function Employee(props) {
+  return (
+    <div>
+      <p> Name: { "Name0" } </p>
+      <p> Unit: {props.unit}</p>
+      <p> Age : {props.age} </p>
+      <hr></hr>
+    </div>
+  )
+}
+ 
+Employee.defaultProps = {
+  name: "Name5",
+  unit: "development",
+  age: "32"
+}
+
+In both cases, you receive names as Name0 instead of Name1 and Name5. How can you fix this?
+ 
+ 	 	 	Use { props.name } instead of { "Name0" }.
+6. 
+The following React component uses Cascading Style Sheets (CSS) modules:
+
+import styles from './button.module.css';
+
+function Button(){
+    return <button className={styles.btn}>Error Button</button>;
+}
+
+And the ./button.module.css has the following content:
+
+.btn {
+  background-color: red;
+}
+
+What output is rendered?
+ 
+ 	 	 	A red button with the text "Error Button".
+7. 
+Which function would you use to apply an operation to each element of an array?
+ 
+ 	 	 	map()
+8. 
+You have the following snippet of code in a test file for a React component:
+
+import App from './app.js'; // The component being tested
+
+
+it('renders correctly', () => {
+
+  const tree = renderer.create(<App />).toJSON();
+
+  expect(tree).toMatchSnapshot();
+
+});
+
+What does this test validate?
+ 
+ 	 	 	That if a snapshot already exists, and matches with the one from the tree, the test passes
+9. 
+You have this style.css file:
+
+.red {
+  background-color: red;
+}
+
+Your React stack is configured to use CSS modules. Assuming that the style.css file has been imported into a React component as a module like this:
+
+import styles from 'styles.css';
+
+Which snippet of code is the likely way to use the .red style in JSX?
+ 
+ 	 	 	<div className={styles.red}>...</div>;
+10. 
+Which function can get the value of a React context object?
+ 
+ 	 	 	useContext()
+11. 
+You wrote a component Comp to create two checkboxes using the latest hook that React 18 provides. What is wrong with these checkboxes?
+
+function Checkboxes() {
+  const id = useId();
+  return (
+    <>
+      <label htmlFor={id+"household"}>I am a developer.</label>
+      <input id={id+"household"} type="checkbox" name="dev"/>
+      <br />
+      <label htmlFor={id+"house"+"hold"}>Programming is fun!</label>
+      <input id={id+"house"+"hold"} type="checkbox" name="code"/>
+    </>
+  );
+};
+ 
+ 	 	 	Both checkboxes have the same ID, which is :r1:household.
+12. 
+Which syntax lets you create a React context object?
+ 
+ 	 	 	const Obj = React.createContext();
+13. 
+What is the resulting HTML for this component?
+
+const App = () => (
+  <div>{4 + 2}</div>
+);
+ 
+ 	 	 	<div>6</div>
+14. 
+React is often labeled as "declarative". Which statement represents that?
+ 
+ 	 	 	In React, developers describe their user interfaces (UIs) as functions of data/state.
+15. 
+What is a disadvantage to using a state-management solution such as Redux rather than built-in state management in React?
+ 
+ 	 	 	Redux introduces extra verbosity and code complexity.
+16. 
+Which keyword is a valid built-in event in React?
+ 
+ 	 	 	onSubmit
+17. 
+What is wrong with the following code?
+
+function App() {
+  const items = [false, true, undefined, -1, 0];
+
+  const listItems = items.map((ele) =>
+    <li key={ ele.toString() }>
+      { ele }
+    </li>
+  );
+  return (
+    <ul>{listItems}</ul>
+  );
+}
+ 
+ 	 	 	It will throw a TypeError because of the operation undefined.toString().
+18. 
+Which return statement should a component use so it renders nothing?
+ 
+ 	 	 	return null;
+19. 
+Which special React "prop" allows you to perform many of the CSS-in-JavaScript ideas?
+ 
+ 	 	 	style
+20. 
+Which use case is best suited for React?
+ 
+ 	 	 	An application with many user interactions and UI changes
+21. 
+Which hook replaces the need for componentDidMount, componentDidUpdate, and componentWillUnmount?
+ 
+ 	 	 	useEffect
+22. 
+Consider the following script:
+
+Foo.defaultProps = {
+	ids: ["OSF2", "FKSI3", "SFDW4"]
+}
+
+function App() {
+ return (
+   <div>
+     <Foo />
+   </div>
+ )
+}
+
+How would you write the function Foo to display each ID separated by a space?
+ 
+ 	 	 	function Foo(props) {
+ return <>{props.ids.map((e) => e + " ")}</>;
+}
+23. 
+Lifting the state up to a parent component is inefficient for multiple components to share a common state. What external solution should you use?
+ 
+ 	 	 	Redux
+
+set5
+
+1. 
+Why can't you use React hooks within loops and conditions?
+ 
+ 	 	 	Because React uses the order of defined hooks to preserve their state
+2. 
+What validation does snapshot testing provide?
+ 
+ 	 	 	Validation that the component's expected rendered HTML output did not change
+3. 
+Which statement is correct about higher-order components (HOCs)?
+ 
+ 	 	 	HOCs do not alter the input component.
+4. 
+A subscribe function returns an unsubscribe function. Calling the subscribe function establishes a listener X and calling the unsubscribe function cancels X. What code must you add within the body of a React function component to make it establish the X listener during its lifetime?
+ 
+ 	 	 	React.useEffect(() => {
+    const unsubscribe = subscribe()
+    return () => unsubscribe();
+  }, []);
+5. 
+Given the following render component:
+
+const App = () => {
+  const [count, setCount] = React.useState(0);
+ 
+  const handleClick = () => {
+    if (count % 2 === 0) {
+      setCount(count + 1);
+    }
+  }
+ 
+  return (
+    <button onClick={handleClick}>{count}</button>
+  );
+};
+
+What is the value of count after the user clicks the button three times?
+ 
+ 	 	 	1
+6. 
+How would you render the following container in React 18 without any warning?
+
+const cont = document.getElementById('app');
+ 
+ 	 	 	const root = createRoot(cont);
+root.render(<App />);
+7. 
+You have a function to handle change events:
+
+const changeHandler = (e) => { ... };
+
+
+This function is used for many input elements such as this:
+
+<input value={...} onChange={changeHandler} />
+
+<input value={...} onChange={changeHandler} />
+
+<input value={...} onChange={changeHandler} />
+
+
+What attribute must you add for each input element so that you can identify which element the changeHandler function is being called for?
+ 
+ 	 	 	An attribute such as name or id
+8. 
+You have three components: A, B, and C. The definition of component C is:
+
+const C = ({ one, two }) => <>
+  <div id="one">{one}</div>
+  <div id="two">{two}</div>
+</>;
+
+Which code snippet will correctly make C render component A in div#one and component B in div#two?
+ 
+ 	 	 	<C one={<A />} two={<B />} />
+9. 
+In a class component, you initialize and update the states with the following two lines:
+
+state = { count: 0, tries: 0};
+this.setState( (state) => ({ count: state.count + 1}) );
+
+To port this over to a function component, you first initialize the state with:
+
+const [state, setState] = React.useState({ count: 0, tries: 0});
+
+What is the equivalent hook updater call to the this.setState call above?
+ 
+ 	 	 	setState( (state) => ({ ...state, count: state.count + 1}) );
+10. 
+In React.cloneElement() API, which props remain untouched if no new props are available in config?
+ 
+ 	 	 	key and ref
+11. 
+Which snippet of code is a valid React application that will render a div element in the browser?
+ 
+ 	 	 	ReactDOM.render(React.createElement("div", null, "Hello React"));
+12. 
+A React component can be a simple function with an input that is a set of props. What is its output?
+ 
+ 	 	 	An HTML layout of a user interface (UI)
+13. 
+Consider the following component buttonCounter() along with its two higher-order components:
+
+function App() {
+  return (
+    <div className="App">      
+       < { HOCprimary } { HOCsecondary } />
+    </div>
+  );
+}
+
+function HOCprimary(props)
+{
+  return <h2 style={{backgroundColor:'green', width:1000}}> <props.sol /> </h2>
+}
+
+function HOCsecondary(props)
+{
+  return <h2 style={{backgroundColor:'yellow', height:200}}> <props.sol /> </h2>
+}
+
+function buttonCounter()
+{
+  const [count,setCount]=useState(0)
+  return<div>
+    <h3>{count}</h3>
+    <button onClick={()=>setCount(count+5)}>Press me!</button>
+  </div>
+}
+
+You run the above script with all the required imports, but you get a blank webpage instead of two buttons with customized styles. On review, you narrow down the problem to the code within the App's div tag. What is the correct code?
+ 
+ 	 	 	<HOCprimary sol={buttonCounter} />
+<HOCsecondary sol={buttonCounter} />
+14. 
+If component C defined a context object and used its "Provider". What components can access the value of that context object?
+ 
+ 	 	 	All children and grand children components of C
+15. 
+You need React to execute some JavaScript code each time a button is clicked. What do you do?
+ 
+ 	 	 	Define an onClick attribute on that button.
+16. 
+You place subscriptions and timers inside a function component's main body, which introduces inconsistencies in your project. Which hook can remove the inconsistencies and make the code imperative?
+ 
+ 	 	 	useEffect
+17. 
+Your team convention is to export all components using named exports. Which line of code must you use to define your component?
+ 
+ 	 	 	export const MyComponent = ...
+18. 
+You must create a new single-page React project with the latest available stable release. How will you do so using the node.js command?
+ 
+ 	 	 	npx create-react-app ps
+19. 
+What React attribute allows you to specify which form element a label is bound to?
+ 
+ 	 	 	htmlFor
+20. 
+The following App component is supposed to increment the button counter label on each click of that button in perpetuity, but it's not working. What is the bug?
+
+const App = () => {
+  let [count, setCount] = React.useState(0);
+ 
+  const handleClick = React.useCallback(
+    () => setCount(count + 1),
+    []
+  );
+ 
+  return (
+    <button onClick={handleClick}>{count}</button>
+  );
+};
+
+ReactDOM.render(<App />, mountNode);
+ 
+ 	 	 	The empty array [] (second argument of useCallback) should be [count].
+
+
+set6
+
+1. 
+In React 18, you are using the renderToNodeStream API for node streaming. Which statement is true based on this information?
+ 
+ 	 	 	React will notify you to use the renderToPipeableStream API.
+2. 
+Given the following component:
+
+const App = () => {
+  const [{a, b, c}, setState] = React.useState({ a: 1, b: 2, c: 3 });
+ 
+  return (
+    <div onClick={() => setState({ b: b + 10, c: a })}>...</div>
+  );
+};
+
+What are the values of a, b, and c after the user clicks on the div twice?
+ 
+ 	 	 	{ a: undefined, b: 22, c: undefined }
+3. 
+Consider the following function:
+
+function MyComponent() {
+  const [cnt, setCount] = useState(0);
+
+  function Foo() {
+    setCount(cnt + 1);
+    setCount(cnt - 1);
+  }
+
+  function Bar() {
+    setCount(cnt => cnt + 1);
+    setCount(cnt => cnt + 2);
+  }
+
+  return (
+    <div>
+      <div>{cnt}</div>
+      <button onClick={Foo}>F1</button>
+      <button onClick={Bar}>F2</button>
+    </div>
+  );
+}
+
+You click twice on F2 and then once on F1. What is the final output?
+ 
+ 	 	 	5
+4. 
+In the following code, React renders twice on each state update:
+
+setTimeout(() => {
+  setCount(cnt => cnt + 1);
+  setFlag(flag => !flag);
+}, 1000);
+
+What changes would you make in your project so React renders only once?
+ 
+ 	 	 	Upgrade to React 18.0.0.
+5. 
+How can you identify if a function component Foo uses multiple props?
+ 
+ 	 	 	The function definition will start with Foo(props).
+6. 
+You execute the following code in a browser's console:
+
+ReactDOM.render(
+  <xyz>Hello</xyz>, 
+  document.getElementById('mountNode')
+);
+
+You get this error:
+
+Uncaught SyntaxError: Unexpected token '<'
+
+
+What is the problem?
+ 
+ 	 	 	<xyz> is not valid JavaScript code
+7. 
+You have the following React component:
+
+const SaveButton = () => (
+  <button>Save</button>
+);
+
+In its file, you have the following declarations:
+
+import TestRenderer from 'react-test-renderer';
+
+const TestErrorButton = TestRenderer.create(
+ <SaveButton />
+);
+
+Your test framework provides an expect function that returns an assertion object with a toBe method to assert the value of what you pass to expect. Which line is a right way to assert that SaveButton renders a button element?
+ 
+ 	 	 	expect(TestErrorButton.children[0].type).toBe("button")
+8. 
+In React 18, which is a context API?
+ 
+ 	 	 	Context.Provider
+9. 
+Consider the following higher-order component function:
+
+const M = (C) => {
+  return () => <C answer={42} />;
+};
+
+Which snippet of code creates a new component that wraps component A as well as makes it receive the answer prop?
+ 
+ 	 	 	M(A);
+10. 
+What does the following code display on a webpage?
+
+const App = () => <div>{'42 &gt; 41'}</div>;
+
+ReactDOM.render(<App />, document.getElementById('root'));
+ 
+ 	 	 	42 &gt; 41
+11. 
+Your application uses server-side rendering with hydration. You are upgrading your React version to 18. Which upgraded component should you use?
+ 
+ 	 	 	hydrateRoot
+12. 
+Using React 18 and CSS-in-JS libraries, which hook injects styles into Document Object Model (DOM) before another hook reads a new layout?
+ 
+ 	 	 	useInsertionEffect
+13. 
+What will the following code do?
+
+const App = ({ v }) => {
+  v = 42;
+  return <div>{v}</div>
+};
+ReactDOM.render(<App v={37} />, mountNode);
+ 
+ 	 	 	Render: <div>42</div>
+14. 
+In the following script, you try to display the text Hi, there! on the webpage but it results in a TypeError. Why?
+
+import React from 'react';
+
+function Foo(props) {
+  return <>{props.p1 += "there!" }</>;
+}
+
+function App() {
+ return (
+   <div>
+	<Foo p1="Hi, " />
+   </div>
+ )
+}
+
+export default App;
+ 
+ 	 	 	Because you can only read props but cannot modify them
+15. 
+A function component manages a state variable. Each time that state variable changes, you must make a synchronous change to the Document Object Model (DOM) (not using React but rather using the DOM API directly). Which hook function do you need?
+ 
+ 	 	 	useLayoutEffect
+16. 
+Which function in the "react-dom/test-utils" API is useful when you want to write a black-box test for a component?
+ 
+ 	 	 	Simulate
+17. 
+In a controlled component, what value is assigned to the value attribute to keep a form editable?
+ 
+ 	 	 	undefined
+18. 
+You render the following React application:
+
+const App = () => {
+  const [state, setState] = useState(2);
+  setTimeout(() => setState(3), 5000);
+  return <input defaultValue="0"/>
+};
+
+ReactDOM.render(<App />, mountNode);
+
+You then type the number 1 in the input box (within the first five seconds). What is the value of the input box after five seconds?
+ 
+ 	 	 	1
+19. 
+You are given the function doSomething. How do you execute the code in that function after the ReactDOM.render method is done rendering a React element into the Document Object Model (DOM)?
+ 
+ 	 	 	ReactDOM.render(element, container, doSomething)
+20. 
+What will the console.log line in this code print?
+
+const App = () => {};
+
+const props = { v: 100 };
+const component1 = <App {...props} v={200} />;
+const component2 = <App v={300} {...props} />;
+
+console.log(component1.props.v, component2.props.v);
+ 
+ 	 	 	200 100
+
+
+
+set7
+
+
+1. 
+Why can't you use React hooks within loops and conditions?
+ 
+ 	 	 	Because React uses the order of defined hooks to preserve their state
+2. 
+You execute the following code in a browser's console:
+
+ReactDOM.render(
+  <xyz>Hello</xyz>, 
+  document.getElementById('mountNode')
+);
+
+You get this error:
+
+Uncaught SyntaxError: Unexpected token '<'
+
+
+What is the problem?
+ 
+ 	 	 	<xyz> is not valid JavaScript code
+3. 
+Given the following component:
+
+const App = () => {
+  const [{a, b, c}, setState] = React.useState({ a: 1, b: 2, c: 3 });
+ 
+  return (
+    <div onClick={() => setState({ b: b + 10, c: a })}>...</div>
+  );
+};
+
+What are the values of a, b, and c after the user clicks on the div twice?
+ 
+ 	 	 	{ a: undefined, b: 22, c: undefined }
+4. 
+You have the following React component:
+
+const SaveButton = () => (
+  <button>Save</button>
+);
+
+In its file, you have the following declarations:
+
+import TestRenderer from 'react-test-renderer';
+
+const TestErrorButton = TestRenderer.create(
+ <SaveButton />
+);
+
+Your test framework provides an expect function that returns an assertion object with a toBe method to assert the value of what you pass to expect. Which line is a right way to assert that SaveButton renders a button element?
+ 
+ 	 	 	expect(TestErrorButton.children[0].type).toBe("button")
+5. 
+Consider the following function:
+
+function MyComponent() {
+  const [cnt, setCount] = useState(0);
+
+  function Foo() {
+    setCount(cnt + 1);
+    setCount(cnt - 1);
+  }
+
+  function Bar() {
+    setCount(cnt => cnt + 1);
+    setCount(cnt => cnt + 2);
+  }
+
+  return (
+    <div>
+      <div>{cnt}</div>
+      <button onClick={Foo}>F1</button>
+      <button onClick={Bar}>F2</button>
+    </div>
+  );
+}
+
+You click twice on F2 and then once on F1. What is the final output?
+ 
+ 	 	 	5
+6. 
+In the following code, React renders twice on each state update:
+
+setTimeout(() => {
+  setCount(cnt => cnt + 1);
+  setFlag(flag => !flag);
+}, 1000);
+
+What changes would you make in your project so React renders only once?
+ 
+ 	 	 	Upgrade to React 18.0.0.
+7. 
+What does the following code display on a webpage?
+
+const App = () => <div>{'42 &gt; 41'}</div>;
+
+ReactDOM.render(<App />, document.getElementById('root'));
+ 
+ 	 	 	42 &gt; 41
+8. 
+What is the resulting HTML for this component?
+
+const App = () => (
+  <div>{'ABC' && true}</div>
+);
+ 
+ 	 	 	<div></div>
+9. 
+You have the following two mount nodes in the Document Object Model (DOM) (in this order):
+
+<div id="mountNode1"></div>
+<div id="mountNode2"></div>
+
+What is the output of the following React application?
+
+const R = () => 
+  <>
+    Red 
+    <G />
+  </>;
+
+const G = () =>
+  ReactDOM.createPortal(
+    'Green', 
+    document.getElementById('mountNode1')
+  );
+
+ReactDOM.render(<R />, document.getElementById('mountNode2'));
+ 
+ 	 	 	Green
+Red
+10. 
+The following code creates a button with a number on it. What is the new number on the button if you update count === 1 to count < 1?
+
+const App = () => {
+  const [count, setCount] = React.useState(0);
+ 
+  React.useEffect(
+    () => setCount(count + 1), 
+    [count === 1]
+  );
+ 
+  return (
+    <button>{count}</button>
+  );
+};
+ 
+ 	 	 	2
+11. 
+What will this React app render in the browser?
+
+export function MyComponent(props) {
+  return Object.keys(props).length;
+}
+
+function App() {
+  const ref = React.createRef();
+  
+  return (
+    <div className="App">	
+      <MyComponent key={1} id="42" ref={ref}/>
+    </div>
+  );
+}
+ 
+ 	 	 	1
+12. 
+In the following script, which items list elements retain the original value when displayed on the web browser?
+
+function App() {
+  const items = [false, true, undefined, -1, 0];
+
+  return (
+    <div>    
+	{
+	  items.map(number => (
+		<p> {number + number} </p>
+	  ))
+	}
+    </div>
+  );
+}
+ 
+ 	 	 	0
+13. 
+How can you identify if a function component Foo uses multiple props?
+ 
+ 	 	 	The function definition will start with Foo(props).
+14. 
+You have two classes, ordered and ordered-list, stored in a Cascading Style Sheets (CSS) file. You run className={styles.ordered-list} inside a ul tag. What happens?
+ 
+ 	 	 	The code fails to compile.
+15. 
+Which statement is true regarding keys when you use them with a list of items?
+ 
+ 	 	 	You can create duplicate keys globally.
+16. 
+Given the following component hierarchy (Parent -> Child1 -> Child2):
+
+const Parent = (props) => <Child1 v={42} {...props} />;
+
+const Child1 = (props) => <Child2 />;
+
+const Child2 = (props) => <div>...</div>;
+
+Which change to component Child1 will make component Child2 receive the exact same props that component Parent receives?
+ 
+ 	 	 	const Child1 = ({ v, ...props }) => <Child2 {...props} />;
+17. 
+Given a function named doSomething and a list of items rendered in React using a loop. How can you make doSomething the click event handler for all the items and be able to identify which item is clicked without creating an extra function per item?
+ 
+ 	 	 	By storing the item identity on the Document Object Model (DOM) element and reading it in doSomething
+18. 
+What will the console.log line in this code print?
+
+const App = () => {};
+
+const props = { v: 100 };
+const component1 = <App {...props} v={200} />;
+const component2 = <App v={300} {...props} />;
+
+console.log(component1.props.v, component2.props.v);
+ 
+ 	 	 	200 100
+19. 
+Given this rendered component:
+
+const App = () => {
+  const [count, setCount] = React.useState(0);
+ 
+  const handleClick = () => {
+    setCount((count) => {
+      count = count + 1
+    });
+  }
+ 
+  return (
+    <button onClick={handleClick}>{count}</button>
+  );
+};
+
+What is the value of count after the user clicks the button twice?
+ 
+ 	 	 	undefined
+20. 
+You have four props in the Employee() function. In the App function, how many Employee props are using the default values?
+
+function App(props) {
+  return (
+    <div >
+      <Employee name="xyz" unit="testing" age="25"></Employee>
+    </div>
+  );
+}
+ 
+function Employee(props) {
+  return (
+    <div>
+      <p> Name:    {props.name} </p>
+      <p> Unit:    {props.unit} </p>
+      <p> Age :    {props.age}  </p>
+      <p> Salary : {props.salary} </p>
+    </div>
+  )
+}
+ 
+ 	 	 	3
+21. 
+Using React 18 and CSS-in-JS libraries, which hook injects styles into Document Object Model (DOM) before another hook reads a new layout?
+ 
+ 	 	 	useInsertionEffect
+
+
+set8
+
+1. 
+Consider the following function:
+
+function MyComponent() {
+  const [cnt, setCount] = useState(0);
+
+  function Foo() {
+    setCount(cnt + 1);
+    setCount(cnt - 1);
+  }
+
+  function Bar() {
+    setCount(cnt => cnt + 1);
+    setCount(cnt => cnt + 2);
+  }
+
+  return (
+    <div>
+      <div>{cnt}</div>
+      <button onClick={Foo}>F1</button>
+      <button onClick={Bar}>F2</button>
+    </div>
+  );
+}
+
+You click twice on F2 and then once on F1. What is the final output?
+ 
+ 	 	 	5
+VM157:43 2. 
+In React 18, which is a context API?
+ 
+ 	 	 	Context.Provider
+VM157:43 3. 
+In the following script, which items list elements retain the original value when displayed on the web browser?
+
+function App() {
+  const items = [false, true, undefined, -1, 0];
+
+  return (
+    <div>    
+	{
+	  items.map(number => (
+		<p> {number + number} </p>
+	  ))
+	}
+    </div>
+  );
+}
+ 
+ 	 	 	0
+VM157:43 4. 
+You notice 4/12 next to the gear button on React's DevTools profiler. What does 12 refer to?
+ 
+ 	 	 	Commits
+VM157:43 5. 
+Which statement is true regarding keys when you use them with a list of items?
+ 
+ 	 	 	You can create duplicate keys globally.
+VM157:43 6. 
+What is the resulting HTML for this component?
+
+const App = () => (
+  <div>{'ABC' && true}</div>
+);
+ 
+ 	 	 	<div></div>
+VM157:43 7. 
+Which statement is correct about automatic batching in React 18?
+ 
+ 	 	 	You cannot access this.state when calling setState frequently.
+VM157:43 8. 
+Given the following component hierarchy (Parent -> Child1 -> Child2):
+
+const Parent = (props) => <Child1 v={42} {...props} />;
+
+const Child1 = (props) => <Child2 />;
+
+const Child2 = (props) => <div>...</div>;
+
+Which change to component Child1 will make component Child2 receive the exact same props that component Parent receives?
+ 
+ 	 	 	const Child1 = ({ v, ...props }) => <Child2 {...props} />;
+VM157:43 9. 
+What will this React app render in the browser?
+
+export function MyComponent(props) {
+  return Object.keys(props).length;
+}
+
+function App() {
+  const ref = React.createRef();
+  
+  return (
+    <div className="App">	
+      <MyComponent key={1} id="42" ref={ref}/>
+    </div>
+  );
+}
+ 
+ 	 	 	1
+VM157:43 10. 
+Given a function named doSomething and a list of items rendered in React using a loop. How can you make doSomething the click event handler for all the items and be able to identify which item is clicked without creating an extra function per item?
+ 
+ 	 	 	By storing the item identity on the Document Object Model (DOM) element and reading it in doSomething
+VM157:43 11. 
+Given this rendered component:
+
+const App = () => {
+  const [count, setCount] = React.useState(0);
+ 
+  const handleClick = () => {
+    setCount((count) => {
+      count = count + 1
+    });
+  }
+ 
+  return (
+    <button onClick={handleClick}>{count}</button>
+  );
+};
+
+What is the value of count after the user clicks the button twice?
+ 
+ 	 	 	undefined
+VM157:43 12. 
+While using hooks, how can you make a component's state depend on changes in its props over time?
+ 
+ 	 	 	By scheduling updates during rendering
+VM157:43 13. 
+Given this React component:
+
+const M = ({ props, children }) => (
+  <>
+    {React.Children.map(children, child =>
+       React.cloneElement(child, props)
+     )}
+  </>
+);
+
+And this object:
+
+const data = {
+  a: 1,
+  b: 2,
+  // ...
+}
+
+And that component M is used like this:
+
+<M>
+  <C1 />
+  <C2 />
+</M>
+
+How do you make the children components (C1 and C2) receive the data object properties as their props? For example:
+
+<C1 a={1} b={2} />
+ 
+ 	 	 	<M props={data}>
+  <C1 />
+  <C2 />
+</M>
+VM157:43 14. 
+You have the following two mount nodes in the Document Object Model (DOM) (in this order):
+
+<div id="mountNode1"></div>
+<div id="mountNode2"></div>
+
+What is the output of the following React application?
+
+const R = () => 
+  <>
+    Red 
+    <G />
+  </>;
+
+const G = () =>
+  ReactDOM.createPortal(
+    'Green', 
+    document.getElementById('mountNode1')
+  );
+
+ReactDOM.render(<R />, document.getElementById('mountNode2'));
+ 
+ 	 	 	Green
+Red
+VM157:43 15. 
+You have the following React component:
+
+const SaveButton = () => (
+  <button>Save</button>
+);
+
+In its file, you have the following declarations:
+
+import TestRenderer from 'react-test-renderer';
+
+const TestErrorButton = TestRenderer.create(
+ <SaveButton />
+);
+
+Your test framework provides an expect function that returns an assertion object with a toBe method to assert the value of what you pass to expect. Which line is a right way to assert that SaveButton renders a button element?
+ 
+ 	 	 	expect(TestErrorButton.children[0].type).toBe("button")
+VM157:43 16. 
+In the 'react-dom/server' package, which method can you only use on the server environment and results in the initial HTML of a React's element?
+ 
+ 	 	 	renderToNodeStream()
+VM157:43 17. 
+The following code creates a button with a number on it. What is the new number on the button if you update count === 1 to count < 1?
+
+const App = () => {
+  const [count, setCount] = React.useState(0);
+ 
+  React.useEffect(
+    () => setCount(count + 1), 
+    [count === 1]
+  );
+ 
+  return (
+    <button>{count}</button>
+  );
+};
+ 
+ 	 	 	2
+VM157:43 18. 
+You have two classes, ordered and ordered-list, stored in a Cascading Style Sheets (CSS) file. You run className={styles.ordered-list} inside a ul tag. What happens?
+ 
+ 	 	 	The code fails to compile.
+VM157:43 19. 
+Given the following component:
+
+const App = () => {
+  const [{a, b, c}, setState] = React.useState({ a: 1, b: 2, c: 3 });
+ 
+  return (
+    <div onClick={() => setState({ b: b + 10, c: a })}>...</div>
+  );
+};
+
+What are the values of a, b, and c after the user clicks on the div twice?
+ 
+ 	 	 	{ a: undefined, b: 22, c: undefined }
+VM157:43 20. 
+Which function in the "react-dom/test-utils" API is useful when you want to write a black-box test for a component?
+ 
+ 	 	 	Simulate
+VM157:43 21. 
+What does the following code display on a webpage?
+
+const App = () => <div>{'42 &gt; 41'}</div>;
+
+ReactDOM.render(<App />, document.getElementById('root'));
+ 
+ 	 	 	42 &gt; 41
+VM157:43 22. 
+In the following code, React renders twice on each state update:
+
+setTimeout(() => {
+  setCount(cnt => cnt + 1);
+  setFlag(flag => !flag);
+}, 1000);
+
+What changes would you make in your project so React renders only once?
+ 
+ 	 	 	Upgrade to React 18.0.0.
+VM157:43 23. 
+What will the following code do?
+
+const App = ({ v }) => {
+  v = 42;
+  return <div>{v}</div>
+};
+ReactDOM.render(<App v={37} />, mountNode);
+ 
+ 	 	 	Render: <div>42</div>
+VM157:43 24. 
+Which snippet of code will copy the value of an initialLabel prop into the label state element?
+ 
+ 	 	 	const [label, setLabel] = React.useState(
+  () => initialLabel
+);
+VM157:43 25. 
+Given the following rendered component:
+
+const App = () => {
+  const [count, setCount] = React.useState(0);
+ 
+  React.useEffect(
+    () => setCount(count + 1), 
+    [count === 0]
+  );
+ 
+  return (
+    <button>{count}</button>
+  );
+};
+
+What is the value of count after this component renders for the first time?
+ 
+ 	 	 	2
+VM157:43 26. 
+You execute the following code in a browser's console:
+
+ReactDOM.render(
+  <xyz>Hello</xyz>, 
+  document.getElementById('mountNode')
+);
+
+You get this error:
+
+Uncaught SyntaxError: Unexpected token '<'
+
+
+What is the problem?
+ 
+ 	 	 	<xyz> is not valid JavaScript code
+
+
+
+

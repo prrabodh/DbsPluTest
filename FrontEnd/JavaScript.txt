@@ -1,0 +1,996 @@
+JavaScript
+
+set1
+
+1. 
+Which symbol must an object use to become iterable?
+ 
+ 	 	 	@@iterator
+2. 
+What prints to the console when a web page loads the following scripts?
+
+<script>  
+var foo = 27;  
+(function () {    
+  foo = 42;  
+})();
+</script>
+
+<script>  
+console.log(window.foo);
+</script>
+ 
+ 	 	 	42
+3. 
+In the following function, the this keyword has a value of undefined. Why?
+
+function func1() {
+  return this;
+}
+ 
+ 	 	 	You are using strict mode in this program.
+4. 
+You want to use the following code snippet to emulate a private method using a closure. The code snippet is missing its return statement. Which return statement should you add where it says, "COMPLETE THE CODE SNIPPET"?
+
+const counter = (function() {
+  let privateCounter = 0;
+  function changeBy(val) {
+     privateCounter += val;
+  }
+  return {
+ // COMPLETE THE CODE SNIPPET
+  };
+})(); counter.value();counter.increment();
+ 
+ 	 	 	increment: function() { changeBy(1); },
+value: function() { return privateCounter; }
+5. 
+What is the correct syntax for declaring an object literal?
+ 
+ 	 	 	const obj = {};
+6. 
+You want to add a new language into the following array: 
+
+const languages = ["Javascript", "Perl", "PHP", "TCL"];
+languages.push("Python");
+
+This appends a new language to the end, but you want Python to be the first element in this array. What change would you make? 
+ 
+ 	 	 	Use the unshift method instead of push.
+7. 
+How can you declare a class with a constructor?
+ 
+ 	 	 	Using the class keyword and the constructor keyword as a property:
+8. 
+How can you define getters and setters without Object.defineProperty() on an object?
+ 
+ 	 	 	With the get and set keywords
+9. 
+You have a series of three promise objects. You run the following code to complete all three tasks. The code only returns a value of "promise1", which means it discarded the other two tasks. How can you change this code so that all three tasks complete?
+
+const prom1 = new Promise((resolve) => setTimeout(resolve, 20, 'promise1'));
+const prom2 = new Promise((resolve) => setTimeout(resolve, 20, 'promise2'));
+const prom3 = new Promise((resolve) => setTimeout(resolve, 20, 'promise3'));
+
+Promise.any([prom1,  prom2, prom3]).then((value) => console.log(value));
+ 
+ 	 	 	Use the allSettled() function instead.
+10. 
+How can you loop over an iterable object and print each index value to the console?
+ 
+ 	 	 	for (var i = 0; i < ele.length; i++) {
+  console.log(i)
+}
+11. 
+What is a correct syntax for declaring an arrow function?
+ 
+ 	 	 	() => {}
+12. 
+How can classes inherit from other classes?
+ 
+ 	 	 	By using the extends keyword:
+13. 
+The following code takes in a number and determines the tier you belong in. All input is a valid integer between 0 and 1,000 Why does this code not run?
+
+const tier = prompt();
+if (tier <= 1000 && tier >= 800) {
+  document.write("You got top tier!");
+} else if (tier <= 800 && tier >= 600) {
+  document.write("You got high tier!");
+} else if (tier <= 600 && tier >= 400) {
+} else if () {
+  document.write("You got low tier!");
+} else {
+  document.write("You got bottom tier!");
+}
+ 
+ 	 	 	There is an else if statement without a condition.
+14. 
+You create the following program to determine a score range based on the letter grade you receive:
+
+const letterGrade = prompt();
+switch (letterGrade) {
+  case "A": 
+    document.write("You got 90-100! <br>");
+  case "B": 
+    document.write("You got 80-89! <br>");
+  case "C": 
+    document.write("You got 70-79! <br>");
+  case "D": 
+    document.write("You got 60-69! <br>");
+  default:
+    document.write("You got 0-59! <br>");
+}
+
+When you input the letter "C" into this program it outputs the following:
+
+You got 70-79!
+You got 60-69!
+You got 0-59! 
+
+How can you change this code to only return, You got 70-79! as it should?
+ 
+ 	 	 	Add a break statement to the bottom of each case statement block.
+15. 
+Which JavaScript operator checks if two operands are of equal value and equal type? 
+ 
+ 	 	 	===
+16. 
+What keyword can you use to declare a value that cannot be reassigned?
+ 
+ 	 	 	const
+17. 
+What does the ternary operator (condition ? expression1 : expression2) do?
+ 
+ 	 	 	If the condition is true, the operator returns the value of expression1; otherwise, it returns the value of expression2.
+18. 
+What is the scope of the variable a in the following snippet?
+
+function foo() {
+    var a = 42;
+}
+ 
+ 	 	 	The function it is declared in
+19. 
+How can you rewrite the following implementation of a ternary operator into a traditional if...else statement?
+
+var x = 0;
+var y = 1;
+z = 20;
+console.log((z < 18) ? x : y);
+ 
+ 	 	 	if (z < 18) {
+  console.log(x);
+} else {
+  console.log(y);
+}
+20. 
+What code would you use to create a buffer for a typed array with a fixed length of 32-bytes?
+ 
+ 	 	 	let buffer = new ArrayBuffer(32);
+
+
+set2
+
+1. 
+Given the following function expression, how could you refactor this snippet into a named function expression?
+
+const myFunction = function() {
+    // statements
+}
+ 
+ 	 	 	const myFunction = function namedFunction(){ // statements }
+2. 
+Why might you use typed arrays instead of standard arrays?
+ 
+ 	 	 	You must quickly and easily manipulate raw binary data.
+3. 
+What is wrong with this snippet?
+
+class MegaArray extends Array{
+  constructor(contents){
+    this.contents = contents;
+  }
+}
+let mArr = new MegaArray(1, 2, 3);
+ 
+ 	 	 	The class constructor does not call super(), so this is not defined when inheriting from Array.
+4. 
+Why would you create a default export in a module?
+ 
+ 	 	 	To set a fallback value for your module so it is never undefined
+5. 
+Which steps would you take to create multiple views on the same binary data?
+ 
+ 	 	 	Create a buffer to hold the data and pass the buffer to two different types of TypedArray constructors.
+6. 
+You create the following array, which holds the names of the major oceans on Earth. How can you create an iterable of this array?
+
+const oceans = ["Atlantic", "Pacific", "Indian", "Arctic", "Southern"];
+ 
+ 	 	 	const iter = oceans[Symbol.iterator]();
+7. 
+Which symbol must an object use to become iterable?
+ 
+ 	 	 	@@iterator
+8. 
+What is the difference between using the this keyword with an arrow function and an explicit function? 
+ 
+ 	 	 	When you use this with arrow functions it does not establish a binding, which does happen with a regular function.
+9. 
+Internet browsers use which security method to authenticate and encrypt domain name system (DNS) traffic between a user and a server? 
+ 
+ 	 	 	DNSCrypt
+10. 
+Given the following code, how can the function bar reuse the identifier i without affecting the value of i in foo's scope?
+
+function foo() {
+  for (var i = 0; i < 10; i++) {
+    (function bar() {
+      // need to use an isolated "i" here
+    })();
+  }
+}
+ 
+ 	 	 	Redeclare i inside bar using var.
+11. 
+Given the following iterator, what happens if you change the flow control if statement from < to >?
+
+function makeRangeIterator(end=Infinity) {
+    let nextIndex = 0;
+    end = Math.abs(end);
+
+    const rangeIterator = {
+       next: function() {
+           let result;
+           if (nextIndex < end) {
+               result = { value: nextIndex, done: false }
+               nextIndex++;
+               return result;
+           }
+           return { value: nextIndex, done: true }
+       }
+    };
+    return rangeIterator;
+}
+ 
+ 	 	 	The iterator always returns done: true when called because the end range argument cannot be less than 0.
+12. 
+What is a shared characteristic of both iterators and generators?
+ 
+ 	 	 	Both allow working with potentially large sequences of data in a memory efficient way
+13. 
+What arguments are passed to a catch block of a try...catch...finally?
+ 
+ 	 	 	The argument passed to the throw statement.
+14. 
+How would you create a default export of a variable length, equal to 12.5 from a module?
+ 
+ 	 	 	let length;
+export default length = 12.5;
+15. 
+You are working on a custom JavaScript User object for your web application. You must implement a custom iterable protocol for a collection of User objects, which should allow the web app to display information on all the users in a table. What should the collection's iterator return when called?
+ 
+ 	 	 	An iterator that is itself an iterable
+16. 
+Which implementation of the .then() function of a Promise would result in error-free code?
+ 
+ 	 	 	myPromise.then(
+);
+17. 
+Which statement is true about typed arrays? 
+ 
+ 	 	 	Typed arrays do not support the push and pop methods.
+18. 
+What primitive type is the variable result?
+
+ 
+
+const result = NaN
+ 
+ 	 	 	Number
+19. 
+What is one benefit of using Symbol() for unique identifiers?
+ 
+ 	 	 	Symbol() is hidden and you can keep it private for internal use.
+20. 
+In the following function, the this keyword has a value of undefined. Why?
+
+function func1() {
+  return this;
+}
+ 
+ 	 	 	You are using strict mode in this program.
+
+
+set3
+
+1. 
+Given the following iterator, what happens if you change the flow control if statement from < to >?
+
+function makeRangeIterator(end=Infinity) {
+    let nextIndex = 0;
+    end = Math.abs(end);
+
+    const rangeIterator = {
+       next: function() {
+           let result;
+           if (nextIndex < end) {
+               result = { value: nextIndex, done: false }
+               nextIndex++;
+               return result;
+           }
+           return { value: nextIndex, done: true }
+       }
+    };
+    return rangeIterator;
+}
+ 
+ 	 	 	The iterator always returns done: true when called because the end range argument cannot be less than 0.
+2. 
+Which implementation of the .then() function of a Promise would result in error-free code?
+ 
+ 	 	 	myPromise.then(
+);
+3. 
+How would you create a default export of a variable length, equal to 12.5 from a module?
+ 
+ 	 	 	let length;
+export default length = 12.5;
+4. 
+What is a shared characteristic of both iterators and generators?
+ 
+ 	 	 	Both allow working with potentially large sequences of data in a memory efficient way
+5. 
+You are working on a custom JavaScript User object for your web application. You must implement a custom iterable protocol for a collection of User objects, which should allow the web app to display information on all the users in a table. What should the collection's iterator return when called?
+ 
+ 	 	 	An iterator that is itself an iterable
+6. 
+A variable, originally declared with the let keyword, is re-declared in an inner block scope using the var keyword. What happens?
+ 
+ 	 	 	It generates an error.
+7. 
+Which statement is true about typed arrays? 
+ 
+ 	 	 	Typed arrays do not support the push and pop methods.
+8. 
+What arguments are passed to a catch block of a try...catch...finally?
+ 
+ 	 	 	The argument passed to the throw statement.
+9. 
+Which steps would you take to create multiple views on the same binary data?
+ 
+ 	 	 	Create a buffer to hold the data and pass the buffer to two different types of TypedArray constructors.
+10. 
+What is the difference between using the this keyword with an arrow function and an explicit function? 
+ 
+ 	 	 	When you use this with arrow functions it does not establish a binding, which does happen with a regular function.
+11. 
+Internet browsers use which security method to authenticate and encrypt domain name system (DNS) traffic between a user and a server? 
+ 
+ 	 	 	DNSCrypt
+12. 
+Given the following function expression, how could you refactor this snippet into a named function expression?
+
+const myFunction = function() {
+    // statements
+}
+ 
+ 	 	 	const myFunction = function namedFunction(){ // statements }
+13. 
+Why would you create a default export in a module?
+ 
+ 	 	 	To set a fallback value for your module so it is never undefined
+14. 
+What static method allows the inheritance of an object's prototype in the creation of a new object?
+ 
+ 	 	 	Object.create()
+15. 
+What is wrong with this snippet?
+
+class MegaArray extends Array{
+  constructor(contents){
+    this.contents = contents;
+  }
+}
+let mArr = new MegaArray(1, 2, 3);
+ 
+ 	 	 	The class constructor does not call super(), so this is not defined when inheriting from Array.
+16. 
+You invoke a constructor function without using the new keyword. What does the function do?
+ 
+ 	 	 	Assigns the properties to the function's this scope; usually the global object (window in a browser)
+17. 
+How would you add extra properties to a new object, bar, to be created from another object, foo, with Object.create()?
+ 
+ 	 	 	By passing in an object with the additional keys as a second argument
+18. 
+An infinite iterator is one that never expresses true through what property?
+ 
+ 	 	 	done
+19. 
+Given the following code, how can the function bar reuse the identifier i without affecting the value of i in foo's scope?
+
+function foo() {
+  for (var i = 0; i < 10; i++) {
+    (function bar() {
+      // need to use an isolated "i" here
+    })();
+  }
+}
+ 
+ 	 	 	Redeclare i inside bar using var.
+20. 
+You have a class with two methods. You invoke both methods to compare their outputs. You want to compare these outputs and return a boolean value of true when the outputs are the same value, even in the case of NaN. Which method/operator would you use?
+ 
+ 	 	 	Object.is()
+21. 
+What is the value of the variable result?
+
+const valueOne = "2";
+const valueTwo = "2";
+const result = valueOne / valueTwo;
+ 
+ 	 	 	1
+22. 
+What primitive type is the variable result?
+
+ 
+
+const result = NaN
+ 
+ 	 	 	Number
+23. 
+How should you change the following snippet so that both loops conclude at the same time?
+
+for (let i = 0; i < 5; i++) {
+  for (let j = 0; j < 5; j++) {
+    // exit both loops from here
+  }
+}
+ 
+ 	 	 	Add a label and break to it.
+
+set4
+
+1. 
+Which steps would you take to create multiple views on the same binary data?
+ 
+ 	 	 	Create a buffer to hold the data and pass the buffer to two different types of TypedArray constructors.
+2. 
+A variable, originally declared with the let keyword, is re-declared in an inner block scope using the var keyword. What happens?
+ 
+ 	 	 	It generates an error.
+3. 
+Given the following code, how can the function bar reuse the identifier i without affecting the value of i in foo's scope?
+
+function foo() {
+  for (var i = 0; i < 10; i++) {
+    (function bar() {
+      // need to use an isolated "i" here
+    })();
+  }
+}
+ 
+ 	 	 	Redeclare i inside bar using var.
+4. 
+What arguments are passed to a catch block of a try...catch...finally?
+ 
+ 	 	 	The argument passed to the throw statement.
+5. 
+Which implementation of the .then() function of a Promise would result in error-free code?
+ 
+ 	 	 	myPromise.then(
+);
+6. 
+What is a shared characteristic of both iterators and generators?
+ 
+ 	 	 	Both allow working with potentially large sequences of data in a memory efficient way
+7. 
+How would you add extra properties to a new object, bar, to be created from another object, foo, with Object.create()?
+ 
+ 	 	 	By passing in an object with the additional keys as a second argument
+8. 
+Internet browsers use which security method to authenticate and encrypt domain name system (DNS) traffic between a user and a server? 
+ 
+ 	 	 	DNSCrypt
+9. 
+You are working on a custom JavaScript User object for your web application. You must implement a custom iterable protocol for a collection of User objects, which should allow the web app to display information on all the users in a table. What should the collection's iterator return when called?
+ 
+ 	 	 	An iterator that is itself an iterable
+10. 
+Why would you create a default export in a module?
+ 
+ 	 	 	To set a fallback value for your module so it is never undefined
+11. 
+What is the difference between using the this keyword with an arrow function and an explicit function? 
+ 
+ 	 	 	When you use this with arrow functions it does not establish a binding, which does happen with a regular function.
+12. 
+Given the following function expression, how could you refactor this snippet into a named function expression?
+
+const myFunction = function() {
+    // statements
+}
+ 
+ 	 	 	const myFunction = function namedFunction(){ // statements }
+13. 
+What primitive type is the variable result?
+
+ 
+
+const result = NaN
+ 
+ 	 	 	Number
+14. 
+Which statement is true about typed arrays? 
+ 
+ 	 	 	Typed arrays do not support the push and pop methods.
+15. 
+You create a new page on a website that accepts user input, stores the input into a variable input, and grabs some related data from a database. How can you take the user input in a safe and efficient manner? 
+ 
+ 	 	 	let input = prompt(<question>);
+16. 
+Which symbol must an object use to become iterable?
+ 
+ 	 	 	@@iterator
+17. 
+How would you create a default export of a variable length, equal to 12.5 from a module?
+ 
+ 	 	 	let length;
+export default length = 12.5;
+18. 
+What static method allows the inheritance of an object's prototype in the creation of a new object?
+ 
+ 	 	 	Object.create()
+19. 
+In the following function, the this keyword has a value of undefined. Why?
+
+function func1() {
+  return this;
+}
+ 
+ 	 	 	You are using strict mode in this program.
+20. 
+Which code snippet declares a new property called prop on obj1, defined below, that you can change with the assignment operator?
+
+const obj1 = {};
+ 
+ 	 	 	Object.defineProperty(obj1, 'prop', {
+  writable: true,
+  configurable: true,
+});
+21. 
+Given the following iterator, what happens if you change the flow control if statement from < to >?
+
+function makeRangeIterator(end=Infinity) {
+    let nextIndex = 0;
+    end = Math.abs(end);
+
+    const rangeIterator = {
+       next: function() {
+           let result;
+           if (nextIndex < end) {
+               result = { value: nextIndex, done: false }
+               nextIndex++;
+               return result;
+           }
+           return { value: nextIndex, done: true }
+       }
+    };
+    return rangeIterator;
+}
+ 
+ 	 	 	The iterator always returns done: true when called because the end range argument cannot be less than 0.
+
+
+set 5
+
+1. 
+What arguments are passed to a catch block of a try...catch...finally?
+ 
+ 	 	 	The argument passed to the throw statement.
+2. 
+Which implementation of the .then() function of a Promise would result in error-free code?
+ 
+ 	 	 	myPromise.then(
+);
+3. 
+What is a shared characteristic of both iterators and generators?
+ 
+ 	 	 	Both allow working with potentially large sequences of data in a memory efficient way
+4. 
+A variable, originally declared with the let keyword, is re-declared in an inner block scope using the var keyword. What happens?
+ 
+ 	 	 	It generates an error.
+5. 
+Which symbol must an object use to become iterable?
+ 
+ 	 	 	@@iterator
+6. 
+Given the following code, how can the function bar reuse the identifier i without affecting the value of i in foo's scope?
+
+function foo() {
+  for (var i = 0; i < 10; i++) {
+    (function bar() {
+      // need to use an isolated "i" here
+    })();
+  }
+}
+ 
+ 	 	 	Redeclare i inside bar using var.
+7. 
+Which steps would you take to create multiple views on the same binary data?
+ 
+ 	 	 	Create a buffer to hold the data and pass the buffer to two different types of TypedArray constructors.
+8. 
+What primitive type is the variable result?
+
+ 
+
+const result = NaN
+ 
+ 	 	 	Number
+9. 
+Why would you create a default export in a module?
+ 
+ 	 	 	To set a fallback value for your module so it is never undefined
+10. 
+In the following code snippet, getConfig is a function that returns data on the config object, at the time of invocation, for different parts of your application. When invoked this way, getConfig instead returns undefined. What change must you make to get the functionality you intend?
+
+let config = {
+  data: { "number": 99 },
+  getConfig: function() { return this.data; }
+};
+let getConfig = config.getConfig;
+getConfig();
+ 
+ 	 	 	Bind the function's this value to config.
+11. 
+How would you add extra properties to a new object, bar, to be created from another object, foo, with Object.create()?
+ 
+ 	 	 	By passing in an object with the additional keys as a second argument
+12. 
+What is the difference between using the this keyword with an arrow function and an explicit function? 
+ 
+ 	 	 	When you use this with arrow functions it does not establish a binding, which does happen with a regular function.
+13. 
+Given the following function expression, how could you refactor this snippet into a named function expression?
+
+const myFunction = function() {
+    // statements
+}
+ 
+ 	 	 	const myFunction = function namedFunction(){ // statements }
+14. 
+How would you create a default export of a variable length, equal to 12.5 from a module?
+ 
+ 	 	 	let length;
+export default length = 12.5;
+15. 
+Which statement is true about typed arrays? 
+ 
+ 	 	 	Typed arrays do not support the push and pop methods.
+16. 
+What static method allows the inheritance of an object's prototype in the creation of a new object?
+ 
+ 	 	 	Object.create()
+17. 
+When creating a class, how can you define a method that is not accessible from an instance of that class, but instead only callable directly on the class?
+ 
+ 	 	 	Using the static keyword:
+18. 
+What happens when you run the following code?
+
+function func1(arg1) {
+  arguments[0] = 99;
+  console.log(arg1);
+}
+
+function func2(arg1) {
+  arg1 = 99;
+  console.log(arguments[1]);
+}
+
+func1(10);
+func2(10);
+ 
+ 	 	 	You get the following output:
+ 	 	 	99
+			undefined
+19. 
+What is one benefit of using Symbol() for unique identifiers?
+ 
+ 	 	 	Symbol() is hidden and you can keep it private for internal use.
+20. 
+Given the following iterator, what happens if you change the flow control if statement from < to >?
+
+function makeRangeIterator(end=Infinity) {
+    let nextIndex = 0;
+    end = Math.abs(end);
+
+    const rangeIterator = {
+       next: function() {
+           let result;
+           if (nextIndex < end) {
+               result = { value: nextIndex, done: false }
+               nextIndex++;
+               return result;
+           }
+           return { value: nextIndex, done: true }
+       }
+    };
+    return rangeIterator;
+}
+ 
+ 	 	 	The iterator always returns done: true when called because the end range argument cannot be less than 0.
+21. 
+What value prints to the console in the following code snippet?
+
+this.greeting = "Hello, Universe!";
+
+let person = {
+  greeting: "Hello, World!",
+  greetUser: () => {
+    console.log(this.greeting);
+  }
+};
+
+person.greetUser();
+ 
+ 	 	 	"Hello, Universe!"
+22. 
+You create the following typed array and manipulate and iterate on it. You want to convert this typed array into a normal, non-typed array. How can you do so?
+
+const myArr = new Int8Array(10);
+myArr.fill(14);
+ 
+ 	 	 	const normalArray2 = [...myArr];
+23. 
+You must refactor some JavaScript code written for ES5, as follows:
+
+var obj1 = {"color": "blue", "model": "Model1", "make": "Brand1"};
+var list = [];
+for(var prop in obj1) {
+    list.push(obj1[prop]);
+}
+console.log(list);
+
+How can you refactor away from the for loop and use a more efficient, up-to-date method?
+ 
+ 	 	 	Pass obj1 as a parameter to the Object.values() method and embed the Object.values() method inside a console.log() statement.
+24. 
+How would you remove the duplicates from the following array using the spread operator?
+
+let array = [0, 1, 1, 2, 3, 4, 4];
+ 
+ 	 	 	let noDups = [...new Set(array)];
+25. 
+Which is a "truthy" value?
+ 
+ 	 	 	{}
+
+Set6
+
+1. 
+In the following code snippet, getConfig is a function that returns data on the config object, at the time of invocation, for different parts of your application. When invoked this way, getConfig instead returns undefined. What change must you make to get the functionality you intend?
+
+let config = {
+  data: { "number": 99 },
+  getConfig: function() { return this.data; }
+};
+let getConfig = config.getConfig;
+getConfig();
+ 
+ 	 	 	Bind the function's this value to config.
+2. 
+Internet browsers use which security method to authenticate and encrypt domain name system (DNS) traffic between a user and a server? 
+ 
+ 	 	 	DNSCrypt
+3. 
+How would you add extra properties to a new object, bar, to be created from another object, foo, with Object.create()?
+ 
+ 	 	 	By passing in an object with the additional keys as a second argument
+4. 
+Which implementation of the .then() function of a Promise would result in error-free code?
+ 
+ 	 	 	myPromise.then(
+);
+5. 
+You are working on a custom JavaScript User object for your web application. You must implement a custom iterable protocol for a collection of User objects, which should allow the web app to display information on all the users in a table. What should the collection's iterator return when called?
+ 
+ 	 	 	An iterator that is itself an iterable
+6. 
+How would you create a default export of a variable length, equal to 12.5 from a module?
+ 
+ 	 	 	let length;
+export default length = 12.5;
+7. 
+Given the following function expression, how could you refactor this snippet into a named function expression?
+
+const myFunction = function() {
+    // statements
+}
+ 
+ 	 	 	const myFunction = function namedFunction(){ // statements }
+8. 
+What static method allows the inheritance of an object's prototype in the creation of a new object?
+ 
+ 	 	 	Object.create()
+9. 
+A variable, originally declared with the let keyword, is re-declared in an inner block scope using the var keyword. What happens?
+ 
+ 	 	 	It generates an error.
+10. 
+What is the difference between using the this keyword with an arrow function and an explicit function? 
+ 
+ 	 	 	When you use this with arrow functions it does not establish a binding, which does happen with a regular function.
+11. 
+Which symbol must an object use to become iterable?
+ 
+ 	 	 	@@iterator
+12. 
+When creating a class, how can you define a method that is not accessible from an instance of that class, but instead only callable directly on the class?
+ 
+ 	 	 	Using the static keyword:
+
+class Foo {
+  static logFoo(f){
+    console.log(f);
+  }
+}
+13. 
+What is one benefit of using Symbol() for unique identifiers?
+ 
+ 	 	 	Symbol() is hidden and you can keep it private for internal use.
+14. 
+What is a shared characteristic of both iterators and generators?
+ 
+ 	 	 	Both allow working with potentially large sequences of data in a memory efficient way
+15. 
+What primitive type is the variable result?
+
+ 
+
+const result = NaN
+ 
+ 	 	 	Number
+16. 
+What arguments are passed to a catch block of a try...catch...finally?
+ 
+ 	 	 	The argument passed to the throw statement.
+17. 
+Which steps would you take to create multiple views on the same binary data?
+ 
+ 	 	 	Create a buffer to hold the data and pass the buffer to two different types of TypedArray constructors.
+18. 
+Given the following code, how can the function bar reuse the identifier i without affecting the value of i in foo's scope?
+
+function foo() {
+  for (var i = 0; i < 10; i++) {
+    (function bar() {
+      // need to use an isolated "i" here
+    })();
+  }
+}
+ 
+ 	 	 	Redeclare i inside bar using var.
+19. 
+Given the following iterator, what happens if you change the flow control if statement from < to >?
+
+function makeRangeIterator(end=Infinity) {
+    let nextIndex = 0;
+    end = Math.abs(end);
+
+    const rangeIterator = {
+       next: function() {
+           let result;
+           if (nextIndex < end) {
+               result = { value: nextIndex, done: false }
+               nextIndex++;
+               return result;
+           }
+           return { value: nextIndex, done: true }
+       }
+    };
+    return rangeIterator;
+}
+ 
+ 	 	 	The iterator always returns done: true when called because the end range argument cannot be less than 0.
+20. 
+What boolean does the following code return?
+
+ 
+
+Symbol("foo") !== Symbol("foo")
+ 
+ 	 	 	true
+21. 
+Which function type has the this keyword bound lexically?
+ 
+ 	 	 	An arrow function
+22. 
+What happens when you run the following code?
+
+function func1(arg1) {
+  arguments[0] = 99;
+  console.log(arg1);
+}
+
+function func2(arg1) {
+  arg1 = 99;
+  console.log(arguments[1]);
+}
+
+func1(10);
+func2(10);
+ 
+ 	 	 	You get the following output:
+
+99
+undefined
+23. 
+You create a new page on a website that accepts user input, stores the input into a variable input, and grabs some related data from a database. How can you take the user input in a safe and efficient manner? 
+ 
+ 	 	 	let input = prompt(<question>);
+24. 
+Which code snippet declares a new property called prop on obj1, defined below, that you can change with the assignment operator?
+
+const obj1 = {};
+ 
+ 	 	 	Object.defineProperty(obj1, 'prop', {
+  writable: true,
+  configurable: true,
+});
+25. 
+In the following function, the this keyword has a value of undefined. Why?
+
+function func1() {
+  return this;
+}
+ 
+ 	 	 	You are using strict mode in this program.
+26. 
+What happens when the following code runs?
+
+let foo = {    
+  get name(){    
+    return this.name;  
+  },    
+  set name(n){    
+    this.name = n;  
+  }
+}
+foo.name = "foo";
+ 
+ 	 	 	A recursive call to the setter causes a RangeError to be thrown because it exceeds the maximum call stack size.
+27. 
+You create the following array, which holds the names of the major oceans on Earth. How can you create an iterable of this array?
+
+const oceans = ["Atlantic", "Pacific", "Indian", "Arctic", "Southern"];
+ 
+ 	 	 	const iter = oceans[Symbol.iterator]();
+28. 
+What is the value of the variable result?
+
+const valueOne = "2";
+const valueTwo = "2";
+const result = valueOne / valueTwo;
+ 
+ 	 	 	1
+29. 
+What is the value of x after running the following code snippet?
+
+let x = 0;
+function foo(){
+  x ^= 1;
+}
+foo();
+foo();
+foo();
+ 
+ 	 	 	1
+30. 
+An infinite iterator is one that never expresses true through what property?
+ 
+ 	 	 	done

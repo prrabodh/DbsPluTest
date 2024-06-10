@@ -1,0 +1,581 @@
+Using Kubernetes as a Developer
+
+1. Which metric is measurable while monitoring a Kubernetes cluster?
+
+	Network bandwidth
+
+2. Kubernetes enables the microservice architecture pattern through the use of what?
+
+	Service discovery
+
+3. What resources can a developer use in a Kubernetes cluster to grant multiple applications access to a shared configuration file?
+
+	ConfigMap objects
+
+4. What is the small controllable unit in Kubernetes?
+
+	Pod
+
+5. What happens to Kubernetes Job resources that a CronJob creates with the optional field concurrencyPolicy equal to Replace?
+
+	If it's time for a new run and the previous Job run hasn’t completed, the CronJob replaces the currently running Job run with a new Job object.
+
+6. You have five containers and two Pods. To retrieve the logs, you run the following command:
+kubectl logs -f -l --all-containers
+How many of these containers will start streaming their logs?
+
+	Five
+
+7. When would you use ImagePullSecrets?
+
+	When the images that you want to pull are stored in private repositories
+
+8. Which protocol would you use in port forwarding to access a database in a Pod?
+
+	Transmission Control Protocol (TCP)
+
+9. What command in a Kubernetes command-line interface (CLI) can show more detailed descriptions about the status of running resources?
+
+	kubectl describe $TYPE $NAME_PREFIX
+
+10. A growing agile software development team wants to work on different parts of an internal application at the same time. To do so, the team splits into smaller groups. These groups want to create decomposed modules that are loosely coupled and deployed independently. How can the teams do this?
+
+	Write the new modules as microservices in Docker containers and deploy them independently onto the same Kubernetes cluster
+
+11. Which application architecture pattern is Kubernetes designed for?
+
+	Microservices pattern
+
+12. You are releasing a new version of your application. You take down the previous release and let all the live traffic flow to the new one. After a few hours, a lot of new bugs start to arise in the new version. How could you have properly migrated to the new release?
+
+	Use canary deployment along with the previous release.
+
+13. What is the result of running the following command: kubectl port-forward service/redis-master 6000:5000
+
+	It forwards connections from port 6000 to port 5000 
+
+14. What is the atomic scheduling unit in a Kubernetes cluster?
+
+	Pod
+
+15. You created the following manual Secret definition for Kubernetes:
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mysecret
+type: Opaque
+data:
+  username: my-username  
+  password: my-password
+When you run kubectl apply for this file, you encounter the error "Error from server (BadRequest): error when creating "dummy-secret.yaml": Secret in version "v1" cannot be handled as a Secret: v1.Secret: Data: decode base64: illegal base64 data..." How would you fix this?
+
+	Encode the data values in base64.
+
+
+
+16. The main non-functional requirements of a software project for the architecture team are:
+	Host anywhere;
+	Support decoupled services that can be independently deployed and scaled;
+	Ensure dependency management is part of the deployment unit;
+	Orchestrate components and enable discovery
+	Which approach can meet these requirements?
+
+	Write a containerized collection of microservices, and deploy and manage them using Kubernetes.
+
+17. In Kubernetes networking, what does Ingress do?
+
+	Expose HTTP and HTTPS routes from outside the cluster to services within the cluster
+
+18. While working with ConfigMaps, you are unable to change the content of the data field. What could be the state of the ConfigMap in this case?
+
+	Immutable
+
+19. What is a key benefit of running a containerized application on Kubernetes?
+
+	Orchestration and scheduling
+
+20. Which YAML syntax correctly represents the details of an employee?
+
+	emp:
+	  name: xyz
+	  unit: rp23
+	  skills:
+	    - python
+	    - java
+
+
+1. Given the following PersistentVolumeClaim (PVC) and PersistentVolume (PV) definition:
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: persistent-disk-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 8Gi
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: persistent-disk
+spec:
+  capacity:
+    storage: 8Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
+  storageClassName: Recyclable
+  nfs:
+    path: /tmp
+    server: 172.17.0.2
+
+What changes can you make to allow the PVC to bind to the PV persistent-disk?
+
+	Add the storageClassName: Recyclable attribute to the PVC.
+
+2. A Kubernetes cluster administrator must inspect all changes made to a Deployment. What command can the admin use to show all revision history on the Deployment called web-application-demo?
+
+	kubectl rollout history deployment/web-application-demo
+
+3. You have a container demo belonging to a Pod named main. How will you stream the logs for this container while only displaying the most recent 20 lines?
+
+	kubectl logs -f main -c demo -tail=20
+
+4. One of your containers in a Pod randomly shuts down. You investigate the output:
+Container Name: nginx
+LastState: map[terminated:map[exitCode:137 reason:OOM Killed containerID:docker://0e4095b]]
+
+What does this mean?
+
+	The container stopped because it was resource starved. 
+
+5. In a microservices application with a strict service-level agreement (SLA), how does Kubernetes enable application resiliency?
+
+	Kubernetes is self-healing so if a node fails, the Pods will restart across deployed clusters.
+
+6. You are building the image configuration of a container stored locally that spawns privatized production instances of the location services API for your application. How can you make sure that no attempt is made to pull the image?
+
+	imagePullPolicy: Never
+
+7. You are helping users maintain container orchestration with Kubernetes. After a major update of the software, your Pod deployments are being corrupted with malformed metadata. You run this command: kubectl run -it --rm --restart=Never alpine --image=alpine sh. What does it do?
+
+	Creates an Alpine Linux Pod, and executes an interactive shell; this Pod type allows you to view more detailed information on a Pod running in a cluster
+
+8. What do annotations in Kubernetes do?
+
+	Provide a purely generic way to add metadata to Kubernetes objects
+
+9. What resources can a developer use in a Kubernetes cluster to grant multiple applications access to a shared configuration file?
+
+	ConfigMap objects
+
+10. The command kubectl describe nginx-deployment-1006230814-6winp, when run, produces an error. Why?
+
+	The line is missing the pod command.
+
+11. What is a liveness probe?
+
+	A periodic check on whether a Pod is healthy and can continue to receive traffic
+
+12. What is the small controllable unit in Kubernetes?
+
+	Pod
+
+13. What files does using the following configuration for a ConfigMap create?
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-configmap-pod-cfpd
+spec:
+  containers:
+    - name: example
+      image: alpine
+      command: ["sleep", "1800"]
+      env:
+        - name: FOO_BAR 
+          valueFrom:
+            configMapKeyRef:
+              name: example-test        
+              key: foo_bar 
+        - name: BAZ_QUE
+          valueFrom:
+            configMapKeyRef:
+              name: example-test
+              key: baz_que
+      volumeMounts:
+      - name: config
+        mountPath: "/config"
+        readOnly: true
+  volumes:
+    - name: config
+      configMap:
+        name: example-test
+        items:
+        - key: "test.properties"
+          path: "test.properties"
+        - key: "example-screening.properties"
+          path: "example-screening.properties"
+
+
+   /config/test.properties and /config/example-screening.properties
+
+
+14. A growing agile software development team wants to work on different parts of an internal application at the same time. To do so, the team splits into smaller groups. These groups want to create decomposed modules that are loosely coupled and deployed independently. How can the teams do this?
+
+	Write the new modules as microservices in Docker containers and deploy them independently onto the same Kubernetes cluster.
+
+15. What is the atomic scheduling unit in a Kubernetes cluster?
+
+	Pod
+
+16. The main non-functional requirements of a software project for the architecture team are:
+Host anywhere;
+Support decoupled services that can be independently deployed and scaled;
+Ensure dependency management is part of the deployment unit;
+Orchestrate components and enable discovery
+Which approach can meet these requirements?
+
+
+	Write a containerized collection of microservices, and deploy and manage them using Kubernetes.
+
+17. You created the following manual Secret definition for Kubernetes:
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mysecret
+type: Opaque
+data:
+  username: my-username  
+  password: my-password
+When you run kubectl apply for this file, you encounter the error "Error from server (BadRequest): error when creating "dummy-secret.yaml": Secret in version "v1" cannot be handled as a Secret: v1.Secret: Data: decode base64: illegal base64 data..." How would you fix this?
+
+	Encode the data values in base64.
+
+18. You are an engineer at a company focused on helping users find more options for completing their daily commute. You are establishing a label structure for Pods where tier can have any value except frontend and backend. Also, the environment label can have either production or qa as its value. Based on this, what is the most relevant set of labels for the Pods that contain deployments?
+
+	environment in (production, qa)
+	tier notin (frontend, backend)
+
+
+2. In Kubernetes, which environment variable controls the log destination?
+
+	KUBE_LOGGING_DESTINATION
+
+3. Inside securityContext, which label stops a process from attaining more privilege than its parent process?
+
+	allowPrivilegeEscalation
+
+4. You created a Deployment with five replicas using the command kubectl apply -f https://eg.com/demo/controllers/dep.yaml. How can you verify if all five replicas are ready in the Deployment?
+
+	Run kubectl get deployments and check if the AVAILABLE label has the number five in it.
+
+5. You have a microservice application hosted on Kubernetes. You had to roll back the previous RollingUpdate deployment because the health check did not detect an actual Pod failure. What change would you make to ensure that deployments are less likely to have downtime because of a rollout of buggy code that passes the health check?
+
+	Switch to using canary deployment methods either with services or an Ingress controller.
+
+6. Containers within a Pod share an IP address and port space. What special function does this enable for containers?
+
+	The ability to find each other with localhost
+
+7. As a freelance developer, you signed a new contract with a client who wants you to set up Kubernetes in their enterprise. You are at home learning more about Docker and are trying to start a Dockerized web server at port 80. Which command will achieve this?
+
+	docker run --detach --publish=80:80 --name=webserver nginx
+
+8. A microservice you engineered contains endpoints that persist information to a database. In your application, a component of the Kubernetes container logic handles the final issuing of the calls. When the database call is made, the data to be persisted is sanitized, transformed, and injected into the database. The application handles sanitization and transformation. As the deployed application runs, resiliency testing is performed, but when containers are shut down, calls are dropped and do not experience a retry. Why is this?
+
+	Generally, containers should be treated as ephemeral. Therefore, the microservice should handle the final issuing of calls, not the container. 
+
+9. What command in a Kubernetes command-line interface (CLI) can create a Secret called app-token with the contents of the file ./secret-token.yaml stored in the token key of the object?
+
+	kubectl create secret generic app-token --from-file=token=./secret-token.yaml
+
+10. You are running a Kubernetes cluster on-premises. How would you expose an application on a single port, running on multiple Nodes, to the non-Kubernetes systems in your network?
+
+	Create a service using a NodePort running on a Pod on each worker node.
+
+11. Which key-value pair of ConfigMap is a file-like key?
+
+	user.properties: |
+  		profile.picture = true
+
+12. What objects can the dataSource field reference to?
+
+ 	PersistentVolumeClaim and VolumeSnapshot 
+
+13. You omit a prefix when creating a Kubernetes annotation. What happens?
+
+	Kubernetes presumes that the annotation key is private to the user.
+
+14. An administrator created an application deployment from the command line. An update of the container image rescales the deployment to three instances. The admin ran the following set of commands in a Kubernetes command-line interface (CLI):  kubectl create deployment nginx --image=nginx:1.7.9
+kubectl set image deployment/nginx nginx=nginx:1.9.1 --record=true
+kubectl scale deployment/nginx --replicas=3
+
+Because of an incident that the admin must fix in the application version, they reverse the deployment revision as follows:  kubectl rollout undo deployment/nginx
+
+What values will the Image and Replicas fields indicate for the deployment nginx if the admin runs the command kubectl describe deployment/nginx?
+
+	Image: nginx:1.7.9
+	Replicas: 3
+
+15. After creating the resources with the following PersistentVolumeClaim (PVC) and PersistentVolume (PV) definition running on a Kubernetes cluster, the PVC is still unbound. Why?
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: persistent-disk-claim
+  namespace: training
+  
+spec:
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Filesystem
+  storageClassName: Recyclable
+  resources:
+    requests:
+      storage: 5Gi
+  selector:
+    matchLabels:
+      environment: "dev"
+
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: persistent-disk
+spec:
+  capacity:
+    storage: 8Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
+  storageClassName: Recyclable
+  nfs:
+    path: /tmp
+    server: 172.17.0.2	
+
+    The PVC can only bind to PVs that have the label: environment: dev.
+
+16. Given a service account called default, what command would you use to update the imagePullSecrets property with a secret named pullSecret?
+
+	kubectl patch serviceaccount default -p 
+       '{"imagePullSecrets": [{"name": "pullSecret"}]}'
+
+
+
+17. Given the following PersistentVolumeClaim (PVC) and PersistentVolume (PV) definition:
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: persistent-disk-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 8Gi
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: persistent-disk
+spec:
+  capacity:
+    storage: 8Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
+  storageClassName: Recyclable
+  nfs:
+    path: /tmp
+    server: 172.17.0.2
+
+What changes can you make to allow the PVC to bind to the PV persistent-disk?
+
+	Add the storageClassName: Recyclable attribute to the PVC.
+
+18. What attributes must be in the definition of a Pod to mount the value of the ConfigMap special-config as an environment variable SPECIAL_LEVEL_KEY?
+
+	- name: SPECIAL_LEVEL_KEY
+	  valueFrom:
+	    configMapKeyRef:
+	      name: special-config
+	      key: SPECIAL_LEVEL_KEY
+
+
+19. Consider the following Pod definition:
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cuda-test
+spec:
+  containers:
+    - name: cuda-test
+      image: "k8s.gcr.io/cuda-vector-add:v0.1"
+      resources:
+        limits:
+          nvidia.com/gpu: 1
+  nodeSelector:
+    accelerator: nvidia-tesla-p100
+
+
+What type of label filtering is in use?
+
+	Equality-based requirements
+
+
+20. Why would you use the kompose up command as opposed to kompose convert
+
+	If you want to convert docker-compose YAML files and deploy to Kubernetes simultaneously.
+
+3. What is the purpose of using the kompose up command?
+
+	To create a Kubernetes deployment for a Dockerized application
+
+4. You must debug a Pod by identifying the node on which it is running and using the shell on the node. How will you create the interactive shell instance?
+
+	kubectl debug node/rkst -it --image=ubuntu
+
+
+7. You are generating Kubernetes resources using kompose. You use the following kompose labels in your docker-compose.yaml file:
+
+kompose.volume.size as 1Gi for the requests storage’s size in the PersistentVolumeClaim
+kompose.service.type as node to designate the service to be created
+kompose.controller.type as daemonset to convert the deployment upon creation
+
+When you run kompose convert, the command fails. Why is this?
+
+	You must define the kompose.service.type as nodeport instead.
+
+9. Based on the specification in the following Ingress configuration, what type of Ingress are you using?
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+ annotations:
+ nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+ rules:
+ - host: foo.bar.com
+ http:
+ paths:
+ - path: /foo
+ backend:
+ serviceName: service1
+ servicePort: 4200
+ - path: /bar
+ backend:
+ serviceName: service2
+ servicePort: 8080
+
+ 	A simple fanout
+
+10. Why is Service an optional field in the Kubernetes web user interface (UI) deploy wizard?
+
+	Because not every application needs to expose a Service to an external IP address
+
+
+11. How are files from a directory defined inside a ConfigMap?
+
+	With the contents of a single file in the data attribute or a collection of key/value pairs that are also defined in the data attribute of the object
+
+
+15. An application is working for the past half hour but is not progressing. You suspect the application never started successfully so you use a startup probe to check when it was started. This doesn't resolve the issue, however. What else can you do to make the application progress?
+
+	Use a liveness probe to catch any deadlock present in the application and restart it.
+
+
+17. Which metadata field in a Pod is populated by the system?
+
+	generation
+
+18. You want your company’s Kubernetes deployments to use dynamic Secret values generated as a set of files. Because you manage several clusters, what is the most effective way to handle this?
+
+	Attach Secrets files to Pods by declaring a volume that will mount each Secret as a file in the Pod definition.
+
+19. Which option must you set while creating a CronJob object to handle timezones?
+
+	CRON_TZ
+
+20. A microservice you engineered contains endpoints that persist information to a database. In your application, a component of the Kubernetes container logic handles the final issuing of the calls. When the database call is made, the data to be persisted is sanitized, transformed, and injected into the database. The application handles sanitization and transformation. As the deployed application runs, resiliency testing is performed, but when containers are shut down, calls are dropped and do not experience a retry. Why is this?
+
+	Generally, containers should be treated as ephemeral. Therefore, the microservice should handle the final issuing of calls, not the container. 
+
+
+3. You are diagnosing a problem, but running kubectl get events produces too many events for you to see the problem. Which command would you use to view only the important events?
+
+	kubectl get events --field-selector type!=Normal
+
+
+6. How many ways can you discover a Service in Kubernetes?
+
+	2
+
+8. Which workload resource would you use for an application that requires an ordered and automated rolling update?
+
+	StatefulSets
+
+11. Which is a valid label value?
+
+	An empty value
+
+12. What is correct about using Services in Kubernetes?
+
+	The iptables proxy mode has an affect on clients passing with a load balancer.
+
+13. Your team uses kubectl to manage all aspects of your company's Kubernetes deployment. You are onboarding several DevOps engineers on the team who will take over the day-to-day management of simple tasks related to deployments. Which solution is most appropriate and will help your company scale?
+
+	The updated kubectl command structure
+
+17. Why would you use the shorthand R with the kubectl rollout command?
+
+	To process the directory specified in -f recursively
+
+18. You must load the following configuration file into Kubernetes as a ConfigMap:
+
+## application config appconfig.txt
+## comments for dev use only
+
+host=reports.example.com
+port=80
+timeout=6
+
+When you run the command kubectl create configmap myconfig --from-file=./appconfig.txt, however, the ConfigMap is created with the comments intact, which is causing your application to throw an error. How would you fix the command?
+
+	kubectl create configmap myconfig --from-env-file=./appconfig.txt
+
+
+20. You modified the config/kernel-monitor.json file and removed the ReadonlyFilesystem condition from the file. How can you revert the changes back?
+
+	By creating a new ReadonlyFilesystem condition definition inside the conditions field along with a reason and a message
+
+21. You have a MongoDB server running in a Pod at port number 34121. You must access the database from your local system which means you require port forwarding. How will you achieve the task without choosing the port number manually?
+
+	kubectl port-forward replicaset/mongo-3fj5sk9 :34121
+
+22. You want to create a new CronJob object called demo-job that uses the image training/demo-job and runs the /scripts/job.sh script every minute. What command would you run in the Kubernetes command-line interface (CLI)?
+
+	kubectl run demo-job --restart=OnFailure --schedule="*/1 * * * *" 
+                     --image=training/demo-job -- /scripts/job.sh
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,960 @@
+Selenium4
+
+set1
+
+1. 
+A developer used the geolocation Chrome DevTools Protocol with ChromeDriver to set data compliance functionality for European Union (EU) countries. Why might the functionality not display in an EU country?
+ 
+ 	 	 	Location accuracy must be more precise
+2. 
+What benefit does Selenium WebDriver offer over Selenium Integrated Development Environment (IDE)? 
+ 
+ 	 	 	WebDriver supports more browsers.
+3. 
+A script uses the by tag name locator for navigation links in a large ecommerce website. How would you change it?
+ 
+ 	 	 	Change it to the by link text locator because navigation links may change often.
+4. 
+A developer is setting the device dimensions for an iPhone 11 Pro to simulate a responsive issue a user is having. When setting the device metrics for override device mode within Chrome DevTools Protocol, the developer has the width, height, and mobile parameters, but is missing one other necessary parameter. What parameter must they add?
+ 
+ 	 	 	deviceScaleFactor
+5. 
+getCssValue() (Java), value_of_css_property() (Python), or GetCssValue() (C#) takes what string as an argument?
+ 
+ 	 	 	propertyName
+6. 
+Which BiDirectional API (Chrome DevTools Protocol (CDP) implementation) feature allows an automation tester to capture network events in the browser and manipulate them?
+ 
+ 	 	 	Network interception
+7. 
+Which option should you select to match the element, <a id="toHome" href="to-home.html">Home</a>, if you want to use the "by link" text locator?
+ 
+ 	 	 	Home
+8. 
+What type of collection does the findElements() (Java), find_elements (Python), or FindElements (C#) method return?
+ 
+ 	 	 	A collection of element references
+9. 
+An automation tester is creating a script, that verifies the checkbox element. The checkbox returns False for the isSelected() (Java), is_selected (Python), or Selected (C#) command, however.
+
+<input type="checkbox" id="selenium" name="selenium">
+
+What command should the automation tester run before performing the isSelected(), is_selected, or Selected command?
+ 
+ 	 	 	Java and Python: click();
+C#: Click()
+10. 
+How would you point a Selenium script to a WebDriver binary in code? 
+ 
+ 	 	 	Define a path to the binary directory as a string and set it as a driver property once.
+11. 
+The Select() (Java and Python) and SelectElement() (C#) object throws an, "UnsupportedOperationException" when the <select> element is in what state?
+ 
+ 	 	 	Disabled
+12. 
+As an automation tester, you are reviewing a pull request for an automation script. The developer included a few Thread.sleep(3000)s or time.sleep(3) in Python within their script. What is the best option to improve this approach?
+ 
+ 	 	 	Use explicit waits.
+13. 
+What window global configuration options exist at the WebDriver object level?
+ 
+ 	 	 	Maximize, minimize, and set the size of the window
+14. 
+There is a form with multiple inputs. You must select the element, <input type="text" name="firstname">. What is the best locator to use?
+ 
+ 	 	 	By name
+15. 
+The script invokes a click command on a button inside a frame, but it fails with NoSuchElementException. You used the by XPath locator which you are sure is correct. What is the problem? 
+ 
+ 	 	 	The script does not switch to the frame first.
+16. 
+What is the most practical way to programmatically inspect the entire source code of a web page? 
+ 
+ 	 	 	Invoke the getPageSource() (Java), PageSource (C#), or page_source (Python) command and parse the returned HTML string.
+17. 
+What mouse interaction is the click() (Java and Python) and Click() (C#) command equivalent to?
+ 
+ 	 	 	Left-click
+18. 
+You run a Selenium script, but it fails with the message, "The path to the driver executable must be set". Why? 
+ 
+ 	 	 	The user did not download and configure the binary driver in the code.
+19. 
+A developer must check that different features are available across different geographic locations. What Chrome DevTools function allows the developer to simulate this scenario?
+ 
+ 	 	 	Emulate geolocation
+20. 
+How do you get the title of a web page?
+ 
+ 	 	 	Use the .getTitle() method (Java) or title (Python) or Title (C#) property.
+
+
+set2
+
+1. 
+You want to use Selenium to automate tests for a JSON-serving API. Why is this not a good fit?
+ 
+ 	 	 	Selenium can capture HTTP traffic, but its intended purpose is automation at the user interface (UI) layer.
+2. 
+Your script fails with an UnhandledAlertException. How would you fix it? 
+ 
+ 	 	 	Add alert handling code to the script.
+3. 
+In addition to navigating to the specified URL, what other navigation actions does Selenium allow you to do? 
+ 
+ 	 	 	Navigate back, forward, and refresh the page
+4. 
+How does the Selenium WebDriver library interact with the binary file and the browser? 
+ 
+ 	 	 	The library controls the browser through the binary file using the W3C WebDriver protocol.
+5. 
+To get JavaScript exception information from WebDriver BiDirectional Protocol, what must you register to the browser session?
+ 
+ 	 	 	Callbacks
+6. 
+How would you point a Selenium script to a WebDriver binary in code? 
+ 
+ 	 	 	Define a path to the binary directory as a string and set it as a driver property once.
+7. 
+What type of value does the getTagName() (Java), tag_name (Python), or TagName (C#) command return?
+ 
+ 	 	 	String
+8. 
+As an automation tester, you are reviewing a pull request for an automation script. The developer included a few Thread.sleep(3000)s or time.sleep(3) in Python within their script. What is the best option to improve this approach?
+ 
+ 	 	 	Use explicit waits.
+9. 
+As a developer, you want to intercept a third-party API. What is an example of browser activity that you can intercept using WebDriver BiDirectional API network interception?
+ 
+ 	 	 	HTTP response
+10. 
+A script uses a locator with an absolute XPath. What should you do? 
+ 
+ 	 	 	Change it to relative XPath because it is much less likely to break.
+11. 
+What programming languages does Selenium WebDriver officially support? 
+ 
+ 	 	 	Java, Python, Ruby, C#, and JavaScript
+12. 
+The sendKeys() (Java), send_keys() (Python), or SendKeys() (C#) command interacts with an input field that is in which state?
+ 
+ 	 	 	Editable and enabled
+13. 
+What command navigates to a URL? 
+ 
+ 	 	 	The .get() method (Java and Python or .Navigate().GoToUrl() (C#).
+14. 
+You must click a button inside a frame. How would you do it? 
+ 
+ 	 	 	Explicitly switch to the frame, then click() the button.
+15. 
+What would you use the WebDriver BiDirectional Mutation Observation feature for?
+ 
+ 	 	 	To detect Document Object Model (DOM) mutations
+16. 
+What check would you perform when using the isDisplayed() (Java), is_displayed (Python), or Displayed (C#) method?
+ 
+ 	 	 	Check that the element is visible.
+17. 
+What makes the by ID locator the most reliable?
+ 
+ 	 	 	IDs must be unique in an HTML document so it prevents you from accidentally selecting the wrong element.
+18. 
+How do you get the title of a web page?
+ 
+ 	 	 	Use the .getTitle() method (Java) or title (Python) or Title (C#) property.
+19. 
+What is a risk of using the by class name locator? 
+ 
+ 	 	 	The web application may introduce a new element with the same class name and break your script.
+20. 
+In past versions of Selenium you could run older Selenium scripts in headless mode by setting the --headless flag. What flag can you use in Selenium 4?
+ 
+ 	 	 	headless=true
+
+
+set3
+
+1. 
+A JavaScript issue throws an error within the browser from the web application. How would you retrieve the error text?
+ 
+ 	 	 	Add a JavascriptException listener and getMessage from the exception.
+2. 
+How is the partial link text locating mechanism different from tag name? 
+ 
+ 	 	 	Partial link text considers the text within the tags, whereas the tag name looks at the HTML tag.
+3. 
+A developer wants to write a test to check that after clicking a checkbox, the checkbox changes from red to green if the developer calls getCssValue() (Java), value_of_css_property() (Python), or GetCssValue() (C#). They get a "StaleElementReference" exception when doing so, however. What must the developer do?
+ 
+ 	 	 	Use ExplicitWait for the property change and validate.
+4. 
+As an automation tester, you are reviewing a pull request for an automation script. The developer included a few Thread.sleep(3000)s or time.sleep(3) in Python within their script. What is the best option to improve this approach?
+ 
+ 	 	 	Use explicit waits.
+5. 
+There is a form with multiple inputs. You must select the element, <input type="text" name="firstname">. What is the best locator to use?
+ 
+ 	 	 	By name
+6. 
+What mouse interaction is the click() (Java and Python) and Click() (C#) command equivalent to?
+ 
+ 	 	 	Left-click
+7. 
+What is a disadvantage of using the by tag name locator? 
+ 
+ 	 	 	It may match many elements, including those you did not intend it to.
+8. 
+You invoke driver.quit(), but not all windows close. Why? 
+ 
+ 	 	 	The quit() command only closed the windows associated with the driver object that invoked the command. You must associate the remaining windows with another driver object.
+9. 
+You want to compare the text, "The Selenium Browser Automation Project" with the heading text of the Selenium documentation homepage as follows: <h1> The Selenium Browser Automation Project </h1> using the getText() (Java), text (Python), or Text (C#) command. The values are not matching, however. Why?
+ 
+ 	 	 	The getText() command returns the exact text from the element and does not trim any white spaces.
+10. 
+What is a risk of using the by class name locator? 
+ 
+ 	 	 	The web application may introduce a new element with the same class name and break your script.
+11. 
+What is an HTML frame?
+ 
+ 	 	 	An element that allows you to insert a separate HTML document into another web page
+12. 
+What is an example of an element that the isSelected() (Java), is_selected (Python), or Selected (C#) method is compatible with?
+ 
+ 	 	 	Check box
+13. 
+To register basic authentication, which credentials must a user provide to pass browser authentication?
+ 
+ 	 	 	Username and password
+14. 
+You must select the element, <input type="text" class="form-control" id="firstName">. What is the best selector to use?
+ 
+ 	 	 	ID
+15. 
+Which is a keyboard arrow action?
+ 
+ 	 	 	Java: sendKeys(Keys.ARROW_UP); 
+Python: send_keys(Keys.ARROW_UP); 
+C#: SendKeys(Keys.ArrowUp)
+16. 
+What command navigates to a URL? 
+ 
+ 	 	 	The .get() method (Java and Python or .Navigate().GoToUrl() (C#).
+17. 
+A script fails with a NoSuchElementException. Why?
+ 
+ 	 	 	The configured implicit timeout to locate elements is insufficient.
+18. 
+What makes the by ID locator the most reliable?
+ 
+ 	 	 	IDs must be unique in an HTML document so it prevents you from accidentally selecting the wrong element.
+19. 
+A web page displays a list of items you must buy in the form of a shopping list:
+
+<ol id="shopping-list">
+ <li class="milk">
+ <li class="cheese">
+ <li class="baby wipes">
+</ol>
+
+You want to check the complete list on the web page and compare it with the complete list in a text file. Which command would you use?
+ 
+ 	 	 	Java: findElements();
+Python: find_elements;
+C#: FindElements
+20. 
+Which command should you use to interact with the button element, for example?
+
+<div class="selenium-button-container">
+  <button class="selenium-button">Learn More</button>
+</div>
+ 
+ 	 	 	Java and Python: click(); 
+C#: Click()
+
+
+Set4
+
+1. 
+You want to use Selenium to automate tests for a JSON-serving API. Why is this not a good fit?
+ 
+ 	 	 	Selenium can capture HTTP traffic, but its intended purpose is automation at the user interface (UI) layer.
+2. 
+What window global configuration options exist at the WebDriver object level?
+ 
+ 	 	 	Maximize, minimize, and set the size of the window
+3. 
+You have one tab open. What happens if you invoke either the close() and quit() command?
+ 
+ 	 	 	The browser window closes with both close() and quit().
+4. 
+You invoke driver.quit(), but not all windows close. Why? 
+ 
+ 	 	 	The quit() command only closed the windows associated with the driver object that invoked the command. You must associate the remaining windows with another driver object.
+5. 
+You must select the element, <input type="text" class="form-control" id="firstName">. What is the best selector to use?
+ 
+ 	 	 	ID
+6. 
+Which is a keyboard arrow action?
+ 
+ 	 	 	Java: sendKeys(Keys.ARROW_UP); 
+Python: send_keys(Keys.ARROW_UP); 
+C#: SendKeys(Keys.ArrowUp)
+7. 
+You want to compare the text, "The Selenium Browser Automation Project" with the heading text of the Selenium documentation homepage as follows: <h1> The Selenium Browser Automation Project </h1> using the getText() (Java), text (Python), or Text (C#) command. The values are not matching, however. Why?
+ 
+ 	 	 	The getText() command returns the exact text from the element and does not trim any white spaces.
+8. 
+What is an example of an element that the isSelected() (Java), is_selected (Python), or Selected (C#) method is compatible with?
+ 
+ 	 	 	Check box
+9. 
+You run a Selenium script, but it fails with the message, "The path to the driver executable must be set". Why? 
+ 
+ 	 	 	The user did not download and configure the binary driver in the code.
+10. 
+Your script clicked a button that took it to another page. How can you go back? 
+ 
+ 	 	 	Invoke the .navigate().back() (Java), .back() (Python), or .Navigate().Back() (C#), command.
+11. 
+To register basic authentication, which credentials must a user provide to pass browser authentication?
+ 
+ 	 	 	Username and password
+12. 
+What would prevent a team from using Selenium?
+ 
+ 	 	 	All team members lack both testing and programming skills.
+13. 
+In past versions of Selenium you could run older Selenium scripts in headless mode by setting the --headless flag. What flag can you use in Selenium 4?
+ 
+ 	 	 	headless=true
+14. 
+What is a risk of using the by class name locator? 
+ 
+ 	 	 	The web application may introduce a new element with the same class name and break your script.
+15. 
+What makes the by ID locator the most reliable?
+ 
+ 	 	 	IDs must be unique in an HTML document so it prevents you from accidentally selecting the wrong element.
+16. 
+When you navigate to a login page, you want to check that the login button is not disabled after the user enters their username and password. What method would you use?
+ 
+ 	 	 	Java: isEnabled(); 
+Python: is_enabled;
+C#: Enabled
+17. 
+The sendKeys() (Java), send_keys() (Python), or SendKeys() (C#) command interacts with an input field that is in which state?
+ 
+ 	 	 	Editable and enabled
+18. 
+How do you get the title of a web page?
+ 
+ 	 	 	Use the .getTitle() method (Java) or title (Python) or Title (C#) property.
+19. 
+A script fails with a NoSuchElementException. Why?
+ 
+ 	 	 	The configured implicit timeout to locate elements is insufficient.
+20. 
+What is an HTML frame?
+ 
+ 	 	 	An element that allows you to insert a separate HTML document into another web page
+21. 
+In addition to navigating to the specified URL, what other navigation actions does Selenium allow you to do? 
+ 
+ 	 	 	Navigate back, forward, and refresh the page
+22. 
+What is the difference between absolute and relative XPath? 
+ 
+ 	 	 	Absolute XPath starts from the root node, whereas relative XPath starts from the specified node.
+23. 
+A web page displays a list of items you must buy in the form of a shopping list:
+
+<ol id="shopping-list">
+ <li class="milk">
+ <li class="cheese">
+ <li class="baby wipes">
+</ol>
+
+You want to check the complete list on the web page and compare it with the complete list in a text file. Which command would you use?
+ 
+ 	 	 	Java: findElements();
+Python: find_elements;
+C#: FindElements
+
+
+set5
+
+1. 
+How can you get the binary files that the Selenium WebDriver library requires? 
+ 
+ 	 	 	Download the binary files and use them separately from the library.
+2. 
+Which performance metric can you monitor with BiDirectional API and Chrome DevTools performance analysis?
+ 
+ 	 	 	Nodes
+3. 
+You must run Selenium tests in Google Chrome, but your current Chrome binary is outdated. What do you do?
+ 
+ 	 	 	Download and use the version of the binary that strictly corresponds to the browser version.
+4. 
+Based on Selenium 4 recommendations, what is the correct command to use with this form? 
+
+<form id="new-user" action="/user" method="post">
+  <input id="username" type="text">Username</input>
+  <button id="submit-button" type="submit" class="btn-primary" disabled="">Create user</button>
+</form>
+ 
+ 	 	 	Java and Python: click("submit-button"); 
+C#: Click("submit-button")
+5. 
+A common reason for Selenium tests to fail is poor Document Object Model (DOM) synchronization. How can you help debug the synchronization issue?
+ 
+ 	 	 	Temporarily hard code a sleep.
+6. 
+A developer is setting the device dimensions for an iPhone 11 Pro to simulate a responsive issue a user is having. When setting the device metrics for override device mode within Chrome DevTools Protocol, the developer has the width, height, and mobile parameters, but is missing one other necessary parameter. What parameter must they add?
+ 
+ 	 	 	deviceScaleFactor
+7. 
+What benefit does Selenium WebDriver offer over Selenium Integrated Development Environment (IDE)? 
+ 
+ 	 	 	WebDriver supports more browsers.
+8. 
+A developer must use Chrome DevTools performance metrics to determine an application's resource utilization when visiting a site. What must they do to find this information?
+ 
+ 	 	 	Add the commands Performance.enable and Performance.getMetrics.
+9. 
+You want to use Selenium to automate tests for a JSON-serving API. Why is this not a good fit?
+ 
+ 	 	 	Selenium can capture HTTP traffic, but its intended purpose is automation at the user interface (UI) layer.
+10. 
+You try to check the heading text element, "The Selenium Browser Automation Project" using the isDisplayed() (Java), is_displayed (Python), or Displayed (C#) method on the page, but it returns a, "No Such Element Exception" error. The method should only return either True or False, however. Why could this be happening?
+
+<main role="main">
+  <div class="td-content">
+  <header class="article-meta"></header>
+  <p>Selenium is an umbrella project</p>
+</main>
+ 
+ 	 	 	The heading <h1> element is not within the Document Object Model (DOM).
+11. 
+Which HTML attribute would you use the getAttribute() (Java), get_attribute() (Python), or GetAttribute() (C#) command for?
+ 
+ 	 	 	Value
+12. 
+A developer used the geolocation Chrome DevTools Protocol with ChromeDriver to set data compliance functionality for European Union (EU) countries. Why might the functionality not display in an EU country?
+ 
+ 	 	 	Location accuracy must be more precise
+13. 
+A script uses the by tag name locator for navigation links in a large ecommerce website. How would you change it?
+ 
+ 	 	 	Change it to the by link text locator because navigation links may change often.
+14. 
+You cannot edit or reset an element using the clear() (Java and Python) or Clear() (C#) command. What exception is thrown?
+ 
+ 	 	 	Invalid element state
+15. 
+During test debugging, an automation tester may encounter broken resources that the web application outputs to the console. You want to check for these in your test scripts. What BiDirectional API feature allows you to do so?
+ 
+ 	 	 	Listen to console.log events
+16. 
+What is the difference between explicit wait and implicit wait?
+ 
+ 	 	 	Explicit wait waits until the condition you pass to it resolves on a single element, whereas implicit wait is a global configuration that checks the Document Object Model (DOM) when trying to find an element.
+17. 
+To get JavaScript exception information from WebDriver BiDirectional Protocol, what must you register to the browser session?
+ 
+ 	 	 	Callbacks
+18. 
+Another element is obscuring an element’s center point when you use the click() (Java and Python or Click() (C#) command. What exception is thrown?
+ 
+ 	 	 	Element click intercepted
+19. 
+You are scraping a dynamic web page for content. Because the content changes regularly, you want to set the maximum time to wait for a condition and the frequency to check the condition. What type of wait would you use for this scenario?
+ 
+ 	 	 	Fluent wait
+20. 
+You want to get the type of the following HTML input: <input type="checkbox" id="checkbox" name="checkbox" value="checkbox" />
+
+ 
+
+What command would you use?
+ 
+ 	 	 	Java: getAttribute("type"); 
+Python: get_attribute("type"); 
+C#: GetAttribute("type")
+21. 
+As a developer, you want to get the coordinates of an element. Using getRect() (Java), rect (Python), or Size (C#) on the WebDriver window returns the wrong value. What changes would you make to the script?
+ 
+ 	 	 	Use the getRect() (Java), rect (Python), or Size (C#) command on the element instead.
+
+
+set6
+
+1. 
+Based on Selenium 4 recommendations, what is the correct command to use with this form? 
+
+<form id="new-user" action="/user" method="post">
+  <input id="username" type="text">Username</input>
+  <button id="submit-button" type="submit" class="btn-primary" disabled="">Create user</button>
+</form>
+ 
+ 	 	 	Java and Python: click("submit-button"); 
+C#: Click("submit-button")
+2. 
+What do the getPageSource() (Java), page_source (Python), PageSource (C#) commands return?
+ 
+ 	 	 	The full HTML of the web page as a string
+3. 
+You are testing a form that should save all session text input as soon as the user enters it. What actions can you perform in your script before asserting that the data was saved?
+ 
+ 	 	 	Input text and invoke the .navigate().refresh() (Java), .refresh() (Python), or .Navigate().Refresh() (C#), command.
+4. 
+You run the findElements() (Java), find_elements (Python), or FindElements (C#) command and it does not find any matches. What does it return?
+ 
+ 	 	 	An empty list
+5. 
+How does Selenium WebDriver allow interactions with an HTML IFrame? 
+ 
+ 	 	 	The user must first explicitly switch to the HTML IFrame before interacting with elements inside.
+6. 
+If you switch to a different window, what happens to the current one? 
+ 
+ 	 	 	It remains open.
+7. 
+An automation tester is creating a script, that verifies the checkbox element. The checkbox returns False for the isSelected() (Java), is_selected (Python), or Selected (C#) command, however.
+
+<input type="checkbox" id="selenium" name="selenium">
+
+What command should the automation tester run before performing the isSelected(), is_selected, or Selected command?
+ 
+ 	 	 	Java and Python: click();
+C#: Click()
+8. 
+What programming languages does Selenium WebDriver officially support? 
+ 
+ 	 	 	Java, Python, Ruby, C#, and JavaScript
+9. 
+What check would you perform when using the isDisplayed() (Java), is_displayed (Python), or Displayed (C#) method?
+ 
+ 	 	 	Check that the element is visible.
+10. 
+You want to run a script and see Selenium perform the actions. When the window loads, however, it is not full-screen. What command would you use in your script to fix this?
+ 
+ 	 	 	Maximize
+11. 
+You use the command, getAttribute("label") (Java), get_attribute("label") (Python), or GetAttribute("label") (C#) but it returns Null as follows:
+
+ 
+
+<input id="username" type="text" value="email@gmail.com" aria-label="email" />
+
+ 
+
+What changes would you make to the command?
+ 
+ 	 	 	Java: getAttribute("aria-label"); 
+Python: get_attribute("aria-label");
+C#: GetAttribute("aria-label")
+12. 
+An element isEnabled() (Java), is_enabled (Python), or Enabled (C#) in the current browsing context. What value does the method return?
+ 
+ 	 	 	True
+13. 
+What types of testing can you automate with Selenium?
+ 
+ 	 	 	Mostly user interface (UI) (or end-to-end) tests
+14. 
+What type of value does the getText() (Java), text (Python), or Text (C#) command return?
+ 
+ 	 	 	String
+15. 
+Intermittent issues that arise from using Selenium can be connected to race conditions. Which method could you use to synchronize the state between the browser and Document Object Model (DOM)?
+ 
+ 	 	 	Explicit wait
+16. 
+Where on an element does the click() (Java and Python) or Click() (C#) command action take place?
+ 
+ 	 	 	The center of the element
+17. 
+What is the main difference between Selenium WebDriver and Selenium Integrated Development Environment (IDE)? 
+ 
+ 	 	 	WebDriver is a library, whereas IDE is a graphical user interface (GUI) tool.
+18. 
+In terms of code maintainability, what is the best approach to maximize the window before every test? 
+ 
+ 	 	 	Maximize the window once as a global setting of the WebDriver object.
+19. 
+You have multiple tabs open. You want to close the current tab only. Which command would you use? 
+ 
+ 	 	 	close()
+20. 
+A developer must check that different features are available across different geographic locations. What Chrome DevTools function allows the developer to simulate this scenario?
+ 
+ 	 	 	Emulate geolocation
+
+
+set7
+
+1. 
+A JavaScript issue throws an error within the browser from the web application. How would you retrieve the error text?
+ 
+ 	 	 	Add a JavascriptException listener and getMessage from the exception.
+2. 
+Which performance metric can you monitor with BiDirectional API and Chrome DevTools performance analysis?
+ 
+ 	 	 	Nodes
+3. 
+You try to check the heading text element, "The Selenium Browser Automation Project" using the isDisplayed() (Java), is_displayed (Python), or Displayed (C#) method on the page, but it returns a, "No Such Element Exception" error. The method should only return either True or False, however. Why could this be happening?
+
+<main role="main">
+  <div class="td-content">
+  <header class="article-meta"></header>
+  <p>Selenium is an umbrella project</p>
+</main>
+ 
+ 	 	 	The heading <h1> element is not within the Document Object Model (DOM).
+4. 
+A developer is setting the device dimensions for an iPhone 11 Pro to simulate a responsive issue a user is having. When setting the device metrics for override device mode within Chrome DevTools Protocol, the developer has the width, height, and mobile parameters, but is missing one other necessary parameter. What parameter must they add?
+ 
+ 	 	 	deviceScaleFactor
+5. 
+A common reason for Selenium tests to fail is poor Document Object Model (DOM) synchronization. How can you help debug the synchronization issue?
+ 
+ 	 	 	Temporarily hard code a sleep.
+6. 
+What is the difference between explicit wait and implicit wait?
+ 
+ 	 	 	Explicit wait waits until the condition you pass to it resolves on a single element, whereas implicit wait is a global configuration that checks the Document Object Model (DOM) when trying to find an element.
+7. 
+Another element is obscuring an element’s center point when you use the click() (Java and Python or Click() (C#) command. What exception is thrown?
+ 
+ 	 	 	Element click intercepted
+8. 
+Selenium provides access to Chrome DevTools' emulate geolocation feature. What location data can you set as part of the command?
+ 
+ 	 	 	Longitude, latitude, and accuracy
+9. 
+In Selenium 4, the Register Basic Auth with BiDirectional API only works on browsers that support which protocol?
+ 
+ 	 	 	Chrome DevTools Protocol
+10. 
+What part of an element does the x-axis position return from the size and position commands?
+ 
+ 	 	 	Top left-hand corner
+11. 
+You try to use the command, selectByValue("chocolate") (Java), select_by_value("chocolate") (Python), or SelectByValue("chocolate") (C#), but it throws an, "UnsupportedOperationException":
+
+<select name="multiple" id="multiple" multiple="multiple">
+    <option selected="selected" value="eggs">Eggs</option>
+    <option value="milk">Milk</option>
+    <option value="chocolate" disabled="disabled">Chocolate</option>
+</select>
+
+What changes would you make to the HTML or select command to select the "Chocolate" option?
+ 
+ 	 	 	Remove the disabled="disabled" attribute from the chocolate option.
+12. 
+Which is a disadvantage of using Selenium WebDriver instead of Selenium Integrated Development Environment (IDE)?
+ 
+ 	 	 	WebDriver has a steeper and longer learning curve than Selenium IDE.
+13. 
+In Selenium 4, what protocol does Selenium WebDriver use to communicate with the browser? 
+ 
+ 	 	 	W3C WebDriver protocol
+14. 
+A Confirm dialog pops up with OK and Cancel buttons. What must you do to proceed? 
+ 
+ 	 	 	Invoke either accept or dismiss commands.
+15. 
+What window global configuration options exist at the WebDriver object level?
+ 
+ 	 	 	Maximize, minimize, and set the size of the window
+16. 
+What actions can you perform on dialog pop-ups? 
+ 
+ 	 	 	Accept, dismiss, get text, and send input
+17. 
+You use the by link text selector with the text, "Home" to get the element, <p> Home </p>, but it fails. Why? 
+ 
+ 	 	 	This selector only works on <a> elements.
+18. 
+The getText() (Java), text (Python), or Text (C#) command returns the rendered text that the user sees. Depending on which browser the command uses, it either returns textContent or what other property?
+ 
+ 	 	 	innerText
+19. 
+A script that uses an XPath selector fails with NoSuchElementException. What is the most likely reason? 
+ 
+ 	 	 	The path of the element changed.
+20. 
+You want to close one of many open windows. What would you do? 
+ 
+ 	 	 	Switch to the window you want to close with a window handle and invoke driver.close().
+
+
+
+set8
+
+1. 
+You try to check the heading text element, "The Selenium Browser Automation Project" using the isDisplayed() (Java), is_displayed (Python), or Displayed (C#) method on the page, but it returns a, "No Such Element Exception" error. The method should only return either True or False, however. Why could this be happening?
+
+<main role="main">
+  <div class="td-content">
+  <header class="article-meta"></header>
+  <p>Selenium is an umbrella project</p>
+</main>
+ 
+ 	 	 	The heading <h1> element is not within the Document Object Model (DOM).
+2. 
+Selenium provides access to Chrome DevTools' emulate geolocation feature. What location data can you set as part of the command?
+ 
+ 	 	 	Longitude, latitude, and accuracy
+3. 
+You use the command, getAttribute("label") (Java), get_attribute("label") (Python), or GetAttribute("label") (C#) but it returns Null as follows:
+
+ 
+
+<input id="username" type="text" value="email@gmail.com" aria-label="email" />
+
+ 
+
+What changes would you make to the command?
+ 
+ 	 	 	Java: getAttribute("aria-label"); 
+Python: get_attribute("aria-label");
+C#: GetAttribute("aria-label")
+4. 
+You run the findElements() (Java), find_elements (Python), or FindElements (C#) command and it does not find any matches. What does it return?
+ 
+ 	 	 	An empty list
+5. 
+You want to get the type of the following HTML input: <input type="checkbox" id="checkbox" name="checkbox" value="checkbox" />
+
+ 
+
+What command would you use?
+ 
+ 	 	 	Java: getAttribute("type"); 
+Python: get_attribute("type"); 
+C#: GetAttribute("type")
+6. 
+When you set the position of a window, what is the position relative to? 
+ 
+ 	 	 	The upper left corner of the screen
+7. 
+What part of an element does the x-axis position return from the size and position commands?
+ 
+ 	 	 	Top left-hand corner
+8. 
+As a developer, you want to get the coordinates of an element. Using getRect() (Java), rect (Python), or Size (C#) on the WebDriver window returns the wrong value. What changes would you make to the script?
+ 
+ 	 	 	Use the getRect() (Java), rect (Python), or Size (C#) command on the element instead.
+9. 
+You want to get a list of all the options from the <select> element. What is the next step to return the list?
+ 
+ 	 	 	Get options
+10. 
+As a front-end developer, you want to check that the font is consistent across pages. Which Cascading Style Sheets (CSS) property can you pass to the getCssValue() (Java), value_of_css_property() (Python), or GetCssValue() (C#) command to get the specific font value?
+ 
+ 	 	 	font-weight
+11. 
+In Selenium 4, what protocol does Selenium WebDriver use to communicate with the browser? 
+ 
+ 	 	 	W3C WebDriver protocol
+12. 
+The findElements("ol") (Java), find_elements("ol") (Python), or FindElements("ol") (C#) command returns an empty list:
+
+<ol id="shopping-list">
+ <li class="milk">
+ <li class="cheese">
+ <li class="baby wipes">
+</ol> 
+
+What changes would you make to the command to return the shopping list items?
+ 
+ 	 	 	Java: findElements(By.tagName("li")); 
+Python: find_elements(By.tagName("li")); 
+C#: FindElements(By.tagName("li"))
+13. 
+You must select the element, <textarea class="form-control"></textarea>. What locators can you use to select it? 
+ 
+ 	 	 	Class name, tag name, and other locators
+14. 
+You want to get a list of all selected options from the <select> element. After you create the Select() (Java and Python) or SelectElement() (C#) object, what is the next step to return the list?
+ 
+ 	 	 	Get all selected options.
+15. 
+As a developer, you implement basic authentication on your website. The site now prompts a dialog that you cannot handle using Selenium standard WebDriver commands. What functionality do you need to make this interaction possible?
+ 
+ 	 	 	BiDirectional API (Chrome Debugging Protocol (CDP) implementation)
+16. 
+The script switches to a frame, clicks something in it successfully, then tries to click something outside of it, but fails. Why? 
+ 
+ 	 	 	The script does not switch out of the frame back to the top-level document.
+17. 
+You use isEnabled() and isDisplayed() to check the visibility of elements. What is the difference between isDisplayed() (Java), is_displayed (Python), or Displayed (C#) and isEnabled() (Java), is_enabled (Python), or Enabled (C#)?
+ 
+ 	 	 	isEnabled() checks that the element is enabled or not and isDisplayed() checks that the element is present only.
+18. 
+You have multiple tabs open. You want to close all tabs and the window. Which command would you use? 
+ 
+ 	 	 	quit()
+19. 
+In addition to navigating to the specified URL, what other navigation actions does Selenium allow you to do? 
+ 
+ 	 	 	Navigate back, forward, and refresh the page
+20. 
+What is a risk of using the by class name locator? 
+ 
+ 	 	 	The web application may introduce a new element with the same class name and break your script.
+
+
+set9
+
+1. 
+A script uses the by tag name locator for navigation links in a large ecommerce website. How would you change it?
+ 
+ 	 	 	Change it to the by link text locator because navigation links may change often.
+2. 
+What benefit does Selenium WebDriver offer over Selenium Integrated Development Environment (IDE)? 
+ 
+ 	 	 	WebDriver supports more browsers.
+3. 
+Which performance metric can you monitor with BiDirectional API and Chrome DevTools performance analysis?
+ 
+ 	 	 	Nodes
+4. 
+A JavaScript issue throws an error within the browser from the web application. How would you retrieve the error text?
+ 
+ 	 	 	Add a JavascriptException listener and getMessage from the exception.
+5. 
+When running a Selenium script, you find a functional issue on the web page. What WebDriver BiDirectional feature can you use to check the issue?
+ 
+ 	 	 	Listen to JS Exceptions
+6. 
+You must run Selenium tests in Google Chrome, but your current Chrome binary is outdated. What do you do?
+ 
+ 	 	 	Download and use the version of the binary that strictly corresponds to the browser version.
+7. 
+You cannot edit or reset an element using the clear() (Java and Python) or Clear() (C#) command. What exception is thrown?
+ 
+ 	 	 	Invalid element state
+8. 
+How can you get the binary files that the Selenium WebDriver library requires? 
+ 
+ 	 	 	Download the binary files and use them separately from the library.
+9. 
+Which HTML attribute would you use the getAttribute() (Java), get_attribute() (Python), or GetAttribute() (C#) command for?
+ 
+ 	 	 	Value
+10. 
+As a developer, you want to get the coordinates of an element. Using getRect() (Java), rect (Python), or Size (C#) on the WebDriver window returns the wrong value. What changes would you make to the script?
+ 
+ 	 	 	Use the getRect() (Java), rect (Python), or Size (C#) command on the element instead.
+11. 
+During test debugging, an automation tester may encounter broken resources that the web application outputs to the console. You want to check for these in your test scripts. What BiDirectional API feature allows you to do so?
+ 
+ 	 	 	Listen to console.log events
+12. 
+A developer wants to write a test to check that after clicking a checkbox, the checkbox changes from red to green if the developer calls getCssValue() (Java), value_of_css_property() (Python), or GetCssValue() (C#). They get a "StaleElementReference" exception when doing so, however. What must the developer do?
+ 
+ 	 	 	Use ExplicitWait for the property change and validate.
+13. 
+You try to check the heading text element, "The Selenium Browser Automation Project" using the isDisplayed() (Java), is_displayed (Python), or Displayed (C#) method on the page, but it returns a, "No Such Element Exception" error. The method should only return either True or False, however. Why could this be happening?
+
+<main role="main">
+  <div class="td-content">
+  <header class="article-meta"></header>
+  <p>Selenium is an umbrella project</p>
+</main>
+ 
+ 	 	 	The heading <h1> element is not within the Document Object Model (DOM).
+14. 
+A developer is setting the device dimensions for an iPhone 11 Pro to simulate a responsive issue a user is having. When setting the device metrics for override device mode within Chrome DevTools Protocol, the developer has the width, height, and mobile parameters, but is missing one other necessary parameter. What parameter must they add?
+ 
+ 	 	 	deviceScaleFactor
+15. 
+A developer must use Chrome DevTools performance metrics to determine an application's resource utilization when visiting a site. What must they do to find this information?
+ 
+ 	 	 	Add the commands Performance.enable and Performance.getMetrics.
+16. 
+You want to get the type of the following HTML input: <input type="checkbox" id="checkbox" name="checkbox" value="checkbox" />
+
+ 
+
+What command would you use?
+ 
+ 	 	 	Java: getAttribute("type"); 
+Python: get_attribute("type"); 
+C#: GetAttribute("type")
+17. 
+You want to use Selenium to automate tests for a JSON-serving API. Why is this not a good fit?
+ 
+ 	 	 	Selenium can capture HTTP traffic, but its intended purpose is automation at the user interface (UI) layer.
+18. 
+Another element is obscuring an element’s center point when you use the click() (Java and Python or Click() (C#) command. What exception is thrown?
+ 
+ 	 	 	Element click intercepted
+19. 
+You want to get a list of all the options from the <select> element. What is the next step to return the list?
+ 
+ 	 	 	Get options
+20. 
+Selenium provides access to Chrome DevTools' emulate geolocation feature. What location data can you set as part of the command?
+ 
+ 	 	 	Longitude, latitude, and accuracy
+21. 
+What is the difference between explicit wait and implicit wait?
+ 
+ 	 	 	Explicit wait waits until the condition you pass to it resolves on a single element, whereas implicit wait is a global configuration that checks the Document Object Model (DOM) when trying to find an element.
+22. 
+In Selenium 4, the Register Basic Auth with BiDirectional API only works on browsers that support which protocol?
+ 
+ 	 	 	Chrome DevTools Protocol
+23. 
+What type of list does the getOptions() (Java), options (Python), or Options (C#) command return?
+ 
+ 	 	 	List of web elements
+24. 
+Which option should you select to match the element, <a id="toHome" href="to-home.html">Home</a>, if you want to use the "by link" text locator?
+ 
+ 	 	 	Home
+25. 
+Based on Selenium 4 recommendations, what is the correct command to use with this form? 
+
+<form id="new-user" action="/user" method="post">
+  <input id="username" type="text">Username</input>
+  <button id="submit-button" type="submit" class="btn-primary" disabled="">Create user</button>
+</form>
+ 
+ 	 	 	Java and Python: click("submit-button"); 
+C#: Click("submit-button")
+26. 
+What is the difference between click() (Java and Python) or Click() (C#) and submit() (Java and Python) or Submit() (C#) in Selenium 4?
+ 
+ 	 	 	click() has a separate endpoint, whereas submit() functions by running a script.
+27. 
+Some applications use browser authentication. Which authentication method does Selenium support with its BiDirectional API?
+ 
+ 	 	 	Basic authentication credentials
+28. 
+How many elements can the by name locator return?
+ 
+ 	 	 	One or more
+29. 
+As a front-end developer, you want to check that the font is consistent across pages. Which Cascading Style Sheets (CSS) property can you pass to the getCssValue() (Java), value_of_css_property() (Python), or GetCssValue() (C#) command to get the specific font value?
+ 
+ 	 	 	font-weight
+30. 
+What is one advantage of using XPath locators in Selenium for element identification compared to other locators? 
+ 
+ 	 	 	XPath finds elements by content or partial text matches when attributes vary and text is constant.
+
+
+
+
+
+
+
+

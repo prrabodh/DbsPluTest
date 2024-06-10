@@ -1,0 +1,303 @@
+API Design and Development
+
+1. In OAuth, which statement is correct about refresh tokens?
+	You must keep the tokens confidential during their transmission. 
+
+2. Your application depends on an authorization server to implement OAuth 2.0 authorization. If the access token's validity period is 15 minutes, what should the refresh token's validity period be?
+
+	1 hour
+
+3. You create a website for users to interact with based on their sports interests. To participate in interactions, users must register on the site. You enable rate limiting for the number of logins per minute. What should you do if users unintentionally surpass the rate limit?
+
+	Disable their next login attempts for the next few minutes.
+
+4. You must use Swagger to document your API. Which is the correct format?
+
+		paths:
+		  /SusbcribedUsers:
+		    get:
+		      summary: Gets a list of subscribed Users
+		      responses:
+		        '200':
+		          description: Success
+		        '403':
+		          description: API Key is not allowed to make request
+
+5. An API returns records with sequential integer IDs, starting at 1. You need the IDs: 11, 12, 13, 14, and 15. How would you write the query string?
+
+	skip=10&take=5
+
+6. You apply rate limiting on your API. What effect does this have in terms of resource utilization and the capacity for your API to accommodate users?
+
+	You can accommodate more users with the existing resources.
+
+7. You design an API using microservices architecture principles. You update the API version. What happens?
+
+	The updates do not affect any services. 
+
+8. In OAuth 2.0, the transmission of refresh tokens happens between which components?
+
+	The client and the authorization server
+
+9. Which statement is correct when using an API to access databases?
+
+	APIs provide a standard interface but can decrease performance.
+
+10. You release an API version v2.0.0 with backward compatibility to v1.0.0. How long should you maintain this backward compatibility with the older version?
+
+	Until the expiration of the deprecation grace period
+
+11. After getting the first 20 users from the API, you make the following API call:
+GET /Users?skip=10&take=20
+Some users are the same in both API calls. What could be the cause of the duplicate users?
+
+	Because the take variable was bigger than the skip variable, the API returns 10 duplicates and 10 new records.
+
+12. You have three resources, categories, sub-categories, and items in a RESTful API. You must receive the details of a speaker with the ID 25 within the sub-category electronics. You make the following request to the API: GET /categories/electronics/speaker?=id{25}. You receive a 400 Bad Request error code. How can you correct the request?
+
+	GET /categories/electronics/speaker/2
+
+13. On your API, users must wait six minutes after exceeding the server's request limit before revisiting the site. You use the following HTTP response:
+HTTP/1.1 429 Too Many Requests
+Content-Type: application/json
+Retry-After: 3600
+
+{
+  "message": "Please try again after 6 minutes."
+}
+Despite waiting six minutes, users who exceed the request limit cannot access the website. How can you adjust the HTTP response to resolve this issue?
+
+	HTTP/1.1 429 Too Many Requests
+	Content-Type: application/json
+	Retry-After: 360
+
+	{
+	  "message": "Please try again after 6 minutes."
+	}
+
+14. You must verify the integrity of claims within a JSON Web Token (JWT). Which token would you prefer?
+
+	Signed token
+
+15. You must display an HTTP status code to users who are persistently making frequent failed login attempts. Which HTTP status code should you use other than 429 Too Many Requests?
+
+	503 Service Unavailable
+
+16. In a microservices setup, a client initiates a request that causes several network round trips with the server. You allocate additional resources to resolve the issue for that client. The next day, numerous users replicate similar API calls. What should you do
+
+	Introduce API gateways between clients and services.
+
+17. Which is an encryption algorithm?
+
+	Data Encryption Standard
+
+18. An API allows consumers to specify an orderBy parameter. Why might a request that uses that parameter be slower than a request that does not use that parameter?
+
+	The consumer can specify a field that is not indexed.
+
+19. You visit the domain name https://helloearth.com and receive the 404 Not Found error. What does the error signify?
+
+	The resource is missing with no retrieval time limit.
+
+20. You have documentation for two different versions of the SubscribedUsers endpoint: Version 1: 
+POST /SubscribedUsers/v1/{userEmail}
+User Email is email address associated with the user
+Version 2:
+POST /SubscribedUsers/v2/{userId}
+User ID is the GUID of the user
+Which version should developers use to pass a globally unique identifier (GUID) to the endpoint?
+
+	Version 2 - with no change to the current code block
+
+
+
+1. You set up a weather website at https://sky.com, complete with various sub-domains such as https://blue.sky.com and https://red.sky.com. You want to make the website accessible to the public, allowing anyone to view resources across all sub-domains. In the context of cross-origin resource sharing (CORS), how should you modify the HTTP headers?
+
+	Access-Control-Allow-Origin: *
+	Access-Control-Allow-Methods: GET
+
+3. You must configure the rate limit headers for an API endpoint. The response to the endpoint must hold information about the number of initial requests (70), used requests (30), and time to reset the rate limit (60 seconds). After endpoint configuration, how does the server modify the response when a user sends a request to the endpoint?
+
+	HTTP/1.1 200 OK
+	Content-Type: application/json
+	X-RateLimit-Limit: 70
+	X-RateLimit-Remaining: 40
+	X-RateLimit-Reset: 60
+
+	{ }
+
+4. You build a social networking site that allows users to scroll at a rate of three feeds per second. The API permits access to 10 feeds per second. Some users exhaust their rate limit but are unsure what to do next. You set the X-RateLimit-Limit header to 10 for API requests per second, but this does not clarify the user's next steps. How can you address this uncertainty?
+
+	Communicate the upcoming delay time to users using the Retry-After HTTP header.
+
+5. You are designing a local ecommerce store for electronic and electrical goods. The website lets users create their accounts to manage their orders. What steps would you take for secure user authentication?
+
+	Use JSON Web Token (JWT) for stateless and scalable user authentication.
+
+6. When signing up clients to your application through OAuth 2.0 using their social email IDs, you request access to their photos and other media for an enhanced website experience. An attacker exploits an OAuth 2.0 vulnerability to gain access to users' private data, however. What steps can you take to address and fix this security vulnerability?
+
+	Switch to using JSON Web Token (JWT) as the OAuth's access token.
+
+7. You create a microservice architecture-based API for an ecommerce platform. The platform enables users to search for a product, purchase it, and handle its delivery. A user selects a speaker worth $150. They finish the initial steps of the transaction that spans across multiple services. In the last step, the API specifies an invalid price value of $1,500. As the API owner, what action would you take in this scenario?
+
+	Establish a non-transient service failure and cancel all the user's previous successful steps.
+
+8. You develop API version 1.0.0 and, two years later, launch a significant upgrade, version 2.0.0. During the major release, you communicate to your user base that backward compatibility support for version 1.0.0 ends in one year. As that deadline approaches, some users still have not transitioned to the new version and are approaching the point where they will no longer receive company support. What actions should you take to ensure that customers do not experience a disruption?
+
+	Further extend the grace period for all users, regardless of their migration status.
+
+9. How do API endpoints help run database queries?
+
+	They provide a standard set of commands for applications to query the database.
+
+10. Your website uses OAuth 2.0. The site is under attack. Attackers use replay attacks to compromise your network. During a refresh token exchange, you expect a new access token. The attackers possess the refresh tokens, however, which makes confirming the identity of the requesting source a challenge. How should you respond to this security threat?
+
+	Incorporate refresh token rotation so the authorization server provides a pair of refresh-access tokens.
+
+11. You implement open authorization (OAuth2) on your website, but users want to access it programmatically. How can you facilitate their access?
+
+	Generate a user-specific API key, which is accessible only once until it regenerates.	
+
+13. You remove API gateways between clients and services in a microservices architecture. What happens?
+
+	Clients track multiple endpoints by themselves.
+
+14. You plan to release a major API version in two months, deprecating two old methods. You inform users of the new version release after instantly deprecating the methods, causing chaos for users who opted for the upgrade. How can you avoid this situation in the future?
+
+	Extend each method's deprecation period time to several months after releasing the new API major version.
+
+16. You are designing the /Items API endpoint. What information should you return to the API consumer in the case where the inputs are incorrect?
+
+	The specific fields that were in error and how the user can fix them
+
+17. Which rate limit is suitable for a customer to stream a real-time video with no delays?
+
+	Requests per second
+
+18. You provide the server with two protocols to switch, arc/1 and sim/2, as follows:
+GET /api/products HTTP/1.1
+Host: www.ps.com
+Connection: upgrade
+Upgrade: arc/1, sim/2
+How can you confirm that the server upgrades the connection?
+
+	Verify that you receive the HTTP status code 101.
+
+19. In OAuth 2.0, the transmission of refresh tokens happens between which components?
+
+	The client and the authorization server
+
+20. While developing a RESTful API, why would you use API keys?
+
+	To govern the number of API calls
+
+1. An API runs into a database error because of the data the API consumer supplied. How should the API respond?
+
+	Return a status code of 400 - Bad Request.
+
+3. In JSON Web Token (JWT) syntax, where do you include the payload?
+
+	xxx.payload.xxx
+
+9. Which RESTful design principle allows users to navigate to hyperlinks that they receive in an API response?
+
+	Resource-oriented
+
+13. Your client uses JSON Web Tokens (JWT) for user authentication in their web application. The JWTs consist of signed tokens that contain three Base64-URL encoded strings separated by dots. In addition to standard maintenance, your client requests enhanced website security. Attackers may have exploited a vulnerability and extracted the signature from these tokens. To align with Request for Comments (RFC) 7519 standards, what adjustments must you make to enhance token security on the website?
+
+	Encrypt the signed tokens.
+
+14. You manage a highly secure API that receives a significant number of requests as your marketing campaign flourishes. During this time, a few clients face server refusals, accompanied by the HTTP 431 status code. To mitigate this issue, you use the Retry-After header which reduces the problem's frequency, but the underlying issue persists. How can you resolve the issue with little to no information loss?
+
+	Ensure that the Referer header receives a small URL.
+
+15. What statement is true when you switch from Rivest-Shamir-Adleman (RSA) to the Advanced Encryption Standard (AES) encryption algorithm?
+
+	The sender and the receiver share a private key.
+
+16. What does API versioning simplify?
+
+	Application usability
+
+17. In a microservices setup, you must locate service instances, accounting for dynamic changes in their numbers and locations. During the process, you must handle containers that have dynamic IP addresses. What approach would you use to discover these services?
+
+	Use a load balancer that queries a service registry and forwards the request to the right service instance.
+
+19. How would you construct the JSON Web Token (JWT) signature to transmit information between parties based on the following header and payload data?
+header
+{
+  "alg": "RS256",
+  "typ": "JWT"
+}
+
+payload
+{
+  "sub": "dummy",
+  "name": "Pluralsight",
+  "courses": "2545"
+}
+
+jwt = base64UrlEncode(header) + "." +
+      base64UrlEncode(payload) + "." + 
+      base64UrlEncode(signature)
+
+      RSASHA256(
+	  base64UrlEncode(header) + "." +
+	  base64UrlEncode(payload),
+	  some_secret)
+
+
+
+8. You are working on a microservices architecture to design an API for furniture shopping. The API gathers data for clients who are making purchases as well as clients who are exploring the products. How can you manage data in this scenario?
+
+	Only maintain a subset of the information in services that do not require the complete data.
+
+20. Which test would you use to ensure that your API works the way you want it to?
+
+	Functional test
+
+25. You develop a bank portal with more than 50,000 user accounts. An attacker breaches your security, exposing user email and password data. You implement a more robust security system, but your team can still access user email-password pairs. What steps should you take to enhance user protection against both internal and external threats?
+
+	Save the hash of each password in your portal's database.
+
+28. You hosted your API at https://mydomain.com for five years. The domain URL you originally wanted, https://xyz.com, becomes available for an affordable price. You purchase the new URL and move your API to it. Your existing clients start to get 404 Not Found errors when visiting the old URL, however. How do you resolve this issue? 
+
+	Use the 308 HTTP status code to redirect users to the new URL
+
+29. You are working on a microservices architecture with 10 services. How many services can directly access the data store of the first service?
+
+	1
+
+30. A user makes a GET request to a RESTful API's /cars endpoint to retrieve the two most expensive cars. The API responds with the following output:
+{
+    "cars": [
+        {
+            "id": 451,
+            "name": "Car A",
+            "price": 1000000.00,
+            "links": {
+                "self": { "href": "/cars/1" },
+            }
+        },
+        {
+            "id": 452,
+            "name": "Car B",
+            "price": 800000.00,
+            "links": {
+                "self": { "href": "/cars/2" },
+            }
+        }
+    ],
+    "_links": {
+        "self": { "href": "/manufacturer" }
+    }
+}
+The user cannot navigate to each car manufacturer within the API using each car resource. Using RESTful API design principles, what changes should you make to the API to correct the issue?
+
+	Add "manufacturer": { "href": "/manufacturers/1" } and "manufacturer": { "href": "/manufacturers/2" } to the first and second car resources.
+
+
+
+
+
+
